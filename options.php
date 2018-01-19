@@ -3,7 +3,7 @@
  * The template for Settings content control
  *
  * @package Vtrois
- * @version 2.5(17.12.29)
+ * @version 2.5(18.01.19)
  */
 
 function optionsframework_option_name() {
@@ -75,28 +75,6 @@ function optionsframework_options() {
 		'std' => '0',
 		'type' => 'checkbox');
 	$options[] = array(
-		'name' => '打赏页面标题',
-		'id' => 'paytext_head',
-		'std' => '打赏作者',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '付款码上方提示文字',
-		'id' => 'paytext',
-		'std' => '扫一扫支付',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '微信收款码',
-		'desc' => '上传你的微信收款二维码图片，图片尺寸要大于200px',
-		'id' => 'wechatpayqr_url',
-		'std' => get_template_directory_uri() . '/images/wechatpayqr.png',
-		'type' => 'upload');
-	$options[] = array(
-		'name' => '支付婊收款码',
-		'desc' => '上传你的支付婊收款二维码图片，图片尺寸要大于200px',
-		'id' => 'alipayqr_url',
-		'std' => get_template_directory_uri() . '/images/alipayqr.png',
-		'type' => 'upload');
-	$options[] = array(
 		'name' => '组件配置',
 		'type' => 'heading');
 	$options[] = array(
@@ -118,17 +96,6 @@ function optionsframework_options() {
 		'std' => '0',
 		'type' => 'checkbox');
 	$options[] = array(
-		'name' => '访客留言',
-		'desc' => '是否启用访客留言按钮功能',
-		'id' => 'cd_gb',
-		'std' => '0',
-		'type' => 'checkbox');
-	$options[] = array(
-		'name' => '访客留言配置',
-		'desc' => '输入您的访客留言页面的连接，若没开启访客留言按钮该项无效',
-		'id' => 'guestbook_links',
-		'type' => 'text');
-	$options[] = array(
 		'name' => '微信展示',
 		'desc' => '是否启用微信展示按钮功能',
 		'id' => 'cd_weixin',
@@ -139,6 +106,28 @@ function optionsframework_options() {
 		'desc' => '上传你的微信二维码图片，图片尺寸要大于150px',
 		'id' => 'weixin_image',
 		'std' => get_template_directory_uri() . '/images/weixin.png',
+		'type' => 'upload');
+	$options[] = array(
+		'name' => '打赏页面标题',
+		'id' => 'paytext_head',
+		'std' => '打赏作者',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '付款码上方提示文字',
+		'id' => 'paytext',
+		'std' => '扫一扫支付',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '微信收款码',
+		'desc' => '上传你的微信收款二维码图片，图片尺寸要大于200px',
+		'id' => 'wechatpayqr_url',
+		'std' => get_template_directory_uri() . '/images/wechatpayqr.png',
+		'type' => 'upload');
+	$options[] = array(
+		'name' => '支付婊收款码',
+		'desc' => '上传你的支付婊收款二维码图片，图片尺寸要大于200px',
+		'id' => 'alipayqr_url',
+		'std' => get_template_directory_uri() . '/images/alipayqr.png',
 		'type' => 'upload');
 	$options[] = array(
 		'name' => 'SEO配置',
