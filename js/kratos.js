@@ -59,15 +59,17 @@
 			});
 		}
 	}
-	var mobileMenuOutsideClick = function() {
-		$(document).click(function(e) {
-			var container = $("#offcanvas-menu, .js-kratos-nav-toggle");
-			if (!container.is(e.target) && container.has(e.target).length === 0) {
-				if ($('body').hasClass('kratos-offcanvas')) {
-					$('body').removeClass('kratos-offcanvas');
-				}
-			}
-		});
+	var toSearch = function() {
+			$('.search-box').on("click", function(e) {
+				$("#searchform").animate({width:"200px"},200),
+				$("#searchform input").css('display','block');
+				$(document).one("click", function() {
+					$("#searchform").animate({width:"0"},100),
+					$("#searchform input").hide();
+				});
+				e.stopPropagation();
+			});
+			$('#searchform').on("click", function(e) {e.stopPropagation();})
 	};
 	var contentWayPoint = function() {
 		var i = 0;
@@ -199,7 +201,7 @@
 		showlove();
 		gotop();
 		weixinpic();
-		mobileMenuOutsideClick();
+		toSearch();
 		contentWayPoint();
 		showPhotos();
 	});
