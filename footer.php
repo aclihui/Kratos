@@ -9,6 +9,7 @@
 				<footer>
 					<div id="footer">
 						<div class="cd-tool text-center">
+						    <a class="<?php if ( kratos_option( 'cd_weixin' ) ) echo 'cd-top2 '; ?>cd-top"><span class="fa fa-chevron-up"></span></a>
 						   	<?php if ( kratos_option( 'cd_weixin' ) ) : ?>
 						   		<a id="weixin-img" class="cd-weixin"><span class="fa fa-weixin"></span><div id="weixin-pic"><img src="<?php echo kratos_option('weixin_image') ?>"></div></a>
 						   	<?php endif; ?>
@@ -18,7 +19,6 @@
 									<input type="text" name="s" id="search" placeholder="Search..." style="display: none;"/>
 								</form>
 							</a>
-						    <a class="cd-top cd-is-visible cd-fade-out"><span class="fa fa-chevron-up"></span></a>
 						</div>
 						<div class="container">
 							<div class="row">
