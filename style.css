@@ -4,7 +4,7 @@ Theme URI: https://github.com/xb2016/Kratos
 Author: Vtrois(Modified by 小白-白)
 Author URI: https://www.vtrois.com/
 Description: Kratos 是一款专注于个人博客的主题，提供了一套可自定义的积木式页面配置组件，可以通过使用小工具、导航、社交组件、站点标识、自定颜色等来个性化你的站点。此为小白-白(www.fczbl.vip)的修改版。
-Version: 2.5.8(17.12.29)
+Version: 2.5.8(18.01.19)
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: 简约, 紧凑, 优雅, 情怀, 多栏, 自适应, 响应式, 小工具, 灵活顶部, 主题选项, 打赏组件, 收录优化, 文章分享, 轮播图片, 邮件功能, 社交组件, 广告栏目, 特色图像, 随动边栏, 嵌套评论, 页脚挂件, 自定义边栏, 自定义颜色, 自定义背景, 自定义布局
@@ -1161,7 +1161,7 @@ table,table tbody tr th {
  box-shadow:0 .0625rem .3125rem rgba(0,0,0,.1)
 }
 .comments-area .comment-list li:not(:first-child) {
- margin-top:.9375rem
+ margin-top:2rem
 }
 .comments-area .comment-list .children li {
  margin-top:1rem;
@@ -1233,7 +1233,7 @@ table,table tbody tr th {
  display:none
 }
 .comments-area .comment-awaiting-moderation {
- font-size:.75rem
+ font-size:1.5rem
 }
 .comments-area .comment-meta {
  margin-bottom:.625rem;
@@ -1283,8 +1283,6 @@ a.comment-reply-link:hover {
 	text-decoration:none
 }
 .comment-respond {
-	margin-top:60px;
-	margin:0 0 14px;
 	background-color:#fff;
 	box-shadow:0 1px 5px rgba(0,0,0,.1);
 	border-radius:0;
@@ -1347,9 +1345,6 @@ a.comment-reply-link:hover {
 }
 .comment-form .logged-in-as a {
 	color:#848484
-}
-#comments img {
-	max-width:100%
 }
 #comments img {
 	max-width:100%
@@ -1508,14 +1503,6 @@ a.comment-reply-link:hover {
 .widget_kratos_ad img {
 	max-width:300px;
 	height:auto
-}
-.widget_kratos_search input {
-	height:35px;
-	border:1px solid #ccc;
-	border-radius:0
-}
-.widget_kratos_search .form-group {
-	margin-bottom:0
 }
 #tabul li {
 	border-bottom:3px solid #f2f2f2;
@@ -2141,10 +2128,9 @@ img.size-smiley {
 }
 .cd-tool a {
 	position:fixed;
-	width:50px;
-	height:50px;
-	right:30px;
-	opacity:.7;
+	width:40px;
+	height:40px;
+	right:20px;
 	background:#848484;
 	box-shadow:0 0 10px rgba(0,0,0,.05);
 	white-space:nowrap;
@@ -2152,24 +2138,13 @@ img.size-smiley {
 	transition:all .3s;
 	z-index:2
 }
-.cd-gb-a {
-	bottom:152px
-}
-.cd-gb-b {
-	bottom:96px
-}
-.cd-gb-a span,.cd-gb-b span {
-	margin-top:16px;
-	color:#fff;
-	font-size:20px
-}
 .cd-weixin {
-	bottom:96px
+	bottom:130px
 }
 .cd-weixin span {
-	margin-top:16px;
+	margin-top:12px;
 	color:#fff;
-	font-size:20px
+	font-size:18px
 }
 .cd-weixin img {
 	position:fixed;
@@ -2181,33 +2156,54 @@ img.size-smiley {
 #weixin-pic {
 	display:none
 }
+.search-box {
+	bottom:80px
+}
+.search-box span {
+	margin-top:12px;
+	color:#fff;
+	font-size:18px
+}
+#searchform {
+	width:0;
+	margin-top:-30px;
+	margin-left:-215px;
+	height:40px
+}
+.search-box input {
+	width:100%;
+	height:40px;
+	border:0;
+	background-color:#848484;
+	font-size:16px;
+	padding:12px
+}
 .cd-top {
-	bottom:40px;
+	bottom:30px;
 	visibility:hidden;
 	overflow:hidden
 }
 .cd-top span {
-	margin-top:15px;
+	margin-top:11px;
 	color:#fff;
 	font-size:18px
 }
 .cd-top.cd-is-visible {
-	visibility:visible;
-	opacity:.7
+	visibility:visible
 }
-.cd-gb.cd-fade-out,.cd-top.cd-fade-out,.cd-weixin.cd-fade-out {
+.search-box,.cd-top,.cd-weixin {
 	opacity:.7
 }
 .no-touch .cd-top:hover {
 	background-color:#51aded;
 	opacity:1
 }
-.no-touch .cd-weixin:hover {
-	background-color:#44B549;
+.no-touch .search-box:hover {
+	background-color:#ED2A2F;
 	opacity:1
 }
-.no-touch .cd-gb-a:hover,.no-touch .cd-gb-b:hover {
-	background-color:#ED2A2F;
+.no-touch .cd-weixin:hover {
+	background-color:#44B549;
 	opacity:1
 }
 .btn {
@@ -2380,7 +2376,7 @@ img.size-smiley {
 	position:relative
 }
 .affix {
-	top:49px
+	top:54px
 }
 .affix,.affix-bottom {
 	width:293.31px
