@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
     }
     $(".spig").animate({
         top: $(".spig").offset().top + 300,
-        left: document.body.offsetWidth - 160
+        left: document.body.offsetWidth - 200
     },
 	{
 	    queue: false,
@@ -79,7 +79,10 @@ jQuery(document).ready(function ($) {
     $('#submit').mouseover(function () {
         showMessage('呐 首次评论需要审核，请耐心等待哦~');
     });
-    $('#s').focus(function () {
+    $('.search-box').mouseover(function () {
+        showMessage('找不到想要的？试试搜索吧！');
+    });
+    $('#search').focus(function () {
         showMessage('输入你想搜索的关键词再按Enter键就可以搜索啦!');
     });
     $('.nav-previous').mouseover(function () {
@@ -120,12 +123,6 @@ jQuery(document).ready(function ($) {
 	});
     $('#footer p a i.fa-github').mouseover(function(){
         showMessage('GayHub！我是新手！');
-	});
-    $('.about-photo').mouseover(function(){
-        showMessage('快来看看我是谁吧！');
-	});
-	$('#open-poi-player').mouseover(function(){
-        showMessage('来听音乐吧~');
 	});
 	$('.cd-gb-a').mouseover(function(){
         showMessage('既然来了就留下点什么吧~');
