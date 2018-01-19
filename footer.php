@@ -3,20 +3,21 @@
  * The template for displaying the footer
  *
  * @package Vtrois
- * @version 2.5(17.12.29)
+ * @version 2.5(18.01.19)
  */
 ?>
 				<footer>
 					<div id="footer">
-						<div class="cd-tool visible-lg text-center">
-							<?php if ( kratos_option( 'cd_gb' ) && kratos_option( 'cd_weixin' ) ) { ?>
-						   		<a rel="nofollow" class="cd-gb-a" href="<?php echo kratos_option('guestbook_links'); ?>"><span class="fa fa-book"></span></a>	
-						   	<?php } elseif( kratos_option( 'cd_gb' ) && !kratos_option( 'cd_weixin' ) ){ ?>
-						   		<a rel="nofollow" class="cd-gb-b" href="<?php echo kratos_option('guestbook_links'); ?>"><span class="fa fa-book"></span></a>	
-						   	<?php } ?>
+						<div class="cd-tool text-center">
 						   	<?php if ( kratos_option( 'cd_weixin' ) ) : ?>
 						   		<a id="weixin-img" class="cd-weixin"><span class="fa fa-weixin"></span><div id="weixin-pic"><img src="<?php echo kratos_option('weixin_image') ?>"></div></a>
 						   	<?php endif; ?>
+							<a class="search-box">
+								<span class="fa fa-search"></i>
+								<form class="search-form" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+									<input type="text" name="s" id="search" placeholder="Search..." style="display: none;"/>
+								</form>
+							</a>
 						    <a class="cd-top cd-is-visible cd-fade-out"><span class="fa fa-chevron-up"></span></a>
 						</div>
 						<div class="container">
