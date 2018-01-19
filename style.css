@@ -9,6 +9,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: 简约, 紧凑, 优雅, 情怀, 多栏, 自适应, 响应式, 小工具, 灵活顶部, 主题选项, 打赏组件, 收录优化, 文章分享, 轮播图片, 邮件功能, 社交组件, 广告栏目, 特色图像, 随动边栏, 嵌套评论, 页脚挂件, 自定义边栏, 自定义颜色, 自定义背景, 自定义布局
 */
+
 @charset "UTF-8";
 
 body {
@@ -47,7 +48,7 @@ ol,p,ul {
 h1,h2,h3,h4,h5,h6 {
 	color:#333;
 	font-weight:400;
-	margin:0 0 20px 0
+	margin:0 0 15px 0
 }
 figure {
 	margin-bottom:2em
@@ -461,7 +462,7 @@ table,table tbody tr th {
 	left:0;
 	width:100%;
 	z-index:2;
-	background:rgba(40,42,44,.6)
+	background:rgba(40,42,44,.6);
 }
 #kratos-header-section .sub-menu {
 	padding:10px 7px 10px;
@@ -2139,7 +2140,7 @@ img.size-smiley {
 	z-index:2
 }
 .cd-weixin {
-	bottom:130px
+	bottom:80px
 }
 .cd-weixin span {
 	margin-top:12px;
@@ -2157,7 +2158,7 @@ img.size-smiley {
 	display:none
 }
 .search-box {
-	bottom:80px
+	bottom:30px
 }
 .search-box span {
 	margin-top:12px;
@@ -2179,9 +2180,12 @@ img.size-smiley {
 	padding:12px
 }
 .cd-top {
-	bottom:30px;
+	bottom:80px;
 	visibility:hidden;
 	overflow:hidden
+}
+.cd-top2 {
+	bottom:130px
 }
 .cd-top span {
 	margin-top:11px;
@@ -2191,7 +2195,7 @@ img.size-smiley {
 .cd-top.cd-is-visible {
 	visibility:visible
 }
-.search-box,.cd-top,.cd-weixin {
+.cd-gb,.search-box,.cd-top,.cd-weixin,.cd-gb-a {
 	opacity:.7
 }
 .no-touch .cd-top:hover {
