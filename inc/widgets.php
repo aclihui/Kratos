@@ -252,52 +252,6 @@ class kratos_widget_tags extends WP_Widget {
     }
 }
 
-class kratos_widget_search extends WP_Widget {
-
-    function __construct(){
-        $widget_ops = array(
-            'classname' => 'widget_kratos_search',
-            'name'        => 'Kratos - 站点搜索',
-            'description' => 'Kratos主题特色组件 - 站点搜索'
-        );
-        parent::__construct( false, false, $widget_ops );
-    }
-
-    function widget( $args, $instance ) {
-        extract( $args );
-        $title = $instance['title'] ? $instance['title'] : '';
-        echo $before_widget;
-        ?>
-        <?php if(!empty($title)) {?>
-        <h4 class="widget-title"><?php echo $title; ?></h4>
-        <?php }?>
-         <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
-            <div class="form-group">
-                 <input type="text" name='s' id='s' placeholder="Search…" class="form-control" placeholder="" x-webkit-speech>
-            </div>
-        </form>
-
-        <?php
-        echo $after_widget;
-    }
-
-    function update( $new_instance, $old_instance ) {
-        return $new_instance;
-    }
-
-    function form( $instance ) {
-        @$title = esc_attr( $instance['title'] );
-        ?>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'title' ); ?>">
-                    标题：
-                    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
-                </label>
-            </p>
-        <?php
-    }
-}
-
 class kratos_widget_posts extends WP_Widget{
 
     function __construct(){
@@ -383,7 +337,6 @@ function kratos_register_widgets(){
     register_widget('kratos_widget_ad'); 
     register_widget('kratos_widget_about'); 
     register_widget('kratos_widget_tags'); 
-    register_widget('kratos_widget_search'); 
     register_widget('kratos_widget_posts'); 
 }
 add_action('widgets_init','kratos_register_widgets');
