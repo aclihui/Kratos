@@ -224,23 +224,7 @@ jQuery(document).ready(
 			jQuery(this).parent().parent().parent().find('.xicon').addClass('active');
 		}
 	});
-});
-var now = new Date();
-function createtime(){
-	var grt= new Date(xb.crtime);
-	now.setTime(now.getTime()+250);
-	days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-	hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-	if(String(hnum).length ==1 ){hnum = "0" + hnum;}
-	minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-	mnum = Math.floor(minutes);
-	if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-	seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-	snum = Math.round(seconds);
-	if(String(snum).length ==1 ){snum = "0" + snum;}
-	document.getElementById("span_dt_dt").innerHTML = dnum + "天" + hnum + "小时" + mnum + "分" + snum + "秒";
-}
-setInterval("createtime()",250);
+	if (!isindex) {
 	var OwO_demo = new OwO({
 		logo: 'OωO表情',
 		container: document.getElementsByClassName('OwO')[0],
@@ -281,11 +265,29 @@ setInterval("createtime()",250);
 			myField.focus();
 		}
 	}
+	}
+});
+var now = new Date();
+function createtime(){
+	var grt= new Date(xb.crtime);
+	now.setTime(now.getTime()+250);
+	days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+	hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+	if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+	minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+	mnum = Math.floor(minutes);
+	if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+	seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+	snum = Math.round(seconds);
+	if(String(snum).length ==1 ){snum = "0" + snum;}
+	document.getElementById("span_dt_dt").innerHTML = dnum + "天" + hnum + "小时" + mnum + "分" + snum + "秒";
+}
+setInterval("createtime()",250);
 window.onload = function() {
 	var now = new Date().getTime();
 	var page_load_time = now - performance.timing.navigationStart;
 	console.clear();
-	console.log("项目托管：https://github.com/xb2016/Kratos");
+	console.log("%cFCZBL"," text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em")
 	console.log('%cwww.fczbl.vip', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:2em;');
 	console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','background: #fff;color: #333;text-shadow: 0 0 2px #eee, 0 0 3px #eee, 0 0 3px #eee, 0 0 2px #eee, 0 0 3px #eee;');
 };
