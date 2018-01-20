@@ -3,207 +3,258 @@
         "type": "image",
         "container": [
             {
-                "icon": "<a href=\"javascript:grin(':hehe:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/hehe.png\"></a>",
+                "desc": "':hehe:'",
+                "icon": "/images/smilies/hehe.png",
                 "text": "呵呵"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':haha:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/haha.png\"></a>",
+                "desc": "':haha:'",
+                "icon": "/images/smilies/haha.png",
                 "text": "哈哈"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':tushe:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/tushe.png\"></a>",
+                "desc": "':tushe:'",
+                "icon": "/images/smilies/tushe.png",
                 "text": "吐舌"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':a:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/a.png\"></a>",
+                "desc": "':a:'",
+                "icon": "/images/smilies/a.png",
                 "text": "啊"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':ku:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/ku.png\"></a>",
+                "desc": "':ku:'",
+                "icon": "/images/smilies/ku.png",
                 "text": "酷"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':nu:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/nu.png\"></a>",
+                "desc": "':nu:'",
+                "icon": "/images/smilies/nu.png",
                 "text": "怒"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':kaixin:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/kaixin.png\"></a>",
+                "desc": "':kaixin:'",
+                "icon": "/images/smilies/kaixin.png",
                 "text": "开心"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':han:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/han.png\"></a>",
+                "desc": "':han:'",
+                "icon": "/images/smilies/han.png",
                 "text": "汗"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':lei:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/lei.png\"></a>",
+                "desc": "':lei:'",
+                "icon": "/images/smilies/lei.png",
                 "text": "泪"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':heixian:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/heixian.png\"></a>",
+                "desc": "':heixian:'",
+                "icon": "/images/smilies/heixian.png",
                 "text": "黑线"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':bishi:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/bishi.png\"></a>",
+                "desc": "':bishi:'",
+                "icon": "/images/smilies/bishi.png",
                 "text": "鄙视"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':bugaoxing:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/bugaoxing.png\"></a>",
+                "desc": "':bugaoxing:'",
+                "icon": "/images/smilies/bugaoxing.png",
                 "text": "不高兴"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':zhenbang:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/zhenbang.png\"></a>",
+                "desc": "':zhenbang:'",
+                "icon": "/images/smilies/zhenbang.png",
                 "text": "真棒"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':qian:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/qian.png\"></a>",
+                "desc": "':qian:'",
+                "icon": "/images/smilies/qian.png",
                 "text": "钱"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':yiwen:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/yiwen.png\"></a>",
+                "desc": "':yiwen:'",
+                "icon": "/images/smilies/yiwen.png",
                 "text": "疑问"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':yinxian:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/yinxian.png\"></a>",
+                "desc": "':yinxian:'",
+                "icon": "/images/smilies/yinxian.png",
                 "text": "阴险"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':tu:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/tu.png\"></a>",
+                "desc": "':tu:'",
+                "icon": "/images/smilies/tu.png",
                 "text": "吐"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':yi:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/yi.png\"></a>",
+                "desc": "':yi:'",
+                "icon": "/images/smilies/yi.png",
                 "text": "咦"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':weiqv:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/weiqv.png\"></a>",
+                "desc": "':weiqv:'",
+                "icon": "/images/smilies/weiqv.png",
                 "text": "委屈"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaxin:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaxin.png\"></a>",
+                "desc": "':huaxin:'",
+                "icon": "/images/smilies/huaxin.png",
                 "text": "花心"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':hu:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/hu.png\"></a>",
+                "desc": "':hu:'",
+                "icon": "/images/smilies/hu.png",
                 "text": "呼~~"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':xiaoyan:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/xiaoyan.png\"></a>",
+                "desc": "':xiaoyan:'",
+                "icon": "/images/smilies/xiaoyan.png",
                 "text": "笑眼"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':leng:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/leng.png\"></a>",
+                "desc": "':leng:'",
+                "icon": "/images/smilies/leng.png",
                 "text": "冷"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':taikaixin:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/taikaixin.png\"></a>",
+                "desc": "':taikaixin:'",
+                "icon": "/images/smilies/taikaixin.png",
                 "text": "太开心"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji2:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji2.png\"></a>",
+                "desc": "':huaji2:'",
+                "icon": "/images/smilies/huaji2.png",
                 "text": "右滑稽"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji.png\"></a>",
+                "desc": "':huaji:'",
+                "icon": "/images/smilies/huaji.png",
                 "text": "左滑稽"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':mianqiang:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/mianqiang.png\"></a>",
+                "desc": "':mianqiang:'",
+                "icon": "/images/smilies/mianqiang.png",
                 "text": "勉强"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':kuanghan:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/kuanghan.png\"></a>",
+                "desc": "':kuanghan:'",
+                "icon": "/images/smilies/kuanghan.png",
                 "text": "狂汗"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':guai:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/guai.png\"></a>",
+                "desc": "':guai:'",
+                "icon": "/images/smilies/guai.png",
                 "text": "乖"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':shuijiao:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/shuijiao.png\"></a>",
+                "desc": "':shuijiao:'",
+                "icon": "/images/smilies/shuijiao.png",
                 "text": "睡觉"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':jingku:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/jingku.png\"></a>",
+                "desc": "':jingku:'",
+                "icon": "/images/smilies/jingku.png",
                 "text": "惊哭"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':shengqi:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/shengqi.png\"></a>",
+                "desc": "':shengqi:'",
+                "icon": "/images/smilies/shengqi.png",
                 "text": "生气"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':jingya:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/jingya.png\"></a>",
+                "desc": "':jingya:'",
+                "icon": "/images/smilies/jingya.png",
                 "text": "惊讶"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':pen:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/pen.png\"></a>",
+                "desc": "':pen:'",
+                "icon": "/images/smilies/pen.png",
                 "text": "喷"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':aixin:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/aixin.png\"></a>",
+                "desc": "':aixin:'",
+                "icon": "/images/smilies/aixin.png",
                 "text": "爱心"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':xinsui:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/xinsui.png\"></a>",
+                "desc": "':xinsui:'",
+                "icon": "/images/smilies/xinsui.png",
                 "text": "心碎"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':meigui:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/meigui.png\"></a>",
+                "desc": "':meigui:'",
+                "icon": "/images/smilies/meigui.png",
                 "text": "玫瑰"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':liwu:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/liwu.png\"></a>",
+                "desc": "':liwu:'",
+                "icon": "/images/smilies/liwu.png",
                 "text": "礼物"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':caihong:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/caihong.png\"></a>",
+                "desc": "':caihong:'",
+                "icon": "/images/smilies/caihong.png",
                 "text": "彩虹"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':xxyl:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/xxyl.png\"></a>",
+                "desc": "':xxyl:'",
+                "icon": "/images/smilies/xxyl.png",
                 "text": "星星月亮"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':sun:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/sun.png\"></a>",
+                "desc": "':sun:'",
+                "icon": "/images/smilies/sun.png",
                 "text": "太阳"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':money:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/money.png\"></a>",
+                "desc": "':money:'",
+                "icon": "/images/smilies/money.png",
                 "text": "钱币"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':bulb:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/bulb.png\"></a>",
+                "desc": "':bulb:'",
+                "icon": "/images/smilies/bulb.png",
                 "text": "灯泡"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':cup:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/cup.png\"></a>",
+                "desc": "':cup:'",
+                "icon": "/images/smilies/cup.png",
                 "text": "茶杯"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':cake:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/cake.png\"></a>",
+                "desc": "':cake:'",
+                "icon": "/images/smilies/cake.png",
                 "text": "蛋糕"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':music:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/music.png\"></a>",
+                "desc": "':music:'",
+                "icon": "/images/smilies/music.png",
                 "text": "音乐"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':haha2:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/haha2.png\"></a>",
+                "desc": "':haha2:'",
+                "icon": "/images/smilies/haha2.png",
                 "text": "haha"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':win:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/win.png\"></a>",
+                "desc": "':win:'",
+                "icon": "/images/smilies/win.png",
                 "text": "胜利"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':good:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/good.png\"></a>",
+                "desc": "':good:'",
+                "icon": "/images/smilies/good.png",
                 "text": "大拇指"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':bad:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/bad.png\"></a>",
+                "desc": "':bad:'",
+                "icon": "/images/smilies/bad.png",
                 "text": "弱"
             },
 			{
-                "icon": "<a href=\"javascript:grin(':ok:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/ok.png\"></a>",
+                "desc": "':ok:'",
+                "icon": "/images/smilies/ok.png",
                 "text": "OK"
             }
         ]
@@ -212,95 +263,118 @@
         "type": "image",
         "container": [
             {
-                "icon": "<a href=\"javascript:grin(':huaji2:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji2.png\"></a>",
+                "desc": "':huaji2:'",
+                "icon": "/images/smilies/huaji2.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji.png\"></a>",
+                "desc": "':huaji:'",
+                "icon": "/images/smilies/huaji.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji3:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji3.gif\"></a>",
+                "desc": "':huaji3:'",
+                "icon": "/images/smilies/huaji3.gif",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji4:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji4.png\"></a>",
+                "desc": "':huaji4:'",
+                "icon": "/images/smilies/huaji4.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji5:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji5.gif\"></a>",
+                "desc": "':huaji5:'",
+                "icon": "/images/smilies/huaji5.gif",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji6:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji6.png\"></a>",
+                "desc": "':huaji6:'",
+                "icon": "/images/smilies/huaji6.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji7:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji7.png\"></a>",
+                "desc": "':huaji7:'",
+                "icon": "/images/smilies/huaji7.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji8:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji8.png\"></a>",
+                "desc": "':huaji8:'",
+                "icon": "/images/smilies/huaji8.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji9:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji9.png\"></a>",
+                "desc": "':huaji9:'",
+                "icon": "/images/smilies/huaji9.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji10:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji10.png\"></a>",
+                "desc": "':huaji10:'",
+                "icon": "/images/smilies/huaji10.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji11:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji11.png\"></a>",
+                "desc": "':huaji11:'",
+                "icon": "/images/smilies/huaji11.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji12:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji12.png\"></a>",
+                "desc": "':huaji12:'",
+                "icon": "/images/smilies/huaji12.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji13:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji13.png\"></a>",
+                "desc": "':huaji13:'",
+                "icon": "/images/smilies/huaji13.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji14:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji14.png\"></a>",
+                "desc": "':huaji14:'",
+                "icon": "/images/smilies/huaji14.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji15:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji15.png\"></a>",
+                "desc": "':huaji15:'",
+                "icon": "/images/smilies/huaji15.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji16:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji16.gif\"></a>",
+                "desc": "':huaji16:'",
+                "icon": "/images/smilies/huaji16.gif",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji17:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji17.png\"></a>",
+                "desc": "':huaji17:'",
+                "icon": "/images/smilies/huaji17.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji18:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji18.png\"></a>",
+                "desc": "':huaji18:'",
+                "icon": "/images/smilies/huaji18.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji19:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji19.png\"></a>",
+                "desc": "':huaji19:'",
+                "icon": "/images/smilies/huaji19.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji20:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji20.gif\"></a>",
+                "desc": "':huaji20:'",
+                "icon": "/images/smilies/huaji20.gif",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji21:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji21.gif\"></a>",
+                "desc": "':huaji21:'",
+                "icon": "/images/smilies/huaji21.gif",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji22:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji22.png\"></a>",
+                "desc": "':huaji22:'",
+                "icon": "/images/smilies/huaji22.png",
                 "text": ""
             },
 			{
-                "icon": "<a href=\"javascript:grin(':huaji23:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji23.png\"></a>",
+                "desc": "':huaji23:'",
+                "icon": "/images/smilies/huaji23.png",
                 "text": ""
             }
         ]
@@ -308,265 +382,329 @@
     "颜文字": {
         "type": "emoticon",
         "container": [
-                {
-                    "icon": "<a href=\"javascript:grin('OωO')\">OωO</a>",
-                    "text": "Author: DIYgod"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('|´・ω・)ノ')\">|´・ω・)ノ</a>",
-                    "text": "Hi"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('ヾ(≧∇≦*)ゝ')\">ヾ(≧∇≦*)ゝ</a>",
-                    "text": "开心"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('(☆ω☆)')\">(☆ω☆)</a>",
-                    "text": "星星眼"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('（╯‵□′）╯︵┴─┴')\">（╯‵□′）╯︵┴─┴</a>",
-                    "text": "掀桌"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('￣﹃￣')\">￣﹃￣</a>",
-                    "text": "流口水"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('(/ω＼)')\">(/ω＼)</a>",
-                    "text": "捂脸"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('∠( ᐛ 」∠)＿')\">∠( ᐛ 」∠)＿</a>",
-                    "text": "给跪"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('(๑•̀ㅁ•́ฅ)')\">(๑•̀ㅁ•́ฅ)</a>",
-                    "text": "Hi"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('→_→')\">→_→</a>",
-                    "text": "斜眼"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('୧(๑•̀⌄•́๑)૭')\">୧(๑•̀⌄•́๑)૭</a>",
-                    "text": "加油"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('٩(ˊᗜˋ*)و')\">٩(ˊᗜˋ*)و</a>",
-                    "text": "有木有WiFi"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('(ノ°ο°)ノ')\">(ノ°ο°)ノ</a>",
-                    "text": "前方高能预警"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('(´இ皿இ｀)')\">(´இ皿இ｀)</a>",
-                    "text": "我从未见过如此厚颜无耻之人"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('⌇●﹏●⌇')\">⌇●﹏●⌇</a>",
-                    "text": "吓死宝宝惹"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('(ฅ´ω`ฅ)')\">(ฅ´ω`ฅ)</a>",
-                    "text": "已阅留爪"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('(╯°A°)╯︵○○○')\">(╯°A°)╯︵○○○</a>",
-                    "text": "去吧大师球"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('φ(￣∇￣o)')\">φ(￣∇￣o)</a>",
-                    "text": "太萌惹"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('ヾ(´･ ･｀｡)ノ')\">ヾ(´･ ･｀｡)ノ</a>",
-                    "text": "咦咦咦"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃')\">( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃</a>",
-                    "text": "气呼呼"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('(ó﹏ò｡)')\">(ó﹏ò｡)</a>",
-                    "text": "我受到了惊吓"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('Σ(っ °Д °;)っ')\">Σ(っ °Д °;)っ</a>",
-                    "text": "什么鬼"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('( ,,´･ω･)ﾉ(´っω･｀｡)')\">( ,,´･ω･)ﾉ\"(´っω･｀｡)</a>",
-                    "text": "安慰"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('╮(╯▽╰)╭')\">╮(╯▽╰)╭</a>",
-                    "text": "无奈"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('o(*////▽////*)q')\">o(*////▽////*)q</a>",
-                    "text": "脸红"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('＞﹏＜')\">＞﹏＜</a>",
-                    "text": "难受"
-                },
-                {
-                    "icon": "<a href=\"javascript:grin('( ๑´•ω•) ﾉ(ㆆᴗㆆ)')\">( ๑´•ω•) ﾉ(ㆆᴗㆆ)</a>",
-                    "text": "摸摸头"
-                }
+			{
+                "desc": "'OωO'",
+                "icon": "OωO",
+                "text": "Author: DIYgod"
+			},
+			{
+                "desc": "'|´・ω・)ノ'",
+                "icon": "|´・ω・)ノ",
+                "text": "Hi"
+			},
+			{
+                "desc": "'ヾ(≧∇≦*)ゝ'",
+                "icon": "ヾ(≧∇≦*)ゝ",
+                "text": "开心"
+			},
+			{
+                "desc": "'(☆ω☆)'",
+                "icon": "(☆ω☆)",
+                "text": "星星眼"
+			},
+			{
+                "desc": "'（╯‵□′）╯︵┴─┴'",
+                "icon": "（╯‵□′）╯︵┴─┴",
+                "text": "掀桌"
+			},
+			{
+                "desc": "'￣﹃￣'",
+                "icon": "￣﹃￣",
+                "text": "流口水"
+			},
+			{
+                "desc": "'(/ω＼)'",
+                "icon": "(/ω＼)",
+                "text": "捂脸"
+			},
+			{
+                "desc": "'∠( ᐛ 」∠)＿'",
+                "icon": "∠( ᐛ 」∠)＿",
+                "text": "给跪"
+			},
+			{
+                "desc": "'(๑•̀ㅁ•́ฅ)'",
+                "icon": "(๑•̀ㅁ•́ฅ)",
+                "text": "Hi"
+			},
+			{
+                "desc": "'→_→'",
+                "icon": "→_→",
+                "text": "斜眼"
+			},
+			{
+                "desc": "'୧(๑•̀⌄•́๑)૭'",
+                "icon": "୧(๑•̀⌄•́๑)૭",
+                "text": "加油"
+			},
+			{
+                "desc": "'٩(ˊᗜˋ*)و'",
+                "icon": "٩(ˊᗜˋ*)و",
+                "text": "有木有WiFi"
+			},
+			{
+                "desc": "'(ノ°ο°)ノ'",
+                "icon": "(ノ°ο°)ノ",
+                "text": "前方高能预警"
+			},
+			{
+                "desc": "'(´இ皿இ｀)'",
+                "icon": "(´இ皿இ｀)",
+                "text": "我从未见过如此厚颜无耻之人"
+			},
+			{
+                "desc": "'⌇●﹏●⌇'",
+                "icon": "⌇●﹏●⌇",
+                "text": "吓死宝宝惹"
+			},
+			{
+                "desc": "'(ฅ´ω`ฅ)'",
+                "icon": "(ฅ´ω`ฅ)",
+                "text": "已阅留爪"
+			},
+			{
+                "desc": "'(╯°A°)╯︵○○○'",
+                "icon": "(╯°A°)╯︵○○○",
+                "text": "去吧大师球"
+			},
+			{
+                "desc": "'φ(￣∇￣o)'",
+                "icon": "φ(￣∇￣o)",
+                "text": "太萌惹"
+			},
+			{
+                "desc": "'ヾ(´･ ･｀｡)ノ'",
+                "icon": "ヾ(´･ ･｀｡)ノ",
+                "text": "咦咦咦"
+			},
+			{
+                "desc": "'( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃'",
+                "icon": "( ง ᵒ̌皿ᵒ̌)ง⁼³₌₃",
+                "text": "气呼呼"
+			},
+			{
+                "desc": "'(ó﹏ò｡)'",
+                "icon": "(ó﹏ò｡)",
+                "text": "我受到了惊吓"
+			},
+			{
+                "desc": "'Σ(っ °Д °;)っ'",
+                "icon": "Σ(っ °Д °;)っ",
+                "text": "什么鬼"
+			},
+			{
+                "desc": "'( ,,´･ω･)ﾉ(´っω･｀｡)'",
+                "icon": "( ,,´･ω･)ﾉ\"(´っω･｀｡)",
+                "text": "安慰"
+			},
+			{
+                "desc": "'╮(╯▽╰)╭'",
+                "icon": "╮(╯▽╰)╭",
+                "text": "无奈"
+			},
+			{
+                "desc": "'o(*////▽////*)q'",
+                "icon": "o(*////▽////*)q",
+                "text": "脸红"
+			},
+			{
+                "desc": "'＞﹏＜'",
+                "icon": "＞﹏＜",
+                "text": "难受"
+			},
+			{
+                "desc": "'( ๑´•ω•) ﾉ(ㆆᴗㆆ)'",
+                "icon": "( ๑´•ω•) ﾉ(ㆆᴗㆆ)",
+                "text": "摸摸头"
+			}
         ]
     },
     "Emoji": {
         "type": "emoji",
         "container": [
             {
-                "icon": "<a href=\"javascript:grin('😂')\">😂</a>",
+                "desc": "'😂'",
+                "icon": "😂",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😀')\">😀</a>",
+                "desc": "'😀'",
+                "icon": "😀",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😅')\">😅</a>",
+                "desc": "'😅'",
+                "icon": "😅",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😊')\">😊</a>",
+                "desc": "'😊'",
+                "icon": "😊",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🙂')\">🙂</a>",
+                "desc": "'🙂'",
+                "icon": "🙂",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🙃')\">🙃</a>",
+                "desc": "'🙃'",
+                "icon": "🙃",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😌')\">😌</a>",
+                "desc": "'😌'",
+                "icon": "😌",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😍')\">😍</a>",
+                "desc": "'😍'",
+                "icon": "😍",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😘')\">😘</a>",
+                "desc": "'😘'",
+                "icon": "😘",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😜')\">😜</a>",
+                "desc": "'😜'",
+                "icon": "😜",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😝')\">😝</a>",
+                "desc": "'😝'",
+                "icon": "😝",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😏')\">😏</a>",
+                "desc": "'😏'",
+                "icon": "😏",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😒')\">😒</a>",
+                "desc": "'😒'",
+                "icon": "😒",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🙄')\">🙄</a>",
+                "desc": "'🙄'",
+                "icon": "🙄",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😳')\">😳</a>",
+                "desc": "'😳'",
+                "icon": "😳",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😡')\">😡</a>",
+                "desc": "'😡'",
+                "icon": "😡",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😔')\">😔</a>",
+                "desc": "'😔'",
+                "icon": "😔",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😫')\">😫</a>",
+                "desc": "'😫'",
+                "icon": "😫",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😱')\">😱</a>",
+                "desc": "'😱'",
+                "icon": "😱",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😭')\">😭</a>",
+                "desc": "'😭'",
+                "icon": "😭",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('💩')\">💩</a>",
+                "desc": "'💩'",
+                "icon": "💩",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('👻')\">👻</a>",
+                "desc": "'👻'",
+                "icon": "👻",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🙌')\">🙌</a>",
+                "desc": "'🙌'",
+                "icon": "🙌",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🖕')\">🖕</a>",
+                "desc": "'🖕'",
+                "icon": "🖕",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('👍')\">👍</a>",
+                "desc": "'👍'",
+                "icon": "👍",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('👫')\">👫</a>",
+                "desc": "'👫'",
+                "icon": "👫",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('👬')\">👬</a>",
+                "desc": "'👬'",
+                "icon": "👬",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('👭')\">👭</a>",
+                "desc": "'👭'",
+                "icon": "👭",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🌚')\">🌚</a>",
+                "desc": "'🌚'",
+                "icon": "🌚",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🌝')\">🌝</a>",
+                "desc": "'🌝'",
+                "icon": "🌝",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🙈')\">🙈</a>",
+                "desc": "'🙈'",
+                "icon": "🙈",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('💊')\">💊</a>",
+                "desc": "'💊'",
+                "icon": "💊",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😶')\">😶</a>",
+                "desc": "'😶'",
+                "icon": "😶",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🙏')\">🙏</a>",
+                "desc": "'🙏'",
+                "icon": "🙏",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🍦')\">🍦</a>",
+                "desc": "'🍦'",
+                "icon": "🍦",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('🍉')\">🍉</a>",
+                "desc": "'🍉'",
+                "icon": "🍉",
                 "text": ""
             },
             {
-                "icon": "<a href=\"javascript:grin('😣')\">😣</a>",
+                "desc": "'😣'",
+                "icon": "😣",
                 "text": ""
             }
         ]
