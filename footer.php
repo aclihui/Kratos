@@ -68,7 +68,7 @@
 		<?php echo kratos_option('script_tongji'); ?>
 		</script>
 		<?php endif; ?>
-		<script type="text/javascript"><?php if(is_home()) echo 'var isindex=true;var title="";';else echo 'var isindex=false;var title="', get_the_title(),'";'; ?></script>
+		<script type="text/javascript"><?php if(is_home()) echo 'var isindex=true;var title="";';else echo 'var isindex=false;var title="', get_the_title(),'";';if(comments_open()) echo 'var copen=true;';else echo 'var copen=false;'; ?></script>
 		<?php if ( kratos_option('site_spig') ) : ?>
 		<div id="spig" class="spig">
 			<div id="message">Loading……</div>
