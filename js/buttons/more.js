@@ -143,6 +143,22 @@
     });
     tinymce.PluginManager.add('title', tinymce.plugins.title);
 
+    tinymce.create('tinymce.plugins.accordion', {
+        init : function(ed, url) {
+            ed.addButton('accordion', {
+                title : '展开收缩',
+                image : url+'/images/accordion.png',
+                onclick : function() {
+                     ed.selection.setContent('[collapse title="说明文字"]' + ed.selection.getContent() + '[/collapse]');
+                }
+            });
+        },
+        createControl : function(n, cm) {
+            return null;
+        },
+    });
+    tinymce.PluginManager.add('accordion', tinymce.plugins.accordion);
+
     tinymce.create('tinymce.plugins.kbd', {
         init : function(ed, url) {
             ed.addButton('kbd', {
