@@ -2,44 +2,33 @@
 
 This is a modified version of Kratos2.5.8. For the original version, please visit [https://github.com/Vtrois/Kratos](https://github.com/Vtrois/Kratos).
 
-这是一个Kratos2.5.8主题的修改版，作者的原版见[https://github.com/Vtrois/Kratos](https://github.com/Vtrois/Kratos).
-
-修改版演示地址：[https://www.fczbl.vip](https://www.fczbl.vip)
+DEMO：[https://www.fczbl.vip/787.html](https://www.fczbl.vip/787.html)
 
 Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome). Created and maintained by Vtrois. Stay up to date with the latest release and announcements on [Bulletin Board](https://github.com/Vtrois/Kratos/issues). 
 
 ![Kratos Demo](https://www.fczbl.vip/wp-content/uploads/kratos.png) 
 
 ## Changes
-![Kratos Demo](https://www.fczbl.vip/wp-content/uploads/kratos.jpg)
+![Kratos Demo](https://www.fczbl.vip/wp-content/uploads/kratos2.jpg)
 ```
 二次元风格
-启用Admin Bar，并将其设置为新注册用户默认不显示
-移除Admin Bar左边的WP LOGO
-图片banner高度调整
-以顶部"图片文字"代替左上角站点文字LOGO
-顶部"图片文字"点击可返回首页
-添加博客小人spig（请在\js\spig.js中修改小人的提示内容）
+添加博客小人spig
 无图片的文章特色图片随机化（\images\thumb\下的10张图片）
 置顶文章加上了文字和图标标记
-在post-meta中加入作者信息
 在分享按钮中添加分享到QQ空间选项
 评论区评论嵌套样式修改（参考Ravenclaw主题样式）
-添加评论框中"扑街"图片
-更换表情面板为DIYgay的OwO，支持更多表情（请在\inc\OwO.json中修改表情链接）
+更换表情面板为DIYgay的OwO，支持更多表情
 底部社交组件中添加EMAIL
-底部添加建站时间统计（请在\js\kratos.js中修改建站时间）
+底部添加建站时间统计
 修改鼠标指针样式
 添加复制站点内容时的弹窗提示
 添加了登录/注册页面样式
 添加友链模板
-非Admin用户评论中可使用img标签
 支持文章内容的+展开/-收缩
 后台HTML编辑器上的更多按钮
-后台编辑器可直接插入表情
-表情/图片样式的调整
 后台用户页面显示用户最近一次登录IP
 
+还有很多 这里就不写了
 全部信息请前往https://www.fczbl.vip/787.html查看
 ```
 
@@ -71,7 +60,8 @@ kratos/
 │   │   └── (has some thumb pic)
 │   ├── 404.jpg
 │   ├── about.jpg
-│   ├── ad.png
+│   ├── alipay.png
+│   ├── alipayqr.png
 │   ├── arrow.png
 │   ├── avatar.png
 │   ├── background.jpg
@@ -90,6 +80,8 @@ kratos/
 │   ├── spig.png
 │   ├── sticky.png
 │   ├── ul-li.png
+│   ├── wechat.png
+│   ├── wechatpayqr.png
 │   └── weixin.png
 ├── inc/
 │   ├── theme-options/
@@ -137,10 +129,9 @@ kratos/
 ├── header-abstract.php
 ├── header-banner.php
 ├── index.php
-├── link.php
 ├── options.php
 ├── page.php
-├── page-home.php
+├── page-link.php
 ├── page-notitle.php
 ├── screenshot.png
 ├── single.php
