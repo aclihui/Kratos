@@ -3,7 +3,7 @@
  * The template for displaying the footer
  *
  * @package Vtrois
- * @version 2.5(18.01.19)
+ * @version 2.5(18.01.20)
  */
 ?>
 				<footer>
@@ -61,6 +61,11 @@
 					}
 				});
 			}
+		</script>
+		<?php endif; ?>
+		<?php if ( kratos_option('script_tongji') ) : ?>
+		<script type="text/javascript">
+		<?php echo kratos_option('script_tongji'); ?>
 		</script>
 		<?php endif; ?>
 		<script type="text/javascript"><?php if(is_home()) echo 'var isindex=true;var title="";';else echo 'var isindex=false;var title="', get_the_title(),'";'; ?></script>
