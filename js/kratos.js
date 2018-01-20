@@ -224,7 +224,7 @@ jQuery(document).ready(
 			jQuery(this).parent().parent().parent().find('.xicon').addClass('active');
 		}
 	});
-	if (!isindex) {
+	if (!isindex&&copen) {
 	var OwO_demo = new OwO({
 		logo: 'OωO表情',
 		container: document.getElementsByClassName('OwO')[0],
