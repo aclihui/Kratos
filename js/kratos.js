@@ -206,7 +206,6 @@
 		showPhotos();
 	});
 }());
-//内容展开/收缩
 jQuery(document).ready(
 	function(jQuery){
 	jQuery('.collapseButton').click(function(){
@@ -226,14 +225,62 @@ jQuery(document).ready(
 		}
 	});
 });
-//请在这里修改你的建站时间
-function show_date_time(){
-	window.setTimeout("show_date_time()",1e3);
-	var BirthDay=new Date("2017/01/25"),today=new Date,timeold=today.getTime()-BirthDay.getTime(),msPerDay=864e5,e_daysold=timeold/msPerDay,daysold=Math.floor(e_daysold),e_hrsold=24*(e_daysold-daysold),hrsold=Math.floor(e_hrsold),e_minsold=60*(e_hrsold-hrsold),minsold=Math.floor(60*(e_hrsold-hrsold)),seconds=Math.floor(60*(e_minsold-minsold));
-	span_dt_dt.innerHTML=daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒"
+var now = new Date();
+function createtime(){
+	var grt= new Date(xb.crtime);
+	now.setTime(now.getTime()+250);
+	days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+	hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+	if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+	minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+	mnum = Math.floor(minutes);
+	if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+	seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+	snum = Math.round(seconds);
+	if(String(snum).length ==1 ){snum = "0" + snum;}
+	document.getElementById("span_dt_dt").innerHTML = dnum + "天" + hnum + "小时" + mnum + "分" + snum + "秒";
 }
-show_date_time();
-//log
+setInterval("createtime()",250);
+	var OwO_demo = new OwO({
+		logo: 'OωO表情',
+		container: document.getElementsByClassName('OwO')[0],
+		target: document.getElementsByClassName('OwO')[0],
+		api: xb.thome+'/inc/OwO.json',
+		position: 'down',
+		width: '90%',
+		maxHeight: '250px'
+	});
+	function grin(tag) {
+		var myField;
+		tag = ' ' + tag + ' ';
+		if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
+		myField = document.getElementById('comment');
+		} else {
+			return false;
+		}
+		if (document.selection) {
+			myField.focus();
+		sel = document.selection.createRange();
+		sel.text = tag;
+		myField.focus();
+		} else if (myField.selectionStart || myField.selectionStart == '0') {
+			var startPos = myField.selectionStart;
+			var endPos = myField.selectionEnd;
+			var cursorPos = endPos;
+			myField.value = myField.value.substring(0, startPos)
+				+ tag
+				+ myField.value.substring(endPos, myField.value.length);
+			cursorPos += tag.length;
+			myField.focus();
+			myField.selectionStart = cursorPos;
+			myField.selectionEnd = cursorPos;
+			var owoopen = document.getElementsByClassName('OwO OwO-open')[0];
+			owoopen.className = "OwO";
+		} else {
+			myField.value += tag;
+			myField.focus();
+		}
+	}
 window.onload = function() {
 	var now = new Date().getTime();
 	var page_load_time = now - performance.timing.navigationStart;
