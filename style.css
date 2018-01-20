@@ -296,7 +296,8 @@ table,table tbody tr th {
 	z-index:5
 }
 .kratos-cover,.kratos-start {
-	position:relative
+	position:relative;
+	height:800px
 }
 .kratos-cover.kratos-hero-2,.kratos-start.kratos-hero-2 {
 	height:300px
