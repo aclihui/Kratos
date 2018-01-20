@@ -4,13 +4,12 @@ Theme URI: https://github.com/xb2016/Kratos
 Author: Vtrois(Modified by 小白-白)
 Author URI: https://www.vtrois.com/
 Description: Kratos 是一款专注于个人博客的主题，提供了一套可自定义的积木式页面配置组件，可以通过使用小工具、导航、社交组件、站点标识、自定颜色等来个性化你的站点。此为小白-白(www.fczbl.vip)的修改版。
-Version: 2.5.8(18.01.19)
+Version: 2.5.8(18.01.20)
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: 简约, 紧凑, 优雅, 情怀, 多栏, 自适应, 响应式, 小工具, 灵活顶部, 主题选项, 打赏组件, 收录优化, 文章分享, 轮播图片, 邮件功能, 社交组件, 广告栏目, 特色图像, 随动边栏, 嵌套评论, 页脚挂件, 自定义边栏, 自定义颜色, 自定义背景, 自定义布局
 */
 @charset "UTF-8";
-
 body {
 	font-family:-apple-system,BlinkMacSystemFont,opensans,Optima,"Microsoft Yahei",sans-serif;
 	line-height:1.8;
@@ -291,20 +290,13 @@ table,table tbody tr th {
 	background:#f9f9f9;
 	padding:3em 0
 }
-.kratos-page-default {
-	background:#fff
-}
-.kratos-page-gray {
-	background:rgba(0,0,0,.04)
-}
 #kratos-header {
 	position:relative;
 	margin-bottom:0;
 	z-index:5
 }
 .kratos-cover,.kratos-start {
-	position:relative;
-	height:800px
+	position:relative
 }
 .kratos-cover.kratos-hero-2,.kratos-start.kratos-hero-2 {
 	height:300px
@@ -2527,9 +2519,6 @@ img.size-smiley {
 }
 .kratos-theme-post .abstract-text {
 	text-align:center
-}
-.kratos-page-gray {
-	background:#f5f5f5
 }
 @media (min-width:768px) {
 	#kratos-photos .kratos-photos-item img,.kratos-post-image img {
