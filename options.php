@@ -3,9 +3,8 @@
  * The template for Settings content control
  *
  * @package Vtrois
- * @version 2.5(18.01.19)
+ * @version 2.5(18.01.20)
  */
-
 function optionsframework_option_name() {
 	$themename = wp_get_theme();
 	$themename = preg_replace("/\W/", "_", strtolower($themename) );
@@ -13,13 +12,9 @@ function optionsframework_option_name() {
 	$optionsframework_settings['id'] = $themename;
 	update_option( 'optionsframework', $optionsframework_settings );
 }
-
 function optionsframework_options() {
-
 	$imagepath =  get_template_directory_uri() . '/images/options/';
-
 	$options = array();
-
 	$options[] = array(
 		'name' => '站点配置',
 		'type' => 'heading');
@@ -48,19 +43,19 @@ function optionsframework_options() {
 		'name' => '分类页面',
 		'desc' =>'是否启用分类页面的名称以及简介功能',
 		'id' => 'show_head_cat',
-		'std' => '0',
+		'std' => '1',
 		'type' => 'checkbox');
 	$options[] = array(
 		'name' => '标签页面',
 		'desc' =>'是否启用标签页面的名称以及简介功能',
 		'id' => 'show_head_tag',
-		'std' => '0',
+		'std' => '1',
 		'type' => 'checkbox');
 	$options[] = array(
 		'name' => '浮动小人',
 		'desc' => '是否启用浮动小人功能',
 		'id' => 'site_spig',
-		'std' => '1',
+		'std' => '0',
 		'type' => 'checkbox');
 	$options[] = array(
 		'name' => '站点黑白',
@@ -74,15 +69,6 @@ function optionsframework_options() {
 		'id' => 'site_snow',
 		'std' => '0',
 		'type' => 'checkbox');
-	$options[] = array(
-		'name' => '组件配置',
-		'type' => 'heading');
-	$options[] = array(
-		'name' => '特色图片（留空使用随机图片20张）',
-		'desc' => '选择你喜欢的默认特色图片（仅针对新式布局）',
-		'id' => 'default_image',
-		'std' => get_template_directory_uri() . '/images/thumb/thumb_1.jpg',
-		'type' => 'upload');
 	$options[] = array(
 		'name' => '页面伪静态',
 		'desc' => '是否启用自定义页面伪静态功能',
@@ -99,14 +85,29 @@ function optionsframework_options() {
 		'name' => '微信展示',
 		'desc' => '是否启用微信展示按钮功能',
 		'id' => 'cd_weixin',
-		'std' => '1',
+		'std' => '0',
 		'type' => 'checkbox');
 	$options[] = array(
-		'name' => '微信图片',
-		'desc' => '上传你的微信二维码图片，图片尺寸要大于150px',
+		'name' => '组件配置',
+		'type' => 'heading');
+	$options[] = array(
+		'name' => '特色图片（留空使用随机图片20张）',
+		'desc' => '选择你喜欢的默认特色图片（仅针对新式布局）',
+		'id' => 'default_image',
+		'std' => get_template_directory_uri() . '/images/thumb/thumb_1.jpg',
+		'type' => 'upload');
+	$options[] = array(
+		'name' => '微信二维码',
+		'desc' => '上传你的微信二维码图片，尺寸要大于等于150px',
 		'id' => 'weixin_image',
 		'std' => get_template_directory_uri() . '/images/weixin.png',
 		'type' => 'upload');
+	$options[] = array(
+		'name' => '建站时间',
+		'desc' => '输入你的建站时间，格式MM/DD/YYYY hh:mm:ss',
+		'id' => 'createtime',
+		'std' => '01/25/2017 15:25:00',
+		'type' => 'text');
 	$options[] = array(
 		'name' => '打赏页面标题',
 		'id' => 'paytext_head',
@@ -143,7 +144,12 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'textarea');
 	$options[] = array(
-		'name' => '站点统计',
+		'name' => '站点统计(SCRIPT的内容)',
+		'id' => 'script_tongji',
+		'std' => '',
+		'type' => 'textarea');
+	$options[] = array(
+		'name' => '站点统计(显示统计信息)',
 		'id' => 'site_tongji',
 		'std' => '',
 		'type' => 'textarea');
@@ -225,81 +231,6 @@ function optionsframework_options() {
 		'id' => 'page_like_donate',
 		'std' => '0',
 		'type' => 'checkbox');
-	$options[] = array(
-		'name' => '主页配置',
-		'type' => 'heading');
-	$options[] = array(
-		'name' => '首屏背景',
-		'id' => 'krsort_hm_img',
-		'std' => get_template_directory_uri() . '/images/background.jpg',
-		'type' => 'upload');
-	$options[] = array(
-		'name' => '首屏大标题',
-		'id' => 'krsort_hm_tx1',
-		'std' => 'Kratos',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '首屏小标题',
-		'id' => 'krsort_hm_tx2',
-		'std' => 'A responsible theme for WordPress',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '二屏标题',
-		'id' => 'krsort_hm_tx3',
-		'std' => '标题内容',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '二屏简介',
-		'id' => 'krsort_hm_tx4',
-		'std' => '这里是关于版块的简介内容',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '二屏版块',
-		'id' => 'krsort_hm_bk1',
-		'std' => '15',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '二屏连接',
-		'id' => 'krsort_hm_tx5',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '三屏标题',
-		'id' => 'krsort_hm_tx6',
-		'std' => '标题内容',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '三屏简介',
-		'id' => 'krsort_hm_tx7',
-		'std' => '这里是关于版块的简介内容',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '三屏版块',
-		'id' => 'krsort_hm_bk2',
-		'std' => '15',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '三屏连接',
-		'id' => 'krsort_hm_tx8',
-		'type' => 'text');	
-	$options[] = array(
-		'name' => '四屏标题',
-		'id' => 'krsort_hm_tx9',
-		'std' => '标题内容',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '四屏简介',
-		'id' => 'krsort_hm_tx10',
-		'std' => '这里是关于版块的简介内容',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '四屏版块',
-		'id' => 'krsort_hm_bk3',
-		'std' => '15',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '四屏连接',
-		'id' => 'krsort_hm_tx11',
-		'type' => 'text');	
 	$options[] = array(
 		'name' => '404页面',
 		'type' => 'heading');
@@ -551,45 +482,6 @@ function optionsframework_options() {
 		'desc' => '请用RGB格式表示，默认225,225,225,0.1',
 		'id' => 'snow_xb2016_bgcolor',
 		'std' => '225,225,225,0.1',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '广告配置',
-		'type' => 'heading');
-	$options[] = array(
-		'name' => '广告位置',
-		'desc' => '文章页面顶部',
-		'id' => 'ad_show_1',
-		'std' => '0',
-		'type' => 'checkbox');
-	$options[] = array(
-		'name' => '顶部广告图片',
-		'desc' => '图片尺寸750x80',
-		'std' => get_template_directory_uri() . '/images/ad.png',
-		'id' => 'ad_img_1',
-		'type' => 'upload');
-	$options[] = array(
-		'name' => '顶部广告连接',
-		'desc' => '图片广告指向的地址',
-		'id' => 'ad_link_1',
-		'std' => '',
-		'type' => 'text');
-	$options[] = array(
-		'name' => '广告位置',
-		'desc' => '文章页面底部',
-		'id' => 'ad_show_2',
-		'std' => '0',
-		'type' => 'checkbox');
-	$options[] = array(
-		'name' => '底部广告图片',
-		'desc' => '图片尺寸750x80',
-		'std' => get_template_directory_uri() . '/images/ad.png',
-		'id' => 'ad_img_2',
-		'type' => 'upload');
-	$options[] = array(
-		'name' => '底部广告连接',
-		'desc' => '图片广告指向的地址',
-		'id' => 'ad_link_2',
-		'std' => '',
 		'type' => 'text');
 	return $options;
 }
