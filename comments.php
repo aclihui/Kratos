@@ -3,9 +3,8 @@
  * The template for displaying comments
  *
  * @package Vtrois
- * @version 2.5(17/12/23)
+ * @version 2.5(18/01/20)
  */
-
 if ( post_password_required() ) {
 	return;
 }
@@ -46,47 +45,4 @@ if ( post_password_required() ) {
 		);
 		comment_form($args);
 	?>
-	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri();?>/js/OwO.min.js"></script>
-	<script>
-	var OwO_demo = new OwO({
-		logo: 'OωO表情',
-		container: document.getElementsByClassName('OwO')[0],
-		target: document.getElementsByClassName('OwO')[0],
-		api: '<?php echo get_stylesheet_directory_uri();?>/inc/OwO.json',
-		position: 'down',
-		width: '90%',
-		maxHeight: '250px'
-	});
-	function grin(tag) {
-		var myField;
-		tag = ' ' + tag + ' ';
-		if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
-		myField = document.getElementById('comment');
-		} else {
-			return false;
-		}
-		if (document.selection) {
-			myField.focus();
-		sel = document.selection.createRange();
-		sel.text = tag;
-		myField.focus();
-		} else if (myField.selectionStart || myField.selectionStart == '0') {
-			var startPos = myField.selectionStart;
-			var endPos = myField.selectionEnd;
-			var cursorPos = endPos;
-			myField.value = myField.value.substring(0, startPos)
-				+ tag
-				+ myField.value.substring(endPos, myField.value.length);
-			cursorPos += tag.length;
-			myField.focus();
-			myField.selectionStart = cursorPos;
-			myField.selectionEnd = cursorPos;
-			var owoopen = document.getElementsByClassName('OwO OwO-open')[0];
-			owoopen.className = "OwO";
-		} else {
-			myField.value += tag;
-			myField.focus();
-		}
-	}
-</script>
-</div>
+	</div>
