@@ -3,9 +3,8 @@
  * The default template for displaying content
  *
  * @package Vtrois
- * @version 2.5(17.12.20)
+ * @version 2.5(18.01.20)
  */
-
 $listlayout = kratos_option('list_layout');
 $listlayout = (empty($listlayout)) ? 'new_layout' : $listlayout; ?>
 <article class="kratos-hentry clearfix">
@@ -50,17 +49,13 @@ $listlayout = (empty($listlayout)) ? 'new_layout' : $listlayout; ?>
 		</div>
 	</div>
 	<div class="kratos-post-meta-new">
-		<span class="visible-lg visible-md visible-sm pull-left">
+		<span class="pull-left">
 			<a href="<?php the_permalink() ?>"><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></a>
 			<a href="<?php the_permalink() ?>#respond"><i class="fa fa-commenting-o"></i> <?php comments_number('0', '1', '%'); ?>条评论</a>
 		</span>
-		<span class="pull-left">
-			<a href="<?php the_permalink() ?>"><i class="fa fa-eye"></i> <?php echo kratos_get_post_views(); ?>次阅读</a>
-		</span>
 		<span class="visible-lg visible-md visible-sm pull-left">
+			<a href="<?php the_permalink() ?>"><i class="fa fa-eye"></i> <?php echo kratos_get_post_views(); ?>次阅读</a>
 			<a href="<?php the_permalink() ?>"><i class="fa fa-thumbs-o-up"></i> <?php if( get_post_meta($post->ID,'love',true) ){ echo get_post_meta($post->ID,'love',true); } else { echo '0'; }?>人点赞</a>
-		</span>
-		<span class="pull-left">
 			<a href="<?php the_permalink() ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
 		</span>
 		<span class="pull-right">
