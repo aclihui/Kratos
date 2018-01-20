@@ -3,7 +3,7 @@
  * Kratos functions and definitions
  *
  * @package Vtrois
- * @version 2.5(17/12/23)
+ * @version 2.5(18/01/20)
  */
 
 define( 'KRATOS_VERSION', '2.5' );
@@ -44,8 +44,9 @@ add_filter('the_content', 'my_formatter', 99);
  * Load scripts
  */  
 function kratos_theme_scripts() {  
-    $dir = get_template_directory_uri(); 
-    if ( !is_admin() ) {  
+    $dir = get_template_directory_uri();
+    if ( comments_open()&&!is_admin()&&!is_home() ) wp_enqueue_script( 'owo', $dir . '/js/OwO.min.js', array(), '1.0.1');
+    if ( !is_admin() ) {
         wp_enqueue_style( 'animate', $dir . '/css/animate.min.css', array(), '3.5.1'); 
         wp_enqueue_style( 'awesome', $dir . '/css/font-awesome.min.css', array(), '4.7.0');
         wp_enqueue_style( 'bootstrap', $dir . '/css/bootstrap.min.css', array(), '3.3.7');
@@ -64,6 +65,11 @@ function kratos_theme_scripts() {
         wp_enqueue_script( 'superfish', $dir . '/js/superfish.js', array(), '1.0.0');
         wp_enqueue_script( 'kratos', $dir . '/js/kratos.js', array(),  KRATOS_VERSION);
     }
+    $data2kratos = array(
+        'thome' => get_stylesheet_directory_uri(),
+        'crtime' => kratos_option('createtime'),
+    );
+    wp_localize_script( 'kratos', 'xb', $data2kratos );
 }
 add_action('wp_enqueue_scripts', 'kratos_theme_scripts');
 
