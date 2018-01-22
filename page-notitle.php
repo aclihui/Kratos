@@ -4,8 +4,8 @@ Template Name: 无标题页面模版
 */
 $page_side_bar = kratos_option('page_side_bar');
 $page_side_bar = (empty($page_side_bar)) ? 'right_side' : $page_side_bar;
-get_header(); ?>
-<div id="kratos-blog-post" style="background:<?php if(kratos_option('background_mode')=='color') echo kratos_option('background_index_color');else echo 'url('.kratos_option('background_index_image').');background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:fixed'; ?>">
+get_header();
+get_header('abstract'); ?>
 	<div class="container">
 		<div class="row">
 			<?php if($page_side_bar == 'left_side'){ ?>
