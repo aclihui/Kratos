@@ -1,10 +1,4 @@
 <?php
-/**
- * The template for Settings content control
- *
- * @package Vtrois
- * @version 2.5(18.01.20)
- */
 function optionsframework_option_name() {
 	$themename = wp_get_theme();
 	$themename = preg_replace("/\W/", "_", strtolower($themename) );
@@ -19,11 +13,32 @@ function optionsframework_options() {
 		'name' => '站点配置',
 		'type' => 'heading');
 	$options[] = array(
+		'name' => '站点图标',
+		'id' => 'site_ico',
+		'std' => get_template_directory_uri() . '/images/favicon.ico',
+		'type' => 'upload');
+	$options[] = array(
+		'name' => '背景类型',
+		'desc' => '选择您喜欢的背景类型并修改其对应选项',
+		'id' => 'background_mode',
+		'std' => 'color',
+		'type' => 'select',
+		'class' => 'mini',
+		'options' => array(
+			'color' => '纯色',
+			'image' => '图片'));
+	$options[] = array(
 		'name' => '背景颜色',
-		'desc' => '针对整个站点背景颜色控制',
+		'desc' => '整个站点背景颜色控制(背景类型选择为纯色才有效)',
 		'id' => 'background_index_color',
 		'std' => '#f5f5f5',
 		'type' => 'color');
+	$options[] = array(
+		'name' => '背景图片',
+		'desc' => '整个站点背景图片控制(背景类型选择为图片才有效)',
+		'id' => 'background_index_image',
+		'std' => get_template_directory_uri() . '/images/index_image.png',
+		'type' => 'upload');
 	$options[] = array(
 		'name' => '列表布局',
 		'desc' => '选择你喜欢的列表布局，默认显示新式列表布局',
@@ -33,6 +48,12 @@ function optionsframework_options() {
 		'options' => array(
 			'old_layout' => $imagepath . 'old-layout.png',
 			'new_layout' => $imagepath . 'new-layout.png'));
+	$options[] = array(
+		'name' => 'SSL',
+		'desc' => '此站点是否启用SSL(HTTPS协议)？',
+		'id' => 'tool_ssl',
+		'std' => '0',
+		'type' => 'checkbox');
 	$options[] = array(
 		'name' => '侧边栏随动',
 		'desc' => '是否启用侧边栏小工具随动功能',

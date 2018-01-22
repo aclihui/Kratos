@@ -1,17 +1,6 @@
-/*
- * jQuery Superfish Menu Plugin
- * Copyright (c) 2013 Joel Birch
- *
- * Dual licensed under the MIT and GPL licenses:
- *	http://www.opensource.org/licenses/mit-license.php
- *	http://www.gnu.org/licenses/gpl.html
- */
-
 (function ($, w) {
 	"use strict";
-
 	var methods = (function () {
-		// private properties and methods go here
 		var c = {
 				bcClass: 'sf-breadcrumb',
 				menuClass: 'sf-js-enabled',
@@ -21,7 +10,6 @@
 			ios = (function () {
 				var ios = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 				if (ios) {
-					// iOS clicks only bubble as far as body children
 					$(w).load(function () {
 						$('body').children().on('click', $.noop);
 					});
@@ -134,9 +122,7 @@
 			getOptions = function ($el) {
 				return getMenu($el).data('sf-options');
 			};
-
 		return {
-			// public methods
 			hide: function (instant) {
 				if (this.length) {
 					var $this = this,
@@ -188,13 +174,10 @@
 					toggleMenuClasses($this, o);
 					toggleAnchorClass($hasPopUp);
 					toggleTouchAction($this);
-					// remove event handlers
 					$this.off('.superfish').off('.hoverIntent');
-					// clear animation's inline display style
 					$hasPopUp.children(o.popUpSelector).attr('style', function (i, style) {
 						return style.replace(/display[^;]+;?/g, '');
 					});
-					// reset 'current' path classes
 					o.$path.removeClass(o.hoverClass + ' ' + c.bcClass).addClass(o.pathClass);
 					$this.find('.' + o.hoverClass).removeClass(o.hoverClass);
 					o.onDestroy.call($this);
@@ -208,24 +191,19 @@
 						return false;
 					}
 					var o = $.extend({}, $.fn.superfish.defaults, op),
-						$hasPopUp = $this.find(o.popUpSelector).parent('li');
+					$hasPopUp = $this.find(o.popUpSelector).parent('li');
 					o.$path = setPathToCurrent($this, o);
-
 					$this.data('sf-options', o);
-
 					toggleMenuClasses($this, o);
 					toggleAnchorClass($hasPopUp);
 					toggleTouchAction($this);
 					applyHandlers($this, o);
-
 					$hasPopUp.not('.' + c.bcClass).superfish('hide', true);
-
 					o.onInit.call(this);
 				});
 			}
 		};
 	})();
-
 	$.fn.superfish = function (method, args) {
 		if (methods[method]) {
 			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
@@ -237,9 +215,8 @@
 			return $.error('Method ' +  method + ' does not exist on jQuery.fn.superfish');
 		}
 	};
-
 	$.fn.superfish.defaults = {
-		popUpSelector: 'ul,.sf-mega', // within menu context
+		popUpSelector: 'ul,.sf-mega',
 		hoverClass: 'sfHover',
 		pathClass: 'overrideThisToUse',
 		pathLevels: 1,
@@ -258,5 +235,4 @@
 		onIdle: $.noop,
 		onDestroy: $.noop
 	};
-
 })(jQuery, window);

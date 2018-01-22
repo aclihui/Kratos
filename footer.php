@@ -1,11 +1,3 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * @package Vtrois
- * @version 2.5(18.01.20)
- */
-?>
 				<footer>
 					<div id="footer">
 						<div class="cd-tool text-center">

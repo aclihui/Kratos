@@ -1,63 +1,38 @@
-<?php
-/**
- * The template for displaying the header
- *
- * @package Vtrois
- * @version 2.5(17.12.29)
- */
-?><!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <!--
-////////////       ////////     ////////////      //////////       //
-//               //                     //        //       //      //
-//              //                     //         //        //     //
-//             //                     //          //       //      //
-//////////     //                    //           //////////       //
-//             //                   //            //       //      //
-//              //                 //             //        //     //
-//               //               //              //       //      //
-//                 ////////     ////////////      ///////////      ////////////
-
-                                      ..
-                                    .' @`._
-                     ~       ...._.'  ,__.-;
-                  _..------/`           .-'    ~
-                 :     __./'       ,  .'-'--.._
-              ~   `---(.-'''---.    \`._       `.   ~
-                _.--'(  .______.'.-' `-.`        `.
-               :      `-..____`-.                  ;
-               `.             ````  稻花香里说丰年，  ;   ~
-                 `-.__           听取人生经验。  __.-'
-                      ````-----.......-----'''    ~
-                   ~                   ~   
-                        还请大佬多多指教啦~
+                              ..
+                            .' @`._
+             ~       ...._.'  ,__.-;
+          _..------/`           .-'    ~
+         :     __./'       ,  .'-'--.._
+      ~   `---(.-'''---.    \`._       `.   ~
+        _.--'(  .______.'.-' `-.`        `.
+       :      `-..____`-.                  ;
+       `.             ````  稻花香里说丰年，  ;   ~
+         `-.__           听取人生经验。  __.-'
+              ````-----.......-----'''    ~
+           ~                   ~   
+                还请大佬多多指教啦~
 -->
 <html class="no-js">
-  <head>		
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta http-equiv="Cache-Control" content="no-transform"/>
-    <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#555">
-	<meta name="msapplication-navbutton-color" content="#555">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="<?php wp_title( '-', true, 'right' ); ?>">
-    <meta name="msapplication-starturl" content="<?php echo get_site_url(); ?>">
-    <meta name="msapplication-navbutton-color" content="#555">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="<?php wp_title( '-', true, 'right' ); ?>">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php echo get_site_url(); ?>/feed">
-
-    <title><?php wp_title( '-', true, 'right' ); ?></title>
-    <meta name="description" content="<?php kratos_description(); ?>" />
-    <meta name="keywords" content="<?php kratos_keywords();?>" />
-    <link rel="pingback" href="<?php echo get_site_url(); ?>/xmlrpc.php" />
+  <head>
+	<title><?php wp_title( '-', true, 'right' ); ?></title>
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="index,follow">
+	<?php if (kratos_option('tool_ssl')) {?><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /><?php }; ?>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="format-detection" content="telphone=no, email=no">
+	<meta name="description" itemprop="description" content="<?php kratos_description(); ?>">
+	<meta name="keywords" content="<?php kratos_keywords(); ?>">
+	<link rel="icon" type="image/x-icon" href="<?php echo kratos_option('site_ico'); ?>">
 	<?php wp_head(); ?>
 	<?php wp_print_scripts('jquery'); ?>
 	<?php if ( kratos_option('site_bw')==1 ) : ?>
 	<style type="text/css">html{filter: grayscale(100%);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%);-o-filter: grayscale(100%);filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);filter: gray;-webkit-filter: grayscale(1); }</style>
+	<?php endif; ?>
+	<?php if ( kratos_option('background_mode')=='image' ) : ?>
+	<style type="text/css">@media (min-width:768px){.row{filter:alpha(Opacity=90);-moz-opacity:0.9;opacity:0.9}}</style>
 	<?php endif; ?>
   </head>
 	<?php flush(); ?>
@@ -65,7 +40,11 @@
 		<div id="kratos-wrapper">
 			<div id="kratos-page">
 				<div id="kratos-header">
+					<?php if ( has_nav_menu('header_menu') ) :?>
+					<div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
+					<?php endif; ?>
 					<header id="kratos-header-section">
+						<div class="off-na"><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></div>
 						<div class="container">
 							<div class="nav-header">
 								<?php $defaults = array('theme_location' => 'header_menu', 'container' => 'nav', 'container_id' => 'kratos-menu-wrap', 'menu_class' => 'sf-menu', 'menu_id' => 'kratos-primary-menu', ); ?>
@@ -73,4 +52,12 @@
 							</div>
 						</div>
 					</header>
+				</div>
+				<div class="kratos-start kratos-hero-2">
+					<div class="kratos-overlay"></div>
+					<div class="kratos-cover kratos-cover_2 text-center" style="background-image: url(<?php echo kratos_option('background_image'); ?>);">
+						<div class="desc desc2 animate-box">
+							<a href="<?php echo get_bloginfo('url'); ?>"><h2><?php if(is_category()) echo single_cat_title('', false);else echo kratos_option('background_image_text1'); ?></h2><br><span><?php if(is_category()) echo category_description();else echo  kratos_option('background_image_text2'); ?></span></a>
+						</div>
+					</div>
 				</div>

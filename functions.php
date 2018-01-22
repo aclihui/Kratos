@@ -1,27 +1,15 @@
 <?php
-/**
- * Kratos functions and definitions
- *
- * @package Vtrois
- * @version 2.5(18/01/20)
- */
-
 define( 'KRATOS_VERSION', '2.5' );
-
 require_once( get_template_directory() . '/inc/widgets.php');
 
-/**
- * Replace Gravatar server
- */
+//Replace Gravatar server
 function kratos_get_avatar( $avatar ) {
     $avatar = str_replace( array( 'www.gravatar.com', '0.gravatar.com', '1.gravatar.com', '2.gravatar.com', '3.gravatar.com', 'secure.gravatar.com' ), 'cn.gravatar.com', $avatar );
     return $avatar;
 }
 add_filter( 'get_avatar', 'kratos_get_avatar' );
 
-/**
- * Disable automatic formatting
- */
+//Disable automatic formatting
 function my_formatter($content) {
     $new_content = '';
     $pattern_full = '{(\[raw\].*?\[/raw\])}is';
@@ -40,19 +28,17 @@ remove_filter('the_content', 'wpautop');
 remove_filter('the_content', 'wptexturize');
 add_filter('the_content', 'my_formatter', 99);
 
-/**
- * Load scripts
- */  
+//Load scripts
 function kratos_theme_scripts() {  
     $dir = get_template_directory_uri();
     if ( comments_open()&&!is_admin()&&!is_home() ) wp_enqueue_script( 'owo', $dir . '/js/OwO.min.js', array(), '1.0.1');
     if ( !is_admin() ) {
         wp_enqueue_style( 'animate', $dir . '/css/animate.min.css', array(), '3.5.1'); 
-        wp_enqueue_style( 'awesome', $dir . '/css/font-awesome.min.css', array(), '4.7.0');
+        wp_enqueue_style( 'awesome', $dir . '/css/font-awesome.min.css', array(), '4.7.1');
         wp_enqueue_style( 'bootstrap', $dir . '/css/bootstrap.min.css', array(), '3.3.7');
         wp_enqueue_style( 'superfish', $dir . '/css/superfish.min.css', array(), 'r7');
-        wp_enqueue_style( 'layer', $dir . '/css/layer.min.css', array(), KRATOS_VERSION);
-        wp_enqueue_style( 'kratos', get_stylesheet_uri(), array(), KRATOS_VERSION);
+        wp_enqueue_style( 'layer', $dir . '/css/layer.min.css', array(), '3.1.0');
+        wp_enqueue_style( 'kratos', $dir . '/css/kratos.min.css', array(), KRATOS_VERSION);
         wp_enqueue_script( 'jquery', $dir . '/js/jquery.min.js' , array(), '2.1.4');
         wp_enqueue_script( 'easing', $dir . '/js/jquery.easing.min.js', array(), '1.3.0'); 
         wp_enqueue_script( 'qrcode', $dir . '/js/jquery.qrcode.min.js', array(), KRATOS_VERSION);
@@ -73,9 +59,7 @@ function kratos_theme_scripts() {
 }
 add_action('wp_enqueue_scripts', 'kratos_theme_scripts');
 
-/**
- * Remove the head code
- */
+//Remove the head code
 remove_filter('the_content', 'wptexturize'); 
 remove_action( 'wp_head', 'wp_print_head_scripts', 9 );
 remove_action( 'wp_head', 'wp_generator' );
@@ -97,25 +81,20 @@ remove_filter('the_content_feed', 'wp_staticize_emoji');
 remove_filter('comment_text_rss', 'wp_staticize_emoji');
 remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
 add_filter( 'emoji_svg_url', '__return_false' );
-
-
 add_action( 'wp_enqueue_scripts', 'mt_enqueue_scripts', 1 );
+add_filter( 'show_admin_bar', '__return_false' );
 function mt_enqueue_scripts() {
   wp_deregister_script('jquery');
 }
 
-/**
- * Prohibit character escaping
- */
+//Prohibit character escaping
 $qmr_work_tags = array('the_title','the_excerpt','single_post_title','comment_author','comment_text','link_description','bloginfo','wp_title', 'term_description','category_description','widget_title','widget_text');
 foreach ( $qmr_work_tags as $qmr_work_tag ) {
     remove_filter ($qmr_work_tag, 'wptexturize');
 }
 remove_filter('the_content', 'wptexturize');
 
-/**
- * Add the page html
- */
+//Add the page html
 add_action('init', 'html_page_permalink', -1);
 function html_page_permalink() {
     if (kratos_option('page_html')==1){
@@ -126,25 +105,17 @@ function html_page_permalink() {
     }
 }
 
-/**
- * Remove the revision
- */
+//Remove the revision
 remove_action('post_updated','wp_save_post_revision' );
 
-/**
- * Short code
- */
+//Short code
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12);
 
-/**
- * Link manager
- */  
+//Link manager
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
-/**
- * Init theme
- */
+//Init theme
 add_action( 'load-themes.php', 'Init_theme' );
 function Init_theme(){
   global $pagenow;
@@ -154,9 +125,7 @@ function Init_theme(){
   }
 }
 
-/**
- * Remove the excess CSS selectors
- */
+//Remove the excess CSS selectors
 add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
 add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
 add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
@@ -164,9 +133,7 @@ function my_css_attributes_filter($var) {
     return is_array($var) ? array_intersect($var, array('current-menu-item','current-post-ancestor','current-menu-ancestor','current-menu-parent')) : '';
 }
 
-/**
- * Short code set
- */
+//Short code set
 function success($atts, $content=null, $code="") {
     $return = '<div class="alert alert-success">';
     $return .= $content;
@@ -174,7 +141,6 @@ function success($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('success' , 'success' );
-
 function info($atts, $content=null, $code="") {
     $return = '<div class="alert alert-info">';
     $return .= $content;
@@ -182,7 +148,6 @@ function info($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('info' , 'info' );
-
 function warning($atts, $content=null, $code="") {
     $return = '<div class="alert alert-warning">';
     $return .= $content;
@@ -190,7 +155,6 @@ function warning($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('warning' , 'warning' );
-
 function danger($atts, $content=null, $code="") {
     $return = '<div class="alert alert-danger">';
     $return .= $content;
@@ -198,7 +162,6 @@ function danger($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('danger' , 'danger' );
-
 function wymusic($atts, $content=null, $code="") {
     $return = '<iframe class="" style="width:100%" frameborder="no" border="0" marginwidth="0" marginheight="0" height=86 src="//music.163.com/outchain/player?type=2&id=';
     $return .= $content;
@@ -206,7 +169,6 @@ function wymusic($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('music' , 'wymusic' );
-
 function bdbtn($atts, $content=null, $code="") {
     $return = '<a class="downbtn" href="';
     $return .= $content;
@@ -214,7 +176,6 @@ function bdbtn($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('bdbtn' , 'bdbtn' );
-
 function ypbtn($atts, $content=null, $code="") {
     $return = '<a class="downbtn downcloud" href="';
     $return .= $content;
@@ -222,7 +183,6 @@ function ypbtn($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('ypbtn' , 'ypbtn' );
-
 function nrtitle($atts, $content=null, $code="") {
     $return = '<h2>';
     $return .= $content;
@@ -230,7 +190,6 @@ function nrtitle($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('title' , 'nrtitle' );
-
 function kbd($atts, $content=null, $code="") {
     $return = '<kbd>';
     $return .= $content;
@@ -238,7 +197,6 @@ function kbd($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('kbd' , 'kbd' );
-
 function nrmark($atts, $content=null, $code="") {
     $return = '<mark>';
     $return .= $content;
@@ -246,7 +204,6 @@ function nrmark($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('mark' , 'nrmark' );
-
 function striped($atts, $content=null, $code="") {
     $return = '<div class="progress progress-striped active"><div class="progress-bar" style="width: ';
     $return .= $content;
@@ -254,7 +211,6 @@ function striped($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('striped' , 'striped' );
-
 function successbox($atts, $content=null, $code="") {
     extract(shortcode_atts(array("title"=>'标题内容'),$atts));
     $return = '<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title">';
@@ -265,7 +221,6 @@ function successbox($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('successbox' , 'successbox' );
-
 function infobox($atts, $content=null, $code="") {
     extract(shortcode_atts(array("title"=>'标题内容'),$atts));
     $return = '<div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">';
@@ -276,7 +231,6 @@ function infobox($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('infobox' , 'infobox' );
-
 function warningbox($atts, $content=null, $code="") {
     extract(shortcode_atts(array("title"=>'标题内容'),$atts));
     $return = '<div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title">';
@@ -287,7 +241,6 @@ function warningbox($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('warningbox' , 'warningbox' );
-
 function dangerbox($atts, $content=null, $code="") {
     extract(shortcode_atts(array("title"=>'标题内容'),$atts));
     $return = '<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title">';
@@ -298,7 +251,6 @@ function dangerbox($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('dangerbox' , 'dangerbox' );
-
 function youku($atts, $content=null, $code="") {
     $return = '<div class="video-container"><iframe height="498" width="750" src="http://player.youku.com/embed/';
     $return .= $content;
@@ -306,7 +258,6 @@ function youku($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('youku' , 'youku' );
-
 function tudou($atts, $content=null, $code="") {
     extract(shortcode_atts(array("code"=>'0'),$atts));
     $return = '<div class="video-container"><iframe src="http://www.tudou.com/programs/view/html5embed.action?type=1&code=';
@@ -317,7 +268,6 @@ function tudou($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('tudou' , 'tudou' );
-
 function vqq($atts, $content=null, $code="") {
     extract(shortcode_atts(array("auto"=>'0'),$atts));
     $return = '<div class="video-container"><iframe frameborder="0" width="640" height="498" src="//v.qq.com/iframe/player.html?vid=';
@@ -328,7 +278,6 @@ function vqq($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('vqq' , 'vqq' );
-
 function youtube($atts, $content=null, $code="") {
     $return = '<div class="video-container"><iframe height="498" width="750" src="https://www.youtube.com/embed/';
     $return .= $content;
@@ -336,7 +285,6 @@ function youtube($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('youtube' , 'youtube' );
-
 function pptv($atts, $content=null, $code="") {
     $return = '<div class="video-container"><iframe src="http://player.pptv.com/iframe/index.html#id=';
     $return .= $content;
@@ -344,7 +292,6 @@ function pptv($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('pptv' , 'pptv' );
-
 function bilibili($atts, $content=null, $code="") {
     $return = '<div class="video-container"><embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="http://static.hdslb.com/miniloader.swf" flashvars="aid=';
     $return .= $content;
@@ -352,10 +299,6 @@ function bilibili($atts, $content=null, $code="") {
     return $return;
 }
 add_shortcode('bilibili' , 'bilibili' );
-
-/**
- * Create precode function
- */
 add_action('init', 'more_button_a');
 function more_button_a() {
    if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
@@ -366,7 +309,6 @@ function more_button_a() {
      add_filter( 'mce_buttons', 'register_button' );
    }
 }
-
 add_action('init', 'more_button_b');
 function more_button_b() {
    if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
@@ -377,9 +319,9 @@ function more_button_b() {
      add_filter( 'mce_buttons_3', 'register_button_b' );
    }
 }
-
 function register_button( $buttons ) {
     array_push( $buttons, " ", "title" );
+    array_push( $buttons, " ", "accordion" );
     array_push( $buttons, " ", "kbd" );
     array_push( $buttons, " ", "mark" );
     array_push( $buttons, " ", "striped" );
@@ -394,7 +336,6 @@ function register_button( $buttons ) {
     array_push( $buttons, " ", "bilibili" );
     return $buttons;
 }
-
 function register_button_b( $buttons ) {
     array_push( $buttons, " ", "success" );
     array_push( $buttons, " ", "info" );
@@ -406,9 +347,9 @@ function register_button_b( $buttons ) {
     array_push( $buttons, " ", "dangerbox" );
     return $buttons;
 }
-
 function add_plugin( $plugin_array ) {
     $plugin_array['title'] = get_bloginfo( 'template_url' ) . '/js/buttons/more.js';
+    $plugin_array['accordion'] = get_bloginfo( 'template_url' ) . '/js/buttons/more.js';
     $plugin_array['kbd'] = get_bloginfo( 'template_url' ) . '/js/buttons/more.js';
     $plugin_array['mark'] = get_bloginfo( 'template_url' ) . '/js/buttons/more.js';
     $plugin_array['striped'] = get_bloginfo( 'template_url' ) . '/js/buttons/more.js';
@@ -423,7 +364,6 @@ function add_plugin( $plugin_array ) {
     $plugin_array['bilibili'] = get_bloginfo( 'template_url' ) . '/js/buttons/more.js';
     return $plugin_array;
 }
-
 function add_plugin_b( $plugin_array ) {
     $plugin_array['success'] = get_bloginfo( 'template_url' ) . '/js/buttons/more.js';
     $plugin_array['info'] = get_bloginfo( 'template_url' ) . '/js/buttons/more.js';
@@ -435,10 +375,6 @@ function add_plugin_b( $plugin_array ) {
     $plugin_array['dangerbox'] = get_bloginfo( 'template_url' ) . '/js/buttons/more.js';
     return $plugin_array;
 }
-
-/**
- * Add more buttons
- */
 function add_more_buttons($buttons) {
         $buttons[] = 'hr';
         $buttons[] = 'fontselect';
@@ -448,9 +384,7 @@ function add_more_buttons($buttons) {
 }
 add_filter("mce_buttons_2", "add_more_buttons");
 
-/**
- * The article heat
- */
+//The article heat
 function most_comm_posts($days=30, $nums=5) {
     global $wpdb;
     date_default_timezone_set("PRC");
@@ -478,14 +412,10 @@ function most_comm_posts($days=30, $nums=5) {
     echo $output;
 }
 
-/**
- * Add article type
- */
+//Add article type
 add_theme_support( 'post-formats', array('gallery','video') );
 
-/**
- * Keywords set
- */
+//Keywords Description set
 function kratos_keywords(){
         if( is_home() || is_front_page() ){ echo kratos_option('site_keywords'); }
         elseif( is_category() ){ single_cat_title(); }
@@ -497,10 +427,6 @@ function kratos_keywords(){
         elseif( is_search() ){ the_search_query(); }
         else{ echo trim(wp_title('',FALSE)); }
 }
-
-/**
- * Description set
- */ 
 function kratos_description(){
         if( is_home() || is_front_page() ){ echo trim(kratos_option('site_description')); }
         elseif( is_category() ){ $description = strip_tags(category_description());echo trim($description);}
@@ -518,9 +444,7 @@ function kratos_description(){
         else{ $description = strip_tags(term_description());echo trim($description); }
     }
 
-/**
- * Article outside chain optimization
- */
+//Article outside chain optimization
 function imgnofollow( $content ) {
     $regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>";
     if(preg_match_all("/$regexp/siU", $content, $matches, PREG_SET_ORDER)) {
@@ -554,9 +478,7 @@ function imgnofollow( $content ) {
 }
 add_filter( 'the_content', 'imgnofollow');
 
-/**
- * The title set
- */
+//The title set
 function kratos_wp_title( $title, $sep ) {
     global $paged, $page;
     if ( is_feed() )
@@ -571,9 +493,7 @@ function kratos_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'kratos_wp_title', 10, 2 );
 
-/**
- * Mail smtp setting
- */
+//Mail
 add_action('phpmailer_init', 'mail_smtp');
 function mail_smtp( $phpmailer ) {
     if(kratos_option('mail_smtps') == 1){
@@ -594,10 +514,6 @@ function mail_smtp( $phpmailer ) {
         $phpmailer->IsSMTP();
     }
 }
-
-/**
- * Comments email response system
- */
 add_action('comment_unapproved_to_approved', 'kratos_comment_approved');
 function kratos_comment_approved($comment) {
     if(is_email($comment->comment_author_email)) {
@@ -695,10 +611,7 @@ function comment_mail_notify($comment_id) {
 }
 add_action('comment_post', 'comment_mail_notify');
 
-
-/**
- * The admin control module
- */
+//The admin control module
 if (!function_exists('optionsframework_init')) {
     define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/theme-options/');
     require_once dirname(__FILE__) . '/inc/theme-options/options-framework.php';
@@ -714,17 +627,13 @@ function kratos_options_menu_filter( $menu ) {
 }
 add_filter( 'optionsframework_menu', 'kratos_options_menu_filter' );
 
-/**
- * The menu navigation registration
- */
+//The menu navigation registration
 function kratos_register_nav_menu() {
         register_nav_menus(array('header_menu' => '顶部菜单'));
     }
 add_action('after_setup_theme', 'kratos_register_nav_menu');
 
-/**
- * Highlighting the active menu
- */
+//Highlighting the active menu
 function kratos_active_menu_class($classes) {
     if (in_array('current-menu-item', $classes) OR in_array('current-menu-ancestor', $classes))
         $classes[] = 'active';
@@ -732,11 +641,8 @@ function kratos_active_menu_class($classes) {
 }
 add_filter('nav_menu_css_class', 'kratos_active_menu_class');
 
-/**
- * Photo Thumbnails
- */
+//Photo Thumbnails
 function kratos_photo_thumbnail() {  
-  
     global $post;  
     if ( has_post_thumbnail() ) {  
        the_post_thumbnail(array(750, ), array('class' => 'img-responsive'));
@@ -752,9 +658,7 @@ function kratos_photo_thumbnail() {
     }  
 }
 
-/**
- * Post Thumbnails
- */
+//Post Thumbnails
 if ( function_exists( 'add_image_size' ) ){  
     add_image_size( 'kratos-thumb', 750);
 }  
@@ -770,9 +674,7 @@ function kratos_blog_thumbnail() {
 add_filter( 'add_image_size', create_function( '', 'return 1;' ) );
 add_theme_support( "post-thumbnails" );
 
-/**
- * Post Thumbnails New
- */
+//Post Thumbnails New
 function kratos_blog_thumbnail_new() {
     global $post;
     $img_id = get_post_thumbnail_id();
@@ -801,9 +703,7 @@ function kratos_blog_thumbnail_new() {
     }  
 }
 
-/**
- * The length and suffix
- */
+//The length and suffix
 function kratos_excerpt_length($length) {
     return 170;
 }
@@ -813,9 +713,7 @@ function kratos_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'kratos_excerpt_more');
 
-/**
- * Share the thumbnail fetching
- */
+//Share the thumbnail fetching
 function share_post_image(){
     global $post;
     if (has_post_thumbnail($post->ID)) {
@@ -834,9 +732,7 @@ function share_post_image(){
     return $img;
 }
 
-/**
- * The article reading quantity statistics
- */
+//The article reading quantity statistics
 function kratos_set_post_views()
 {
     if (is_singular())
@@ -863,9 +759,7 @@ function kratos_get_post_views($before = '', $after = '', $echo = 1)
   else return $views;
 }
 
-/**
- * Banner
- */
+//Banner
 function kratos_banner(){
     if( !$output = get_option('kratos_banners') ){
         $output = '';
@@ -910,15 +804,12 @@ function kratos_banner(){
     }
     echo $output;
 }
-
 function clear_banner(){
     update_option('kratos_banners', '');
 }
 add_action( 'optionsframework_after_validate', 'clear_banner' );
 
-/**
- * Appreciate the article
- */
+//Appreciate the article
 function kratos_love(){
     global $wpdb,$post;
     $id = $_POST["um_id"];
@@ -941,9 +832,7 @@ function kratos_love(){
 add_action('wp_ajax_nopriv_love', 'kratos_love');
 add_action('wp_ajax_love', 'kratos_love');
 
-/**
- * Post title optimization
- */
+//Post title optimization
 add_filter( 'private_title_format', 'kratos_private_title_format' );
 add_filter( 'protected_title_format', 'kratos_private_title_format' );
  
@@ -951,9 +840,7 @@ function kratos_private_title_format( $format ) {
     return '%s';
 }
 
-/**
- * Password protection articles
- */
+//Password protection articles
 add_filter( 'the_password_form', 'custom_password_form' );
 function custom_password_form() {
     $url = get_option('siteurl');
@@ -974,9 +861,7 @@ function custom_password_form() {
 return $o;
 }
 
-/**
- * Comments on the face
- */
+//Comments face
 add_filter('smilies_src','custom_smilies_src',1,10);
 function custom_smilies_src ($img_src, $img, $siteurl){
     return get_bloginfo('template_directory').'/images/smilies/'.$img;
@@ -1013,6 +898,7 @@ function smilies_reset() {
 ':xiaoyan:' => 'xiaoyan.png',
 ':leng:' => 'leng.png',
 ':taikaixin:' => 'taikaixin.png',
+':meng:' => 'meng.png',
 ':huaji:' => 'huaji.png',
 ':huaji2:' => 'huaji2.png',
 ':huaji3:' => 'huaji3.gif',
@@ -1065,9 +951,7 @@ function smilies_reset() {
 }
 smilies_reset();
 
-/**
- * Paging
- */
+//Paging
 function kratos_pages($range = 5){
     global $paged, $wp_query,$max_page;
     if ( !$max_page ) {$max_page = $wp_query->max_num_pages;}
@@ -1113,9 +997,7 @@ function kratos_pages($range = 5){
     }
 }
 
-/**
- * More users' info
- */
+//More users' info
 function get_client_ip() {
     if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown"))
         $ip = getenv("HTTP_CLIENT_IP");
@@ -1131,13 +1013,6 @@ function get_client_ip() {
         $ip = "unknown";
     return ($ip);
 }
-// 创建一个新字段存储用户注册时的IP地址
-add_action('user_register', 'log_ip');
-function log_ip($user_id){
-    $ip = get_client_ip();
-    update_user_meta($user_id, 'signup_ip', $ip);
-}
-// 创建新字段存储用户登录时间和登录IP
 add_action( 'wp_login', 'insert_last_login' );
 function insert_last_login( $login ) {
     global $user_id;
@@ -1146,47 +1021,31 @@ function insert_last_login( $login ) {
     $last_login_ip = get_client_ip();
     update_user_meta( $user->ID, 'last_login_ip', $last_login_ip);
 }
-// 添加额外的栏目
 add_filter('manage_users_columns', 'add_user_additional_column');
 function add_user_additional_column($columns) {
     $columns['user_nickname'] = '昵称';
     $columns['user_url'] = '网站';
     $columns['reg_time'] = '注册时间';
-    $columns['signup_ip'] = '注册IP';
     $columns['last_login'] = '上次登录';
     $columns['last_login_ip'] = '登录IP';
-    unset($columns['name']);//移除“姓名”这一栏，如果你需要保留，删除这行即可
+    unset($columns['name']);
     return $columns;
 }
-//显示栏目的内容
 add_action('manage_users_custom_column',  'show_user_additional_column_content', 10, 3);
 function show_user_additional_column_content($value, $column_name, $user_id) {
     $user = get_userdata( $user_id );
-    // 输出“昵称”
     if ( 'user_nickname' == $column_name )
         return $user->nickname;
-    // 输出用户的网站
     if ( 'user_url' == $column_name )
         return '<a href="'.$user->user_url.'" target="_blank">'.$user->user_url.'</a>';
-    // 输出注册时间和注册IP
-    if('reg_time' == $column_name ){
+    if('reg_time' == $column_name )
         return get_date_from_gmt($user->user_registered) ;
-    }
-// 输出注册时间和注册IP
-    if('signup' == $column_name ){
-        return get_user_meta( $user->ID, 'signup_ip', true);
-    }
-    // 输出最近登录时间和登录IP
-    if ( 'last_login' == $column_name && $user->last_login ){
+    if ( 'last_login' == $column_name && $user->last_login )
         return get_user_meta( $user->ID, 'last_login', ture );
-    }
-// 输出最近登录时间和登录IP
-    if ( 'last_login_ip' == $column_name ){
+    if ( 'last_login_ip' == $column_name )
         return get_user_meta( $user->ID, 'last_login_ip', ture );
-    }
     return $value;
 }
-// 默认按照注册时间排序
 add_filter( "manage_users_sortable_columns", 'cmhello_users_sortable_columns' );
 function cmhello_users_sortable_columns($sortable_columns){
     $sortable_columns['reg_time'] = 'reg_time';
@@ -1202,42 +1061,11 @@ function cmhello_users_search_order($obj){
     }
 }
 
-/**
- * Don't show admin bar
- */
-add_action("user_register", "set_user_admin_bar_false_by_default", 10, 1);
-function set_user_admin_bar_false_by_default($user_id) {
-    update_user_meta( $user_id, 'show_admin_bar_front', 'false' );
-    update_user_meta( $user_id, 'show_admin_bar_admin', 'false' );
-}
-
-/**
- * Custom login
- */
-function custom_login_logo() { echo '<link rel="stylesheet" id="wp-admin-css" href="'.get_bloginfo('template_directory').'/css/customlogin.css" type="text/css" />';}
+//Custom login
+function custom_login_logo() { echo '<link rel="stylesheet" id="wp-admin-css" href="'.get_bloginfo('template_directory').'/css/customlogin.min.css" type="text/css" />';}
 add_action('login_head','custom_login_logo');
 
-/**
- * Remove wp logo
- */
-function annointed_admin_bar_remove(){global $wp_admin_bar;$wp_admin_bar->remove_menu('wp-logo');}
-add_action('wp_before_admin_bar_render','annointed_admin_bar_remove',0);
-
-/**
- * Copyright reminder
- */
-function copyright_reminder() {
-?>
-<script type="text/javascript">
-document.body.oncopy=function(){alert('已复制所选内容。请务必遵守本站条约！');}
-</script>
-<?php
-}
-add_action('wp_footer','copyright_reminder');
-
-/**
- * editor
- */
+//editor
 function fa_get_wpsmiliestrans(){
     global $wpsmiliestrans;
     $wpsmilies = array_unique($wpsmiliestrans);
@@ -1278,9 +1106,7 @@ QTags.addButton( '红色面板', '红色面板', '[dangerbox title="标题内容
 }
 add_action('admin_print_footer_scripts', 'appthemes_add_quicktags' );
 
-/**
-* expansion/contraction
-*/
+//expansion/contraction
 function xcollapse($atts, $content = null){
 	extract(shortcode_atts(array("title"=>""),$atts));
 	return '<div style="margin: 0.5em 0;background:#f9f9f9;">
@@ -1293,9 +1119,7 @@ function xcollapse($atts, $content = null){
 }
 add_shortcode('collapse', 'xcollapse');
 
-/**
-* enable more tags
-*/
+//enable more tags
 function sig_allowed_html_tags_in_comments() {
    define('CUSTOM_TAGS', true);
    global $allowedtags;

@@ -192,6 +192,49 @@
 		  ,anim: 0
 		}); 
 	}
+	var offcanvas = function() {
+		var $clone = $('#kratos-menu-wrap').clone();
+		$clone.attr({
+			'id': 'offcanvas-menu'
+		});
+		$clone.find('> ul').attr({
+			'class': 'ul-me',
+			'id': ''
+		});
+		$('#kratos-page').prepend($clone);
+		$('.js-kratos-nav-toggle').on('click', function() {
+			if ($('.nav-toggle').hasClass('toon')) {
+				$('.nav-toggle').removeClass('toon');
+				$('#offcanvas-menu').css('right', '-240px');
+			} else {
+				$('.nav-toggle').addClass('toon');
+				$('#offcanvas-menu').css('right', '0px');
+			}
+		});
+		$('#offcanvas-menu').css('height', $(window).height());
+		$('#offcanvas-menu').css('right', '-240px');
+		$(window).resize(function() {
+			var w = $(window);
+			$('#offcanvas-menu').css('height', w.height());
+			if (w.width() > 769) {
+				if ($('.nav-toggle').hasClass('toon')) {
+					$('.nav-toggle').removeClass('toon');
+					$('#offcanvas-menu').css('right', '-240px');
+				}
+			}
+		});
+	}
+	var mobiClick = function() {
+		$(document).click(function(e) {
+			var container = $("#offcanvas-menu, .js-kratos-nav-toggle");
+			if (!container.is(e.target) && container.has(e.target).length === 0) {
+				if ($('.nav-toggle').hasClass('toon')) {
+					$('.nav-toggle').removeClass('toon');
+					$('#offcanvas-menu').css('right', '-240px');
+				}
+			}
+		});
+	};
 	$(function() {
 		topStart();
 		mainMenu();
@@ -204,6 +247,8 @@
 		toSearch();
 		contentWayPoint();
 		showPhotos();
+		offcanvas();
+		mobiClick();
 	});
 }());
 jQuery(document).ready(
@@ -283,6 +328,7 @@ function createtime(){
 	document.getElementById("span_dt_dt").innerHTML = dnum + "天" + hnum + "小时" + mnum + "分" + snum + "秒";
 }
 setInterval("createtime()",250);
+document.body.oncopy=function(){alert('已复制所选内容。请务必遵守本站条约！');}
 window.onload = function() {
 	var now = new Date().getTime();
 	var page_load_time = now - performance.timing.navigationStart;

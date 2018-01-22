@@ -1,15 +1,8 @@
 <?php
-/**
- * The template for displaying pages
- *
- * @package Vtrois
- * @version 2.5(17/12/23)
- */
 $page_side_bar = kratos_option('page_side_bar');
 $page_side_bar = (empty($page_side_bar)) ? 'right_side' : $page_side_bar;
-get_header();
-get_header('banner'); ?>
-<div id="kratos-blog-post" style="background:<?php echo kratos_option('background_index_color'); ?>">
+get_header(); ?>
+<div id="kratos-blog-post" style="background:<?php if(kratos_option('background_mode')=='color') echo kratos_option('background_index_color');else echo 'url('.kratos_option('background_index_image').');background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:fixed'; ?>">
 	<div class="container">
 		<div class="row">
 			<?php if( $page_side_bar == 'left_side' ){ ?>

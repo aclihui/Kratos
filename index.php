@@ -1,19 +1,5 @@
-<?php
-/**
- * The main template file
- *
- * @package Vtrois
- * @version 2.5
- */
-
-get_header(); ?>
-<?php 
-if(is_category()){
-		get_header('abstract');
-	}else{
-		get_header('banner');
-	} ?>
-<div id="kratos-blog-post" style="background:<?php echo kratos_option('background_index_color'); ?>">
+<?php get_header(); ?>
+<div id="kratos-blog-post" style="background:<?php if(kratos_option('background_mode')=='color') echo kratos_option('background_index_color');else echo 'url('.kratos_option('background_index_image').');background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:fixed'; ?>">
 	<div class="container">
 		<div class="row">
 			<section id="main" class="col-md-8">

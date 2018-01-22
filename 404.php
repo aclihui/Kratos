@@ -1,11 +1,4 @@
-<?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @package Vtrois
- * @version 2.5
- */
-get_header(); ?>
+<?php get_header(); ?>
 <div class="kratos-start">
 	<div class="kratos-overlay"></div>
 	<div class="kratos-cover kratos-topimg text-center" style="background-image: url('<?php echo kratos_option('error_image'); ?>')">

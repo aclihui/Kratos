@@ -1,15 +1,8 @@
 <?php
-/**
- * The template for displaying all single posts and attachments
- *
- * @package Vtrois
- * @version 2.5(18.01.20)
- */
 $sidebar = kratos_option('side_bar');
 $sidebar = (empty($sidebar)) ? 'right_side' : $sidebar;
-get_header();
-get_header('banner'); ?>
-<div id="kratos-blog-post" style="background:<?php echo kratos_option('background_index_color'); ?>">
+get_header(); ?>
+<div id="kratos-blog-post" style="background:<?php if(kratos_option('background_mode')=='color') echo kratos_option('background_index_color');else echo 'url('.kratos_option('background_index_image').');background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:fixed'; ?>">
 	<div class="container">
 		<div class="row">
 			<?php if($sidebar == 'left_side'){ ?>
