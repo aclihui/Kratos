@@ -32,7 +32,7 @@
 	<style type="text/css">html{filter: grayscale(100%);-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%);-o-filter: grayscale(100%);filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);filter: gray;-webkit-filter: grayscale(1); }</style>
 	<?php endif; ?>
 	<?php if ( kratos_option('background_mode')=='image' ) : ?>
-	<style type="text/css">@media (min-width:768px){.kratos-hentry,.comment-respond,#kratos-widget-area .widget,.kratos-hentry,.comments-area .comment-list li{background-color:RGB(255,255,255,0.8)}}</style>
+	<style type="text/css">@media (min-width:768px){.kratos-hentry,.comment-respond,#kratos-widget-area .widget,.kratos-hentry,.comments-area .comment-list li,.post-navigation .nav-previous,.post-navigation .nav-next{background-color:RGB(255,255,255,0.8)}}</style>
 	<?php endif; ?>
   </head>
 	<?php flush(); ?>
