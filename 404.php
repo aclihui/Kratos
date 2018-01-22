@@ -9,4 +9,5 @@
 		</div>
 	</div>
 </div>
+<style>.kratos-start.kratos-hero-2{display:none}</style>
 <?php get_footer(); ?>
