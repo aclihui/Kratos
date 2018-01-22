@@ -1,5 +1,4 @@
 <?php
-
 function kratos_widgets_init() {
     register_sidebar( array(
         'name' => '侧边栏工具',
@@ -11,7 +10,6 @@ function kratos_widgets_init() {
     ) );   
 }
 add_action( 'widgets_init', 'kratos_widgets_init' );
-
 function remove_default_widget() {
  //    unregister_widget('WP_Widget_Recent_Posts');//移除近期文章
  //    unregister_widget('WP_Widget_Recent_Comments');//移除近期评论
@@ -27,9 +25,7 @@ function remove_default_widget() {
        unregister_widget('WP_Widget_Search');//移除搜索
 }
 add_action( 'widgets_init', 'remove_default_widget' );
-
 class kratos_widget_ad extends WP_Widget {
-
     function __construct() {
         $widget_ops = array(
             'classname' => 'widget_kratos_ad',
@@ -38,7 +34,6 @@ class kratos_widget_ad extends WP_Widget {
         );
         parent::__construct( false, false, $widget_ops );
     }
-
     function widget( $args, $instance ) {
         extract( $args );
         $aurl = $instance['aurl'] ? $instance['aurl'] : '';
@@ -57,11 +52,9 @@ class kratos_widget_ad extends WP_Widget {
         <?php
         echo $after_widget;
     }
-
     function update( $new_instance, $old_instance ) {
         return $new_instance;
     }
-
     function form( $instance ) {
         @$title = esc_attr( $instance['title'] );
         @$aurl = esc_attr( $instance['aurl'] );
@@ -88,9 +81,7 @@ class kratos_widget_ad extends WP_Widget {
         <?php
     }
 }
-
 class kratos_widget_about extends WP_Widget {
-
     function __construct() {
         $widget_ops = array(
             'classname' => 'amadeus_about',
@@ -99,7 +90,6 @@ class kratos_widget_about extends WP_Widget {
         );
         parent::__construct( false, false, $widget_ops );
     }
-
     function widget( $args, $instance ) {
         extract( $args );
         $profile = $instance['profile'] ? $instance['profile'] : '';
@@ -135,11 +125,9 @@ class kratos_widget_about extends WP_Widget {
         <?php
         echo $after_widget;
     }
-
     function update( $new_instance, $old_instance ) {
         return $new_instance;
     }
-
     function form( $instance ) {
         @$imgurl = esc_attr( $instance['imgurl'] );
         @$bkimgurl = esc_attr( $instance['bkimgurl'] );
@@ -166,7 +154,6 @@ class kratos_widget_about extends WP_Widget {
         <?php
     }
 }
-
 class kratos_widget_tags extends WP_Widget {
     function __construct(){
         $widget_ops = array(
@@ -175,7 +162,6 @@ class kratos_widget_tags extends WP_Widget {
         );
         parent::__construct(false, false, $widget_ops);
     }
-
     function widget($args, $instance){
         extract($args);
         $result = '';
@@ -203,7 +189,6 @@ class kratos_widget_tags extends WP_Widget {
         $result .= $after_widget;
         echo $result;
     }
-
     function update($new_instance, $old_instance){
         if (!isset($new_instance['submit'])) {
             return false;
@@ -215,7 +200,6 @@ class kratos_widget_tags extends WP_Widget {
         $instance['order'] = esc_attr($new_instance['order']);
         return $instance;
     }
-
     function form($instance){
         global $wpdb;
         $instance = wp_parse_args((array) $instance, array('title'=>'标签聚合','number'=>'20','orderby'=>'count','order'=>'RAND'));
@@ -251,7 +235,6 @@ class kratos_widget_tags extends WP_Widget {
         <?php
     }
 }
-
 class kratos_widget_posts extends WP_Widget{
 
     function __construct(){
@@ -263,7 +246,6 @@ class kratos_widget_posts extends WP_Widget{
         );
         parent::__construct( false, false, $widget_ops );
     }
-
     function widget($args, $instance){
         extract($args);
         $result = '';
@@ -318,7 +300,6 @@ class kratos_widget_posts extends WP_Widget{
         $instance['number'] = intval($new_instance['number']);
         return $instance;
     }
-
     function form($instance){
         global $wpdb;
         $instance = wp_parse_args((array) $instance, array('number'=>'5'));
@@ -332,7 +313,6 @@ class kratos_widget_posts extends WP_Widget{
         <?php
     }
 }
-
 function kratos_register_widgets(){
     register_widget('kratos_widget_ad'); 
     register_widget('kratos_widget_about'); 
