@@ -1,12 +1,15 @@
 				<footer>
 					<div id="footer">
 						<div class="cd-tool text-center">
+						    <?php if ( current_user_can( 'manage_options' ) && is_single() || is_page() ) : ?>
+						    <?php echo edit_post_link('<span class="fa fa-pencil"></span>'); ?>
+						    <?php endif; ?>
 						    <a class="<?php if ( kratos_option( 'cd_weixin' ) ) echo 'cd-top2 '; ?>cd-top"><span class="fa fa-chevron-up"></span></a>
 						   	<?php if ( kratos_option( 'cd_weixin' ) ) : ?>
 						   		<a id="weixin-img" class="cd-weixin"><span class="fa fa-weixin"></span><div id="weixin-pic"><img src="<?php echo kratos_option('weixin_image') ?>"></div></a>
 						   	<?php endif; ?>
 							<a class="search-box">
-								<span class="fa fa-search"></i>
+								<span class="fa fa-search"></span>
 								<form class="search-form" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 									<input type="text" name="s" id="search" placeholder="Search..." style="display: none;"/>
 								</form>
