@@ -7,7 +7,7 @@ function getkoto(){
 jQuery(document).ready(function ($) {
     $("#spig").mousedown(function (e) {
         if(e.which==3){
-        showMessage("秘密通道:<br />    <a href=\"https://www.fczbl.vip\" title=\"首页\">首页</a>    <a href=\"https://www.fczbl.vip/pay.html\" title=\"打赏\">打赏</a>    <a href=\"https://www.fczbl.vip/wp-admin/\" title=\"后台\">后台</a> ",10000);
+        showMessage("秘密通道:<br />    <a href=\"https://www.fczbl.vip\" title=\"首页\">首页</a>    <a href=\"http://pay.fczbl.vip/\" title=\"打赏\">打赏</a>    <a href=\"https://www.fczbl.vip/wp-admin/\" title=\"后台\">后台</a> ",10000);
 }
 });
 $("#spig").bind("contextmenu", function(e) {
@@ -150,8 +150,8 @@ jQuery(document).ready(function ($) {
         var i2 = Math.floor(Math.random() * s.length);
             $(".spig").animate({
             left: document.body.offsetWidth/2*(1+s[i1]),
-            top:  (window.innerHeight+document.documentElement.scrollTop-170)-(window.innerHeight-170)/2*(1+s[i2])
-        },
+            top:  document.body.offsetheight/2*(1+s[i1])
+			},
 			{
 			    duration: 2000,
 			    complete: showMessage(msgs[i])
@@ -233,7 +233,7 @@ jQuery(document).ready(function ($) {
         var i2 = Math.floor(Math.random() * s.length);
             $(".spig").animate({
             left: document.body.offsetWidth/2*(1+s[i1]),
-            top:  (window.innerHeight+document.documentElement.scrollTop-170)-(window.innerHeight-170)/2*(1+s[i2])
+            top:  document.body.offsetheight/2*(1+s[i1])
             },
 			{
 			    duration: 500,
