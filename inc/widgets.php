@@ -11,7 +11,7 @@ function kratos_widgets_init() {
 }
 add_action( 'widgets_init', 'kratos_widgets_init' );
 function remove_default_widget() {
- //    unregister_widget('WP_Widget_Recent_Posts');//移除近期文章
+       unregister_widget('WP_Widget_Recent_Posts');//移除近期文章
  //    unregister_widget('WP_Widget_Recent_Comments');//移除近期评论
  //    unregister_widget('WP_Widget_Meta');//移除站点功能
        unregister_widget('WP_Widget_Tag_Cloud');//移除标签云
@@ -19,7 +19,7 @@ function remove_default_widget() {
  //    unregister_widget('WP_Widget_Archives');//移除文章归档
        unregister_widget('WP_Widget_RSS');//移除RSS
  //    unregister_widget('WP_Nav_Menu_Widget');//移除菜单
- //    unregister_widget('WP_Widget_Pages');//移除页面
+       unregister_widget('WP_Widget_Pages');//移除页面
        unregister_widget('WP_Widget_Calendar');//移除日历
  //    unregister_widget('WP_Widget_Categories');//移除分类目录
        unregister_widget('WP_Widget_Search');//移除搜索
@@ -29,7 +29,7 @@ class kratos_widget_ad extends WP_Widget {
     function __construct() {
         $widget_ops = array(
             'classname' => 'widget_kratos_ad',
-            'name'        => 'Kratos - 广告位',
+            'name'        => '广告位',
             'description' => 'Kratos主题特色组件 - 广告位'
         );
         parent::__construct( false, false, $widget_ops );
@@ -85,7 +85,7 @@ class kratos_widget_about extends WP_Widget {
     function __construct() {
         $widget_ops = array(
             'classname' => 'amadeus_about',
-            'name'        => 'Kratos - 个人简介',
+            'name'        => '个人简介',
             'description' => 'Kratos主题特色组件 - 个人简介'
         );
         parent::__construct( false, false, $widget_ops );
@@ -97,30 +97,40 @@ class kratos_widget_about extends WP_Widget {
         $bkimgurl = $instance['bkimgurl'] ? $instance['bkimgurl'] : '';
         echo $before_widget;
         ?>
-                <?php if(!empty($bkimgurl)) {?>
-                <div class="photo-background">
-                    <div class="photo-background" style="background:url(<?php echo $bkimgurl;?>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
-                </div>
-                <?php }else{?>
-                <div class="photo-background" style="background:url(<?php echo bloginfo('template_url'); ?>/images/about.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
-                <?php }?>
-                <?php if(!empty($imgurl)) {?>
-                <div class="photo-wrapper clearfix">
-                    <div class="photo-wrapper-tip text-center">
-                        <a href="<?php echo get_option('home'); ?>/wp-login.php"><img class="about-photo" src="<?php echo $imgurl; ?>" /></a>
-                    </div>
-                </div>
-                <?php }else{?>
-                <div class="photo-wrapper clearfix">
-                    <div class="photo-wrapper-tip text-center">
-                        <a href="<?php echo get_option('home'); ?>/wp-login.php"><img class="about-photo" src="<?php echo bloginfo('template_url'); ?>/images/photo.jpg" /></a>
-                    </div>
-                </div>
-                <?php }?>
-                <?php if(!empty($profile)) {?>
-                <div class="textwidget">
-                    <p><?php echo $profile; ?></p>
-                </div>
+        <div class="photo-background">
+            <div class="photo-background" style="background:url(
+            <?php if(!empty($bkimgurl)) {echo $bkimgurl;}else{echo bloginfo('template_url'); echo "/images/about.jpg"; }?>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+            </div>
+        </div>
+        <?php if( current_user_can( 'manage_options' ) ) {  ?>
+        <div class="photo-wrapper clearfix">
+            <div class="photo-wrapper-tip text-center">
+                <img class="about-photo" src="<?php if(!empty($imgurl)) {echo $imgurl;}else{echo bloginfo('template_url'); echo "/images/photo.jpg";}?>" alt=""/>
+            </div>
+        </div>
+        <div class="textwidget">
+            <div class="widget-admin text-center">
+                <p>
+                    <a href="<?php echo admin_url('/post-new.php'); ?>"><i class="fa fa-pencil"></i> 撰写文章</a>
+                    <a class="widget-admin-center" href="<?php echo admin_url('/post-new.php?post_type=page'); ?>"><i class="fa fa-plus"></i> 新建页面</a>
+                    <a href="<?php echo admin_url('/edit-comments.php'); ?>"><i class="fa fa-comments"></i> 查看评论</a>
+                </p>
+                <p>
+                    <a href="<?php echo admin_url('/options-general.php'); ?>"><i class="fa fa-cogs"></i> 站点设置</a>
+                    <a class="widget-admin-center" href="<?php echo admin_url('/themes.php?page=kratos'); ?>"><i class="fa fa-cog"></i> 主题设置</a>
+                    <a href="<?php echo wp_logout_url(); ?>"><i class="fa fa-sign-out"></i> 退出登录</a>
+                </p>
+            </div>
+        </div>
+        <?php }else{ ?>
+        <div class="photo-wrapper clearfix">
+            <div class="photo-wrapper-tip text-center">
+                <a href="<?php echo get_option('home'); ?>/wp-login.php" rel="nofollow"><img class="about-photo" src="<?php if(!empty($imgurl)) {echo $imgurl;}else{echo bloginfo('template_url'); echo "/images/photo.jpg";}?>" alt=""/></a>
+            </div>
+        </div>
+        <div class="textwidget">
+            <p class="text-center"><?php echo $profile; ?></p>
+        </div>
                 <?php }?>
         <?php
         echo $after_widget;
@@ -157,7 +167,7 @@ class kratos_widget_about extends WP_Widget {
 class kratos_widget_tags extends WP_Widget {
     function __construct(){
         $widget_ops = array(
-            'name'        => 'Kratos - 标签聚合',
+            'name'        => '标签聚合',
             'description' => 'Kratos主题特色组件 - 标签聚合'
         );
         parent::__construct(false, false, $widget_ops);
@@ -241,7 +251,7 @@ class kratos_widget_posts extends WP_Widget{
         $widget_ops = array(
         	
         	'classname' => 'kratos_widget_posts',
-            'name'        => 'Kratos - 文章聚合',
+            'name'        => '文章聚合',
             'description'=>'Kratos主题特色组件 - 文章聚合'
         );
         parent::__construct( false, false, $widget_ops );
