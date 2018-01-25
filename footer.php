@@ -181,7 +181,7 @@
 			width:100%;
 			height:100%;
 			z-index:99999;
-			background:RGB(<?php echo kratos_option('snow_xb2016_bgcolor');?>);
+			background:RGBA(<?php echo kratos_option('snow_xb2016_bgcolor');?>);
 			pointer-events:none
 		}
 		<?php if ( kratos_option('snow_xb2016_mobile')!=1 ) : ?>
