@@ -150,7 +150,7 @@ jQuery(document).ready(function ($) {
         var i2 = Math.floor(Math.random() * s.length);
             $(".spig").animate({
             left: document.body.offsetWidth/2*(1+s[i1]),
-            top:  document.body.offsetheight/2*(1+s[i1])
+            top:  (window.innerHeight+document.documentElement.scrollTop-170)-(window.innerHeight-170)/2*(1+s[i2])
 			},
 			{
 			    duration: 2000,
@@ -233,7 +233,7 @@ jQuery(document).ready(function ($) {
         var i2 = Math.floor(Math.random() * s.length);
             $(".spig").animate({
             left: document.body.offsetWidth/2*(1+s[i1]),
-            top:  document.body.offsetheight/2*(1+s[i1])
+            top:  (window.innerHeight+document.documentElement.scrollTop-170)-(window.innerHeight-170)/2*(1+s[i2])
             },
 			{
 			    duration: 500,
