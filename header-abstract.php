@@ -6,4 +6,4 @@
 			</div>
 		</div>
 	</div>
-	<div id="kratos-blog-post" style="background:<?php if(kratos_option('background_mode')=='color') echo kratos_option('background_index_color');else echo 'url('.kratos_option('background_index_image').');background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:fixed'; ?>">
+	<div id="kratos-blog-post" <?php if(kratos_option('background_mode')=='color') echo 'style="background:'.kratos_option('background_index_color').'"'; ?>>
