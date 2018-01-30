@@ -42,39 +42,35 @@
 			</div>
 		</div>
 		<?php wp_footer();?>
-		<?php if ( kratos_option('site_sa') ) : ?>
-		<script type="text/javascript">
-			if ($("#main").height() > $("#sidebar").height()) {
-				var footerHeight = 0;
-				if ($('#page-footer').length > 0) {
-					footerHeight = $('#page-footer').outerHeight(true);
-				}
-				$('#sidebar').affix({
-					offset: {
-						top: $('#sidebar').offset().top - 55,
-						bottom: $('#footer').outerHeight(true) + footerHeight + 6
-					}
-				});
+	<script type="text/javascript">
+		<?php if(is_home()) echo 'var isindex=true;var title="";';else echo 'var isindex=false;var title="', get_the_title(),'";';if(comments_open()) echo 'var copen=true;';else echo 'var copen=false;'; ?>
+		<?php if ( kratos_option('script_tongji') ) echo kratos_option('script_tongji'); ?>
+		<?php if ( kratos_option('site_sa')&&!wp_is_mobile() ) : ?>
+		if ($("#main").height() > $("#sidebar").height()) {
+			var footerHeight = 0;
+			if ($('#page-footer').length > 0) {
+				footerHeight = $('#page-footer').outerHeight(true);
 			}
-		</script>
+			$('#sidebar').affix({
+				offset: {
+					top: $('#sidebar').offset().top - 55,
+					bottom: $('#footer').outerHeight(true) + footerHeight + 6
+				}
+			});
+		}
 		<?php endif; ?>
-		<?php if ( kratos_option('script_tongji') ) : ?>
-		<script type="text/javascript">
-		<?php echo kratos_option('script_tongji'); ?>
-		</script>
-		<?php endif; ?>
-		<script type="text/javascript"><?php if(is_home()) echo 'var isindex=true;var title="";';else echo 'var isindex=false;var title="', get_the_title(),'";';if(comments_open()) echo 'var copen=true;';else echo 'var copen=false;'; ?></script>
-		<?php if ( kratos_option('site_spig') ) : ?>
-		<div id="spig" class="spig">
-			<div id="message">Loading……</div>
-			<div id="mumu" class="mumu"></div>
-			<span class="hitokoto" id="hitokoto" style="display:none">Loading...</span>
-			<div id="hjsbox" style="display:none"></div>
-			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri();?>/js/spig.js"></script>
-		</div>
-		<?php endif; ?>
-		<?php if ( kratos_option('site_snow') ) : ?>
-		<div id="snow_xb" class="snow_xb">
+	</script>
+	<?php if ( kratos_option('site_spig')&&!wp_is_mobile() ) : ?>
+	<div id="spig" class="spig">
+		<div id="message">Loading……</div>
+		<div id="mumu" class="mumu"></div>
+		<span class="hitokoto" id="hitokoto" style="display:none">Loading...</span>
+		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri();?>/js/spig.js"></script>
+	</div>
+	<?php endif; ?>
+	<?php if ( kratos_option('site_snow') ) : ?>
+	<?php if ( !wp_is_mobile()||wp_is_mobile()&&kratos_option('snow_xb2016_mobile') ) : ?>
+	<div id="snow_xb" class="snow_xb">
 		<canvas id="Snow"></canvas>
 		<script>
 		(function() {
@@ -83,14 +79,14 @@
 				window.setTimeout(callback, 1000 / 60);
 			};
 			window.requestAnimationFrame = requestAnimationFrame;
-			})();
-			(function() {
+		})();
+		(function() {
 			var flakes = [],
 				canvas = document.getElementById("Snow"),
 				ctx = canvas.getContext("2d"),
 				flakeCount = <?php echo kratos_option('snow_xb2016_flakecount');?>,
 				mX = -100,
-				mY = -100
+				mY = -100;
 				canvas.width = window.innerWidth;
 				canvas.height = window.innerHeight;
 				function snow() {
@@ -98,7 +94,7 @@
 				for (var i = 0; i < flakeCount; i++) {
 					var flake = flakes[i],
 					x = mX,
-				y = mY,
+					y = mY,
 					minDist = <?php echo kratos_option('snow_xb2016_mindist');?>,
 					x2 = flake.x,
 					y2 = flake.y;
@@ -115,7 +111,7 @@
 					} else {
 						flake.velX *= 0.98;
 						if (flake.velY <= flake.speed) {
-							flake.velY = flake.speed
+							flake.velY = flake.speed;
 						}
 					flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
 					}
@@ -173,7 +169,7 @@
 				canvas.width = window.innerWidth;
 				canvas.height = window.innerHeight;
 			});
-		init();
+			init();
     	})();
 		</script>
 		<style>
@@ -187,15 +183,9 @@
 			background:RGBA(<?php echo kratos_option('snow_xb2016_bgcolor');?>);
 			pointer-events:none
 		}
-		<?php if ( kratos_option('snow_xb2016_mobile')!=1 ) : ?>
-		@media screen and (max-width:535px) {
-			#Snow {
-				display:none
-			}
-		}
-		<?php endif; ?>
 		</style>
-		</div>
-		<?php endif; ?>
+	</div>
+	<?php endif; ?>
+	<?php endif; ?>
 	</body>
 </html>

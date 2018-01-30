@@ -48,11 +48,13 @@ get_header('abstract'); ?>
         		<?php kratos_pages(3);?>
 				<?php wp_reset_query(); ?>
 			</section>
+			<?php if(!wp_is_mobile()){ ?>
 			<aside id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm scrollspy">
                 <div id="sidebar">
                     <?php dynamic_sidebar('sidebar_tool'); ?>
                 </div>
             </aside>
+			<?php } ?>
 		</div>
 	</div>
 </div>

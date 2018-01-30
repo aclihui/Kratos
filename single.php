@@ -5,7 +5,7 @@ get_header();
 get_header('abstract'); ?>
 	<div class="container">
 		<div class="row">
-			<?php if($sidebar == 'left_side'){ ?>
+			<?php if($sidebar == 'left_side'&&!wp_is_mobile()){ ?>
 			<aside id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm scrollspy">
                 <div id="sidebar">
                     <?php dynamic_sidebar('sidebar_tool'); ?>
@@ -21,10 +21,12 @@ get_header('abstract'); ?>
 							<div class="kratos-post-meta text-center">
 								<span>
 								<i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
-				                <i class="fa fa-commenting-o"></i> <?php comments_number('0', '1', '%'); ?>条评论
-				                <i class="fa fa-eye"></i> <?php echo kratos_get_post_views();?>次阅读
-				                <i class="fa fa-thumbs-o-up"></i><span class="likenum"> <?php if( get_post_meta($post->ID,'love',true) ){ echo get_post_meta($post->ID,'love',true); } else { echo '0'; }?>人点赞</span>
-				                <i class="fa fa-user"></i> <?php the_author(); ?>
+								<i class="fa fa-commenting-o"></i> <?php comments_number('0', '1', '%'); ?>条评论
+								<i class="fa fa-eye"></i> <?php echo kratos_get_post_views();?>次阅读  
+								<span class="hd">
+								<i class="fa fa-thumbs-o-up"></i> <?php if( get_post_meta($post->ID,'love',true) ){ echo get_post_meta($post->ID,'love',true); } else { echo '0'; }?>人点赞
+								<i class="fa fa-user"></i> <?php the_author(); ?>
+								</span>
 								</span>
 							</div>
 						</header>
@@ -100,7 +102,7 @@ get_header('abstract'); ?>
 				</article>
 				<?php endif; ?>
 			</section>
-			<?php if($sidebar == 'right_side'){ ?>
+			<?php if($sidebar == 'right_side'&&!wp_is_mobile()){ ?>
 				<aside id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm scrollspy">
 	                <div id="sidebar">
 	                    <?php dynamic_sidebar('sidebar_tool'); ?>

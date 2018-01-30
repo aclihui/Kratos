@@ -8,7 +8,7 @@ get_header();
 get_header('abstract'); ?>
 	<div class="container">
 		<div class="row">
-			<?php if($page_side_bar == 'left_side'){ ?>
+			<?php if($page_side_bar == 'left_side'&&!wp_is_mobile()){ ?>
 				<aside id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm scrollspy">
 	                <div id="sidebar">
 	                    <?php dynamic_sidebar('sidebar_tool'); ?>
@@ -65,7 +65,7 @@ get_header('abstract'); ?>
 				</article>
 			<?php endwhile;?>
 			</section>
-			<?php if($page_side_bar == 'right_side'){ ?>
+			<?php if($page_side_bar == 'right_side'&&!wp_is_mobile()){ ?>
 			<aside id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm scrollspy">
                 <div id="sidebar">
                     <?php dynamic_sidebar('sidebar_tool'); ?>
