@@ -4,16 +4,6 @@
 		$(".Share").click(function() {
 			$(".share-wrap").fadeToggle("slow");
 		});
-		$('.qrcode').each(function(index, el) {
-			var url = $(this).data('url');
-			if ($.fn.qrcode) {
-				$(this).qrcode({
-					text: url,
-					width: 150,
-					height: 150,
-				});
-			}
-		});
 	}
 	var topStart = function() {
 		$('#top-Start').click(function() {
@@ -21,15 +11,6 @@
 				scrollTop: $('#kratos-blog').offset().top
 			}, 1000);
 		});
-	};
-	var isiPad = function() {
-		return (navigator.platform.indexOf("iPad") != -1);
-	};
-	var isiPhone = function() {
-		return (
-			(navigator.platform.indexOf("iPhone") != -1) ||
-			(navigator.platform.indexOf("iPod") != -1)
-		);
 	};
 	var mainMenu = function() {
 		$('#kratos-primary-menu').superfish({
