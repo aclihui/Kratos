@@ -33,7 +33,7 @@
 									if(kratos_option('gov_num')){?>
 									<br><a href="<?php echo kratos_option( 'gov_link' ); ?>" rel="external nofollow" target="_blank"><i class="govimg"></i><?php echo kratos_option( 'gov_num' ); ?></a><?php }?>
 									</p>
-									<p><?php echo (!kratos_option('site_tongji')) ? '' : kratos_option('site_tongji'); ?></p>
+									<?php if (kratos_option('site_tongji')) echo '<p>'.kratos_option('site_tongji').'</p>'; ?>
 								</div>
 							</div>
 						</div>
