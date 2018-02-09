@@ -42,10 +42,10 @@ kratos/
 │   ├── bootstrap.min.css
 │   ├── customlogin.css
 │   ├── font-awesome.min.css
+│   ├── kratos.min.css
 │   ├── layer.min.css
 │   └── superfish.min.css
 ├── fonts/
-│   ├── FontAwesome.otf
 │   ├── fontawesome-webfont.eot
 │   ├── fontawesome-webfont.svg
 │   ├── fontawesome-webfont.ttf
@@ -65,14 +65,15 @@ kratos/
 │   ├── arrow.png
 │   ├── avatar.png
 │   ├── background.jpg
-│   ├── bak.jpg
 │   ├── comment.png
 │   ├── cursor.cur
 │   ├── default-logo.png
+│   ├── favicon.ico
 │   ├── fingerprint.png
 │   ├── icon.png
 │   ├── icon-ext.png
 │   ├── icon-police.png
+│   ├── index_image.png
 │   ├── licenses.png
 │   ├── move.cur
 │   ├── photo.jpg
@@ -99,8 +100,12 @@ kratos/
 │   │   │   ├── media-uploader.js
 │   │   │   └── options-custom.js
 │   │   └── options-framework.php
+│   ├── imgcfg.php
 │   ├── OwO.json
+│   ├── post.php
 │   ├── share.php
+│   ├── shortcode.php
+│   ├── smtp.php
 │   └── widgets.php
 ├── js/
 │   ├── buttons/
@@ -111,12 +116,10 @@ kratos/
 │   ├── hoverIntent.min.js
 │   ├── jquery.easing.js
 │   ├── jquery.min.js
-│   ├── jquery.qrcode.min.js
 │   ├── jquery.stellar.min.js
 │   ├── jquery.waypoints.min.js
 │   ├── kratos.js
 │   ├── layer.min.js
-│   ├── modernizr.min.js
 │   ├── OwO.min.js
 │   ├── spig.js
 │   └── superfish.js
@@ -127,7 +130,6 @@ kratos/
 ├── functions.php
 ├── header.php
 ├── header-abstract.php
-├── header-banner.php
 ├── index.php
 ├── options.php
 ├── page.php
