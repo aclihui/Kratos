@@ -5,13 +5,6 @@
 			$(".share-wrap").fadeToggle("slow");
 		});
 	}
-	var topStart = function() {
-		$('#top-Start').click(function() {
-			$('html,body').animate({
-				scrollTop: $('#kratos-blog').offset().top
-			}, 1000);
-		});
-	};
 	var mainMenu = function() {
 		$('#kratos-primary-menu').superfish({
 			delay: 0,
@@ -51,26 +44,6 @@
 				e.stopPropagation();
 			});
 			$('#searchform').on("click", function(e) {e.stopPropagation();})
-	};
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.animate-box').waypoint(function(direction) {
-			if (direction === 'down' && !$(this.element).hasClass('animated')) {
-				i++;
-				$(this.element).addClass('item-animate');
-				setTimeout(function() {
-					$('body .animate-box.item-animate').each(function(k) {
-						var el = $(this);
-						setTimeout(function() {
-							el.addClass('fadeInUp animated');
-							el.removeClass('item-animate');
-						}, k * 200, 'easeInOutExpo');
-					});
-				}, 100);
-			}
-		}, {
-			offset: '85%'
-		});
 	};
 	var showThumb = function(){
 		(function ($) {
@@ -216,8 +189,36 @@
 			}
 		});
 	};
+	var xControl = function() {
+		$('.xHeading').on('click', function(event){
+			var $this = $(this);
+			$this.closest('.xControl').find('.xContent').slideToggle(300, 'easeInOutExpo');
+			if ($this.closest('.xControl').hasClass('active')) {
+				$this.closest('.xControl').removeClass('active');
+			} else {
+				$this.closest('.xControl').addClass('active');
+			}
+			event.preventDefault();
+		});
+	};
+	var donateConfig = function(){
+		$('.Donate').on('click', function(){
+			layer.open({
+				type: 1,
+				area: ['300px', '370px'],
+				title:xb.donate,
+				resize:false,
+				scrollbar: false,
+				content: '<div class="donate-box"><div class="meta-pay text-center"><strong>'+xb.scan+'</strong></div><div class="qr-pay text-center"><img class="pay-img" id="alipay_qr" src="'+xb.alipay+'"><img class="pay-img d-none" id="wechat_qr" src="'+xb.wechat+'"></div><div class="choose-pay text-center mt-2"><input id="alipay" type="radio" name="pay-method" checked><label for="alipay" class="pay-button"><img src="'+xb.thome+'/images/alipay.png"></label><input id="wechatpay" type="radio" name="pay-method"><label for="wechatpay" class="pay-button"><img src="'+xb.thome+'/images/wechat.png"></label></div></div>'
+			});
+			$(".choose-pay input[type='radio']").click(function(){
+				var id= $(this).attr("id");
+				if (id=='alipay') { $(".qr-pay #alipay_qr").removeClass('d-none');$(".qr-pay #wechat_qr").addClass('d-none') };
+				if (id=='wechatpay') { $(".qr-pay #alipay_qr").addClass('d-none');$(".qr-pay #wechat_qr").removeClass('d-none') };
+			});
+		});
+	};
 	$(function() {
-		topStart();
 		mainMenu();
 		shareMenu();
 		parallax();
@@ -226,85 +227,34 @@
 		gotop();
 		weixinpic();
 		toSearch();
-		contentWayPoint();
 		showPhotos();
 		offcanvas();
 		mobiClick();
+		xControl();
+		donateConfig();
+	if (!isindex&&copen) {
+		var OwO_demo = new OwO({
+			logo: 'OωO表情',
+			container: document.getElementsByClassName('OwO')[0],
+			target: document.getElementsByClassName('OwO')[0],
+			api: xb.thome+'/inc/OwO.json',
+			position: 'down',
+			width: '90%',
+			maxHeight: '250px'
+		});
+	}
 	});
 }());
-jQuery(document).ready(
-	function(jQuery){
-	jQuery('.collapseButton').click(function(){
-		jQuery(this).parent().parent().find('.xContent').slideToggle('slow');
-		if (jQuery(this).parent().parent().find('.xicon').hasClass('active')) {
-			jQuery(this).parent().parent().find('.xicon').removeClass('active');
-		} else {
-			jQuery(this).parent().parent().find('.xicon').addClass('active');
-		}
-	});
-	jQuery('.icoButton').click(function(){
-		jQuery(this).parent().parent().parent().find('.xContent').slideToggle('slow');
-		if (jQuery(this).parent().parent().parent().find('.xicon').hasClass('active')) {
-			jQuery(this).parent().parent().parent().find('.xicon').removeClass('active');
-		} else {
-			jQuery(this).parent().parent().parent().find('.xicon').addClass('active');
-		}
-	});
-	if (!isindex&&copen) {
-	var OwO_demo = new OwO({
-		logo: 'OωO表情',
-		container: document.getElementsByClassName('OwO')[0],
-		target: document.getElementsByClassName('OwO')[0],
-		api: xb.thome+'/inc/OwO.json',
-		position: 'down',
-		width: '90%',
-		maxHeight: '250px'
-	});
-	}
-});
-function grin(tag) {
-	var myField;
-	tag = ' ' + tag + ' ';
-	if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
-	myField = document.getElementById('comment');
-	} else {
-		return false;
-	}
-	if (document.selection) {
-		myField.focus();
-		sel = document.selection.createRange();
-		sel.text = tag;
-		myField.focus();
-	} else if (myField.selectionStart || myField.selectionStart == '0') {
-		var startPos = myField.selectionStart;
-		var endPos = myField.selectionEnd;
-		var cursorPos = endPos;
-		myField.value = myField.value.substring(0, startPos)
-			+ tag
-			+ myField.value.substring(endPos, myField.value.length);
-		cursorPos += tag.length;
-		myField.focus();
-		myField.selectionStart = cursorPos;
-		myField.selectionEnd = cursorPos;
-		var owoopen = document.getElementsByClassName('OwO OwO-open')[0];
-		owoopen.className = "OwO";
-	} else {
-		myField.value += tag;
-		myField.focus();
-	}
-}
 var now = new Date();
 function createtime(){
-	var grt= new Date(xb.crtime);
+	var grt = new Date(xb.ctime);
 	now.setTime(now.getTime()+250);
-	days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-	hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+	days = (now - grt ) / 1000 / 60 / 60 / 24;dnum = Math.floor(days);
+	hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);hnum = Math.floor(hours);
 	if(String(hnum).length ==1 ){hnum = "0" + hnum;}
-	minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-	mnum = Math.floor(minutes);
+	minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);mnum = Math.floor(minutes);
 	if(String(mnum).length ==1 ){mnum = "0" + mnum;}
-	seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-	snum = Math.round(seconds);
+	seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);snum = Math.round(seconds);
 	if(String(snum).length ==1 ){snum = "0" + snum;}
 	document.getElementById("span_dt_dt").innerHTML = dnum + "天" + hnum + "小时" + mnum + "分" + snum + "秒";
 }

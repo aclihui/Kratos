@@ -149,7 +149,7 @@
                 title : '展开收缩',
                 image : url+'/images/accordion.png',
                 onclick : function() {
-                     ed.selection.setContent('[collapse title="说明文字"]' + ed.selection.getContent() + '[/collapse]');
+                     ed.selection.setContent('[collapse title="标题内容"]' + ed.selection.getContent() + '[/collapse]');
                 }
             });
         },
@@ -158,6 +158,22 @@
         },
     });
     tinymce.PluginManager.add('accordion', tinymce.plugins.accordion);
+
+    tinymce.create('tinymce.plugins.hide', {
+        init : function(ed, url) {
+            ed.addButton('hide', {
+                title : '回复可见',
+                image : url+'/images/hide.png',
+                onclick : function() {
+                     ed.selection.setContent('<!--hide start{reply_to_this=true}-->' + ed.selection.getContent() + '<!--hide end-->');
+                }
+            });
+        },
+        createControl : function(n, cm) {
+            return null;
+        },
+    });
+    tinymce.PluginManager.add('hide', tinymce.plugins.hide);
 
     tinymce.create('tinymce.plugins.kbd', {
         init : function(ed, url) {
