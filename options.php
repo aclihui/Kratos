@@ -498,11 +498,5 @@ function optionsframework_options() {
 		'id' => 'snow_xb2016_opacity',
 		'std' => '0.3',
 		'type' => 'text');
-	$options[] = array(
-		'name' => '背景颜色',
-		'desc' => '请用RGB格式表示，默认225,225,225,0.1',
-		'id' => 'snow_xb2016_bgcolor',
-		'std' => '225,225,225,0.1',
-		'type' => 'text');
 	return $options;
 }
