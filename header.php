@@ -31,11 +31,11 @@
 		if(kratos_option('background_mode')=='image'&&!wp_is_mobile()) echo '<style type="text/css">@media (min-width:768px){.pagination>li>a{background-color:rgba(255,255,255,.8)}.kratos-hentry,.navigation div,.comments-area .comment-list li,#kratos-widget-area .widget,.comment-respond{background-color:rgba(255,255,255,.8)!important}.comment-list .children li{background-color:rgba(255,253,232,.7)!important}body.custom-background{background-image:url('.kratos_option('background_index_image').');background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:fixed}}</style>'; ?>
   </head>
 	<?php flush(); ?>
-	<body data-spy="scroll" data-target=".scrollspy"<?php if(kratos_option('background_mode')=='image') echo ' class="custom-background"'; ?>>
+	<body <?php if(kratos_option('background_mode')=='image') echo 'class="custom-background"'; ?>>
 		<div id="kratos-wrapper">
 			<div id="kratos-page">
 				<div id="kratos-header">
-					<?php if (has_nav_menu('header_menu')): ?>
+					<?php if(has_nav_menu('header_menu')): ?>
 					<div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
 					<?php endif; ?>
 					<header id="kratos-header-section">
