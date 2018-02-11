@@ -13,7 +13,7 @@ Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootst
 ```
 二次元风格
 添加博客小人spig
-无图片的文章特色图片随机化（\images\thumb\下的10张图片）
+无图片的文章特色图片随机化（\images\thumb\下的20张图片）
 置顶文章加上了文字和图标标记
 在分享按钮中添加分享到QQ空间选项
 评论区评论嵌套样式修改（参考Ravenclaw主题样式）
@@ -75,6 +75,7 @@ kratos/
 │   ├── icon-police.png
 │   ├── index_image.png
 │   ├── licenses.png
+│   ├── locked.gif
 │   ├── move.cur
 │   ├── photo.jpg
 │   ├── pointer.cur
@@ -85,6 +86,10 @@ kratos/
 │   ├── wechatpayqr.png
 │   └── weixin.png
 ├── inc/
+│   ├── buttons/
+│   │   ├── images/
+│   │   │   └── (has some button pic)
+│   │   └── more.js
 │   ├── theme-options/
 │   │   ├── css/
 │   │   │   └── optionsframework.css
@@ -101,6 +106,7 @@ kratos/
 │   │   │   └── options-custom.js
 │   │   └── options-framework.php
 │   ├── imgcfg.php
+│   ├── logincfg.php
 │   ├── OwO.json
 │   ├── post.php
 │   ├── share.php
@@ -108,16 +114,9 @@ kratos/
 │   ├── smtp.php
 │   └── widgets.php
 ├── js/
-│   ├── buttons/
-│   │   ├── images/
-│   │   │   └── (has some button pic)
-│   │   └── more.js
 │   ├── bootstrap.min.js
-│   ├── hoverIntent.min.js
 │   ├── jquery.easing.js
 │   ├── jquery.min.js
-│   ├── jquery.stellar.min.js
-│   ├── jquery.waypoints.min.js
 │   ├── kratos.js
 │   ├── layer.min.js
 │   ├── OwO.min.js
