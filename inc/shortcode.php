@@ -93,18 +93,22 @@ function hide($atts,$content=null,$code=""){
     get_currentuserinfo();
     if($current_user->ID) $email = $current_user->user_email;
     $ereg = "^[_\.a-z0-9]+@([0-9a-z][0-9a-z-]+\.)+[a-z]{2,5}$";
-    if(eregi($ereg,$email)){
-        global $wpdb;
-        global $id;
-        if($reply_to_this=='true'){
+    if($reply_to_this=='true'){
+        if(eregi($ereg,$email)){
+            global $wpdb;
+            global $id;
             $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_author_email = '".$email."' and comment_post_id='".$id."'and comment_approved = '1'");
-            if(!$comments) $conhide = '<div class="hide_notice">抱歉，只有登录并在本文发表评论才能阅读隐藏内容</div>';
-        }else{
+            }
+        if(!$comments) $content = '<div class="hide_notice">抱歉，只有<a href="'.wp_login_url().'" rel="nofollow">登录</a>并在本文发表评论才能阅读隐藏内容</div>';
+    }else{
+        if(eregi($ereg,$email)){
+            global $wpdb;
+            global $id;
             $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_author_email = '".$email."' and comment_approved = '1'");
-            if(!$comments) $conhide = '<div class="hide_notice">抱歉，只有登录并在本站任一文章发表评论才能阅读隐藏内容</div>';
-        }
+		}
+        if(!$comments) $content = '<div class="hide_notice">抱歉，只有<a href="'.wp_login_url().'" rel="nofollow">登录</a>并在本站任一文章发表评论才能阅读隐藏内容</div>';
     }
-	if($conhide) $content = $conhide; else $content = '<div class="unhide"><div class="info">以下为隐藏内容：</div>'.$content.'</div>';
+	if($comments) $content = '<div class="unhide"><div class="info">以下为隐藏内容：</div>'.$content.'</div>';
     return $content;
 }
 add_shortcode('hide','hide');
