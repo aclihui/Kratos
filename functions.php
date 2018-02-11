@@ -7,6 +7,7 @@ require_once(get_template_directory().'/inc/imgcfg.php');
 require_once(get_template_directory().'/inc/post.php');
 require_once(get_template_directory().'/inc/smtp.php');
 require_once(get_template_directory().'/inc/widgets.php');
+require_once(get_template_directory().'/inc/logincfg.php');
 
 //Replace Gravatar server
 function kratos_get_avatar($avatar) {
@@ -48,20 +49,19 @@ function kratos_theme_scripts() {
         wp_enqueue_script('easing',$dir.'/js/jquery.easing.min.js',array(), '1.3.0'); 
         wp_enqueue_script('layer',$dir.'/js/layer.min.js',array(),'3.1.0');
         wp_enqueue_script('bootstrap',$dir.'/js/bootstrap.min.js',array(),'3.3.7');
-        wp_enqueue_script('waypoints',$dir.'/js/jquery.waypoints.min.js',array(),'4.0.0');
-        wp_enqueue_script('stellar',$dir.'/js/jquery.stellar.min.js',array(),'0.6.2');
-        wp_enqueue_script('hoverIntents',$dir.'/js/hoverIntent.min.js',array(),'r7');
         wp_enqueue_script('superfish',$dir.'/js/superfish.js',array(),'1.0.0');
         wp_enqueue_script('kratos',$dir.'/js/kratos.js',array(),KRATOS_VERSION);
     }
     if(comments_open()&&is_single()||is_page()) wp_enqueue_script('OwO',$dir.'/js/OwO.min.js',array(),'1.0.1');
+	if(kratos_option('site_sa')&&!wp_is_mobile()) $site_sa = 'Y';
     $d2kratos = array(
          'thome'=> get_stylesheet_directory_uri(),
          'ctime'=> kratos_option('createtime'),
         'donate'=> kratos_option('paytext_head'),
           'scan'=> kratos_option('paytext'),
         'alipay'=> kratos_option('alipayqr_url'),
-        'wechat'=> kratos_option('wechatpayqr_url')
+        'wechat'=> kratos_option('wechatpayqr_url'),
+		'site_s'=> $site_sa
     );
     wp_localize_script('kratos','xb',$d2kratos);
 }
@@ -141,34 +141,6 @@ add_filter('nav_menu_css_class','my_css_attributes_filter',100,1);
 add_filter('nav_menu_item_id','my_css_attributes_filter',100,1);
 add_filter('page_css_class','my_css_attributes_filter',100,1);
 function my_css_attributes_filter($var) {return is_array($var)?array_intersect($var,array('current-menu-item','current-post-ancestor','current-menu-ancestor','current-menu-parent')):'';}
-
-//The article heat
-function most_comm_posts($days=30,$nums=5) {
-    global $wpdb;
-    date_default_timezone_set("PRC");
-    $today = date("Y-m-d H:i:s");
-    $daysago = date("Y-m-d H:i:s",strtotime($today)-($days*24*60*60));
-    $result = $wpdb->get_results("SELECT comment_count,ID,post_title,post_date FROM $wpdb->posts WHERE post_date BETWEEN '$daysago' AND '$today' and post_type='post' and post_status='publish' ORDER BY comment_count DESC LIMIT 0 ,$nums");
-    $output = '';
-    if(empty($result)) {
-        $output = '<li>暂时没有数据</li>';
-    } else {
-        foreach ($result as $topten) {
-            $postid = $topten->ID;
-            $title = $topten->post_title;
-            $commentcount = $topten->comment_count;
-            if($commentcount>=0) {
-                $output .= '<a class="list-group-item visible-lg" title="'.$title.'" href="'.get_permalink($postid).'" rel="bookmark"><i class="fa  fa-book"></i> ';
-                    $output .= strip_tags($title);
-                $output .= '</a>';
-                $output .= '<a class="list-group-item visible-md" title="'.$title.'" href="'.get_permalink($postid).'" rel="bookmark"><i class="fa  fa-book"></i> ';
-                    $output .= strip_tags($title);
-                $output .= '</a>';
-            }
-        }
-    }
-    echo $output;
-}
 
 //Add article type
 add_theme_support('post-formats',array('gallery','video'));
@@ -320,10 +292,11 @@ function cmhello_users_search_order($obj) {
 }
 
 //Custom login
-function custom_login_logo() {
+function custom_login() {
     echo '<link rel="stylesheet" id="wp-admin-css" href="'.get_bloginfo('template_directory').'/css/customlogin.min.css" type="text/css" />';
+    echo '<style>body{background:#92C1D1 url('.kratos_option('login_bak').') fixed center top no-repeat!important;background-size:cover!important}.login h1 a{background-image:url('.kratos_option('login_logo').')!important}</style>';
 }
-add_action('login_head','custom_login_logo');
+add_action('login_head','custom_login');
 
 //enable more tags
 function sig_allowed_html_tags_in_comments() {

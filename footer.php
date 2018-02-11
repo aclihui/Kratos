@@ -2,7 +2,7 @@
 					<div id="footer">
 						<div class="cd-tool text-center">
 						    <?php if(current_user_can('manage_options')&&is_single()||is_page()) echo edit_post_link('<span class="fa fa-pencil"></span>'); ?>
-						    <a class="<?php if (kratos_option('cd_weixin')) echo 'cd-top2 '; ?>cd-top"><span class="fa fa-chevron-up"></span></a>
+						    <a class="<?php if(kratos_option('cd_weixin')) echo 'cd-top2 '; ?>cd-top"><span class="fa fa-chevron-up"></span></a>
 						   	<?php if(kratos_option('cd_weixin')) echo '<a id="weixin-img" class="cd-weixin"><span class="fa fa-weixin"></span><div id="weixin-pic"><img src="'.kratos_option('weixin_image').'"></div></a>'; ?>
 							<a class="search-box">
 								<span class="fa fa-search"></span>
@@ -38,21 +38,7 @@
 		<?php wp_footer();?>
 	<script type="text/javascript">
 	<?php if(is_home()) echo 'var isindex=true;var title="";';else echo 'var isindex=false;var title="', get_the_title(),'";';if(comments_open()) echo 'var copen=true;';else echo 'var copen=false;';
-		  if(kratos_option('script_tongji')) echo kratos_option('script_tongji');
-		  if(kratos_option('site_sa')&&!wp_is_mobile()){ ?>
-		if($("#main").height()>$("#sidebar").height()){
-			var footerHeight=0;
-			if($('#page-footer').length>0){
-				footerHeight=$('#page-footer').outerHeight(true);
-			}
-			$('#sidebar').affix({
-				offset:{
-					top:$('#sidebar').offset().top-55,
-					bottom:$('#footer').outerHeight(true)+footerHeight+6
-				}
-			});
-		}
-		<?php } ?>
+		  if(kratos_option('script_tongji')) echo kratos_option('script_tongji'); ?>
 	</script>
 	<?php if(kratos_option('site_spig')&&!wp_is_mobile()){ ?>
 	<div id="spig" class="spig">
