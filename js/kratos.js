@@ -16,9 +16,6 @@
 			disableHI: true
 		});
 	};
-	var parallax = function() {
-		$(window).stellar();
-	};
 	var sidebaraffix = function() {
 		if ($("#main").height() > $("#sidebar").height()) {
 			var footerHeight = 0;
@@ -27,7 +24,7 @@
 			}
 			$('#sidebar').affix({
 				offset: {
-					top: $('#sidebar').offset().top - 30,
+					top: $('#sidebar').offset().top - 55,
 					bottom: $('#footer').outerHeight(true) + footerHeight + 6
 				}
 			});
@@ -110,28 +107,23 @@
 			});
 		}
 	var gotop = function() {
-		var offset = 300,
-			offset_opacity = 1200,
-			scroll_top_duration = 700,
-			$back_to_top = $('.cd-top'),
-			$cd_gb = $('.cd-gb'),
-			$cd_weixin = $('.cd-weixin');
+		$('.cd-top').on('click', function(event){
+			event.preventDefault();
+			$('html, body').animate({
+				scrollTop: $('html').offset().top
+			}, 500, 'easeInOutExpo');
+			return false;
+		});
 		$(window).scroll(function(){
-			( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-			if( $(this).scrollTop() > offset_opacity ) { 
-				$back_to_top.addClass('cd-fade-out');
-				$cd_gb.addClass('cd-fade-out');
-				$cd_weixin.addClass('cd-fade-out');
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$('.cd-top').addClass('cd-is-visible');
+			} else {
+				$('.cd-top').removeClass('cd-is-visible');
 			}
 		});
-		$back_to_top.on('click', function(event){
-			event.preventDefault();
-			$('body,html').animate({
-				scrollTop: 0 ,
-			 	}, scroll_top_duration
-			);
-		});
-	}
+	};
+
 	var weixinpic = function() {
 		$("#weixin-img").mouseout(function(){
 	        $("#weixin-pic")[0].style.display = 'none';
@@ -221,7 +213,6 @@
 	$(function() {
 		mainMenu();
 		shareMenu();
-		parallax();
 		showThumb();
 		showlove();
 		gotop();
@@ -232,7 +223,8 @@
 		mobiClick();
 		xControl();
 		donateConfig();
-	if (!isindex&&copen) {
+	if(xb.site_s=='Y') sidebaraffix();
+	if(!isindex&&copen){
 		var OwO_demo = new OwO({
 			logo: 'OωO表情',
 			container: document.getElementsByClassName('OwO')[0],
@@ -263,7 +255,7 @@ document.body.oncopy=function(){alert('已复制所选内容。请务必遵守�
 window.onload = function() {
 	var now = new Date().getTime();
 	var page_load_time = now - performance.timing.navigationStart;
-	console.clear();
+	//console.clear();
 	console.log('项目托管:https://github.com/xb2016/kratos');
 	console.log('%cwww.fczbl.vip', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:2em;');
 	console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','background: #fff;color: #333;text-shadow: 0 0 2px #eee, 0 0 3px #eee, 0 0 3px #eee, 0 0 2px #eee, 0 0 3px #eee;');
