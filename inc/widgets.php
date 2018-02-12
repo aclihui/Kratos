@@ -1,7 +1,6 @@
 <?php
-
 //The article heat
-function most_comm_posts($days=30,$nums=5) {
+function most_comm_posts($days=30,$nums=5){
     global $wpdb;
     date_default_timezone_set("PRC");
     $today = date("Y-m-d H:i:s");
@@ -27,19 +26,18 @@ function most_comm_posts($days=30,$nums=5) {
     }
     echo $output;
 }
-
-function kratos_widgets_init() {
-    register_sidebar( array(
-        'name' => '侧边栏工具',
-        'id' => 'sidebar_tool',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h4 class="widget-title">',
-        'after_title' => '</h4>'
-    ) );   
+function kratos_widgets_init(){
+    register_sidebar(array(
+        'name'=>'侧边栏工具',
+        'id'=>'sidebar_tool',
+        'before_widget'=>'<aside id="%1$s" class="widget %2$s clearfix">',
+        'after_widget'=>'</aside>',
+        'before_title'=>'<h4 class="widget-title">',
+        'after_title'=>'</h4>'
+    ));   
 }
 add_action('widgets_init','kratos_widgets_init');
-function remove_default_widget() {
+function remove_default_widget(){
        unregister_widget('WP_Widget_Recent_Posts');
        unregister_widget('WP_Widget_Tag_Cloud');
        unregister_widget('WP_Widget_RSS');
@@ -48,10 +46,10 @@ function remove_default_widget() {
        unregister_widget('WP_Widget_Search');
        unregister_widget('WP_Nav_Menu_Widget');
        unregister_widget('WP_Widget_Meta');
- //    unregister_widget('WP_Widget_Recent_Comments');//移除近期评论
- //    unregister_widget('WP_Widget_Text');//移除文本框
- //    unregister_widget('WP_Widget_Archives');//移除文章归档
- //    unregister_widget('WP_Widget_Categories');//移除分类目录
+ //    unregister_widget('WP_Widget_Recent_Comments');//近期评论
+ //    unregister_widget('WP_Widget_Text');//文本框
+ //    unregister_widget('WP_Widget_Archives');//文章归档
+ //    unregister_widget('WP_Widget_Categories');//分类目录
 }
 add_action('widgets_init','remove_default_widget');
 class kratos_widget_ad extends WP_Widget {
@@ -63,7 +61,7 @@ class kratos_widget_ad extends WP_Widget {
         );
         parent::__construct(false,false,$widget_ops);
     }
-    function widget($args,$instance) {
+    function widget($args,$instance){
         extract($args);
         $aurl = $instance['aurl']?$instance['aurl']:'';
         $title = $instance['title']?$instance['title']:'';
@@ -79,10 +77,10 @@ class kratos_widget_ad extends WP_Widget {
         <?php }
         echo $after_widget;
     }
-    function update($new_instance,$old_instance) {
+    function update($new_instance,$old_instance){
         return $new_instance;
     }
-    function form($instance) {
+    function form($instance){
         @$title = esc_attr($instance['title']);
         @$aurl = esc_attr($instance['aurl']);
         @$imgurl = esc_attr($instance['imgurl']);
@@ -111,13 +109,13 @@ class kratos_widget_ad extends WP_Widget {
 class kratos_widget_about extends WP_Widget {
     function __construct() {
         $widget_ops = array(
-            'classname'  => 'amadeus_about',
+            'classname'  => 'kratos_about',
             'name'       => '个人简介',
             'description'=> 'Kratos主题特色组件 - 个人简介'
         );
         parent::__construct(false,false,$widget_ops);
     }
-    function widget($args,$instance) {
+    function widget($args,$instance){
         extract($args);
         $profile = $instance['profile']?$instance['profile']:'';
         $imgurl = $instance['imgurl']?$instance['imgurl']:'';
@@ -161,10 +159,10 @@ class kratos_widget_about extends WP_Widget {
         <?php }
         echo $after_widget;
     }
-    function update($new_instance,$old_instance) {
+    function update($new_instance,$old_instance){
         return $new_instance;
     }
-    function form($instance) {
+    function form($instance){
         @$imgurl = esc_attr($instance['imgurl']);
         @$bkimgurl = esc_attr($instance['bkimgurl']);
         @$profile = esc_attr($instance['profile']);
@@ -197,7 +195,7 @@ class kratos_widget_tags extends WP_Widget {
         );
         parent::__construct(false,false,$widget_ops);
     }
-    function widget($args, $instance) {
+    function widget($args, $instance){
         extract($args);
         $result = '';
         $title = $instance['title']?esc_attr($instance['title']):'';
@@ -224,7 +222,7 @@ class kratos_widget_tags extends WP_Widget {
         $result .= $after_widget;
         echo $result;
     }
-    function update($new_instance,$old_instance) {
+    function update($new_instance,$old_instance){
         if(!isset($new_instance['submit'])) return false;
         $instance = $old_instance;
         $instance['title'] = esc_attr($new_instance['title']);
@@ -233,7 +231,7 @@ class kratos_widget_tags extends WP_Widget {
         $instance['order'] = esc_attr($new_instance['order']);
         return $instance;
     }
-    function form($instance) {
+    function form($instance){
         global $wpdb;
         $instance = wp_parse_args((array) $instance,array('title'=>'标签聚合','number'=>'20','orderby'=>'count','order'=>'RAND'));
         $title =  esc_attr($instance['title']);
@@ -276,7 +274,7 @@ class kratos_widget_posts extends WP_Widget {
         );
         parent::__construct(false,false,$widget_ops);
     }
-    function widget($args, $instance) {
+    function widget($args, $instance){
         extract($args);
         $result = '';
         $number = (!empty($instance['number']))?intval($instance['number']):5;
@@ -321,13 +319,13 @@ class kratos_widget_posts extends WP_Widget {
             </div>
         </aside>
         <?php }
-    function update($new_instance,$old_instance) {
+    function update($new_instance,$old_instance){
         if(!isset($new_instance['submit'])) return false;
         $instance = $old_instance;
         $instance['number'] = intval($new_instance['number']);
         return $instance;
     }
-    function form($instance) {
+    function form($instance){
         global $wpdb;
         $instance = wp_parse_args((array) $instance,array('number'=>'5'));
         $number = intval($instance['number']);
@@ -338,7 +336,7 @@ class kratos_widget_posts extends WP_Widget {
         <input type="hidden" id="<?php echo $this->get_field_id('submit'); ?>" name="<?php echo $this->get_field_name('submit'); ?>" value="1" />
         <?php }
 }
-function kratos_register_widgets() {
+function kratos_register_widgets(){
     register_widget('kratos_widget_ad'); 
     register_widget('kratos_widget_about'); 
     register_widget('kratos_widget_tags'); 
