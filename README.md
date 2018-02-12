@@ -81,7 +81,6 @@ kratos/
 │   ├── pointer.cur
 │   ├── spig.png
 │   ├── sticky.png
-│   ├── ul-li.png
 │   ├── wechat.png
 │   ├── wechatpayqr.png
 │   └── weixin.png
