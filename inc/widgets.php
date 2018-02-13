@@ -46,6 +46,7 @@ function remove_default_widget(){
        unregister_widget('WP_Widget_Search');
        unregister_widget('WP_Nav_Menu_Widget');
        unregister_widget('WP_Widget_Meta');
+       unregister_widget('WP_Widget_Media_Image');
  //    unregister_widget('WP_Widget_Recent_Comments');//近期评论
  //    unregister_widget('WP_Widget_Text');//文本框
  //    unregister_widget('WP_Widget_Archives');//文章归档
