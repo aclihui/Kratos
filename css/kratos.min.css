@@ -262,7 +262,7 @@ a.comment-reply-link:hover{color:#000;box-shadow:0 0 1px #505050}
 .comment-form .btn-primary{width:100%;border-radius:0}
 .comment-form .comment-author{margin-top:10px}
 .comment-form .logged-in-as a{color:#848484}
-.wp-smiley{width:auto!important;height:auto!important;vertical-align:text-bottom!important;max-height:8em!important;margin-top:-4px;display:inline}
+img.wp-smiley{width:auto!important;height:auto!important;vertical-align:text-bottom!important;max-height:8em!important;margin-top:-4px;display:inline}
 .OwO{position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 .OwO:hover .OwO-logo{color:#444}
 .OwO.OwO-open .OwO-logo{border-radius:4px 4px 0 0;border-bottom:0;color:#444}
