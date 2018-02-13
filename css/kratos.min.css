@@ -72,7 +72,7 @@ table,table tbody tr th{text-align:center!important}
 .unhide .info{font-size:12px;color:red}
 .spig{display:block;width:130px;height:170px;position:absolute;bottom:300px;left:160px;z-index:9999}
 .spig #message{color:#191919;border:1px solid #c4c4c4;background:#ddd;-webkit-border-radius:5px;border-radius:5px;min-height:1em;padding:5px;top:-45px;position:absolute;text-align:center;width:auto!important;z-index:10000;-webkit-box-shadow:0 0 15px #eee;border-color:#eee;box-shadow:0 0 15px #eee;outline:0}
-.spig.mumu{width:130px;height:170px;cursor:url(../images/move.cur),auto;background:url(../images/spig.png) no-repeat}
+.spig .mumu{width:130px;height:170px;cursor:url(../images/move.cur),auto;background:url(../images/spig.png) no-repeat}
 #Snow{position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;background:rgba(225,225,225,.1);pointer-events:none}
 #kratos-wrapper{overflow-x:hidden;position:relative}
 #offcanvas-menu{position:fixed;bottom:0;top:60px;z-index:5;background:rgba(42,42,42,.9);width:240px;padding:20px;overflow-y:auto;transition:right .3s;-webkit-transition:right .3s}
