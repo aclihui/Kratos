@@ -37,14 +37,12 @@ function kratos_theme_scripts(){
         wp_enqueue_style('animate',$dir.'/css/animate.min.css',array(), '3.5.1'); 
         wp_enqueue_style('awesome',$dir.'/css/font-awesome.min.css',array(),'4.7.1');
         wp_enqueue_style('bootstrap',$dir.'/css/bootstrap.min.css',array(),'3.3.7');
-        wp_enqueue_style('superfish',$dir.'/css/superfish.min.css',array(),'r7');
         wp_enqueue_style('layer',$dir.'/css/layer.min.css',array(),'3.1.0');
         wp_enqueue_style('kratos',$dir.'/css/kratos.min.css',array(),KRATOS_VERSION);
         wp_enqueue_script('jquery',$dir.'/js/jquery.min.js',array(),'2.1.4');
         wp_enqueue_script('easing',$dir.'/js/jquery.easing.min.js',array(), '1.3.0'); 
         wp_enqueue_script('layer',$dir.'/js/layer.min.js',array(),'3.1.0');
         wp_enqueue_script('bootstrap',$dir.'/js/bootstrap.min.js',array(),'3.3.7');
-        wp_enqueue_script('superfish',$dir.'/js/superfish.js',array(),'1.0.0');
         wp_enqueue_script('kratos',$dir.'/js/kratos.js',array(),KRATOS_VERSION);
     }
     if(comments_open()&&is_single()||is_page()) wp_enqueue_script('OwO',$dir.'/js/OwO.min.js',array(),'1.0.1');

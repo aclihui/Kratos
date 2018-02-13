@@ -17,7 +17,7 @@ get_header();get_header('abstract'); ?>
                 <article>
                     <div class="kratos-hentry kratos-post-inner clearfix">
                         <div class="kratos-post-content">
-                        <h2 style="text-align:center;font-size:18pt">dalao们</h2>
+                        <h2 class="title-h2" style="text-align:center;font-size:18pt">dalao们</h2>
                         <p style="text-align:center"><span style="color:#999999">dalao们的链接，每次刷新随机排序~</span></p>
                         <div class="linkpage">
                             <hr/>

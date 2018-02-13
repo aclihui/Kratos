@@ -1,15 +1,15 @@
                 <footer>
                     <div id="footer">
                         <div class="cd-tool text-center">
-                            <?php if(current_user_can('manage_options')&&is_single()||is_page()) echo edit_post_link('<span class="fa fa-pencil"></span>'); ?>
-                            <a class="<?php if(kratos_option('cd_weixin')) echo 'cd-top2 '; ?>cd-top"><span class="fa fa-chevron-up"></span></a>
-                               <?php if(kratos_option('cd_weixin')) echo '<a id="weixin-img" class="cd-weixin"><span class="fa fa-weixin"></span><div id="weixin-pic"><img src="'.kratos_option('weixin_image').'"></div></a>'; ?>
-                            <a class="search-box">
+                            <?php if(current_user_can('manage_options')&&is_single()||is_page()){ ?><div class="<?php if(kratos_option('cd_weixin')) echo 'edit-box2 '; ?>edit-box"><?php echo edit_post_link('<span class="fa fa-pencil"></span>'); ?></div><?php } ?>
+							<div class="<?php if(kratos_option('cd_weixin')) echo 'gotop-box2 '; ?>gotop-box"><div class="gotop-btn"><span class="fa fa-chevron-up"></span></div></div>
+                            <?php if(kratos_option('cd_weixin')) echo '<div id="wechat-img" class="wechat-img"><span class="fa fa-weixin"></span><div id="wechat-pic"><img src="'.kratos_option('weixin_image').'"></div></div>'; ?>
+                            <div class="search-box">
                                 <span class="fa fa-search"></span>
                                 <form class="search-form" role="search" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
                                     <input type="text" name="s" id="search" placeholder="Search..." style="display:none"/>
                                 </form>
-                            </a>
+                            </div>
                         </div>
                         <div class="container">
                             <div class="row">
