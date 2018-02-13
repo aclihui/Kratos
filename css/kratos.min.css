@@ -102,7 +102,7 @@ table,table tbody tr th{text-align:center!important}
 #kratos-header-section .sf-menu>li>ul:after{position:absolute;top:-8px;left:58px;border-right:8px solid transparent;border-bottom:8px solid #fff;border-left:8px solid transparent;content:''}
 #kratos-header-section .sub-menu{position:absolute;display:none;top:100%;z-index:99;width:135px;padding:10px 5px;background:#fff;border-radius:5px;left:-18px;-webkit-box-shadow:0 5px 15px rgba(0,0,0,.15);box-shadow:0 5px 15px rgba(0,0,0,.15)}
 #kratos-header-section .sub-menu .sub-menu{padding:5px 5px}
-#kratos-header-section .sub-menu a{letter-spacing:0;padding:5px 15px!important;line-height:20px;color:#848484!important;text-transform:none;background:0}
+#kratos-header-section .sub-menu a{letter-spacing:0;padding:7px 15px!important;line-height:20px;color:#848484!important;text-transform:none;background:0}
 #kratos-header-section .sub-menu a:hover{color:#51aded!important}
 #kratos-header-section .sub-menu li a{text-align:center}
 #kratos-header-section .sub-menu>li>.sub-menu{left:100%;top:0}
