@@ -287,45 +287,51 @@ img.wp-smiley{width:auto!important;height:auto!important;vertical-align:text-bot
 .OwO .OwO-body .OwO-bar .OwO-packages li:nth-child(1){border-radius:0 0 0 3px}
 .OwO .OwO-body .OwO-bar .OwO-packages li:hover{background:#eee}
 .OwO .OwO-body .OwO-bar .OwO-packages .OwO-package-active{background:#eee;-webkit-transition:.3s;transition:.3s}
-#kratos-widget-area .widget{margin:0 0 15px;padding:15px 25px;background-color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1);border-radius:0}
-#kratos-widget-area .amadeus_about{padding:0}
-#kratos-widget-area .widget_kratos_poststab{padding:15px 30px}
-#kratos-widget-area .widget-title{position:relative;margin:0 0 15px;padding-bottom:15px;border-bottom:1px solid #e7e7e7}
-#kratos-widget-area .widget-title::after{position:absolute;left:0;bottom:0;height:2.5px!important;width:73px;background-color:#51aded;content:''}
-#kratos-widget-area .widget_kratos_tags .widget-title::after{height:2px!important}
 .affix-top{position:relative}
 .affix{top:92px}
 .affix,.affix-bottom{width:293.31px}
 .affix-bottom{position:absolute}
 @media(min-width:1200px){.affix,.affix-bottom{width:360px}}
+.widget{margin:0 0 15px;padding:20px 25px;background-color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1);border-radius:0}
+.widget-title{position:relative;margin:0 0 15px;padding-bottom:15px;border-bottom:1px solid #e7e7e7}
+.widget-title::after{position:absolute;left:0;bottom:0;height:2.5px!important;width:73px;background-color:#51aded;content:''}
 .widget img{max-width:100%;height:auto}
 .widget a{color:#4c4c4c;text-decoration:none;-webkit-transition:color .3s;transition:color .3s}
 .widget a:hover{color:#618eba}.widget li{padding-top:2px;padding-bottom:2px}
 .widget .children{padding-left:30px}
-.kratos_about{padding:0!important}
-.kratos_about p{margin-bottom:1em;font-size:16px;margin:0}
-.kratos_about .photo-wrapper{width:100%}
-.kratos_about .photo-wrapper img{margin:-50px 0 0;max-height:90px;border:rgba(255,255,255,.4) 4px solid;border-radius:50%}
-.kratos_about .photo-background{height:120px}
-.kratos_about .textwidget{margin:10px 30px 30px}
+.widget_kratos_about{padding:0!important}
+.widget_kratos_about p{margin-bottom:1em;font-size:16px;margin:0}
+.widget_kratos_about .photo-wrapper{width:100%}
+.widget_kratos_about .photo-wrapper img{margin:-50px 0 0;max-height:90px;border:rgba(255,255,255,.4) 4px solid;border-radius:50%}
+.widget_kratos_about .photo-background{height:120px}
+.widget_kratos_about .textwidget{margin:10px 0 30px 0}
 .widget_kratos_ad img{max-width:300px;height:auto}
+.widget_kratos_tags .widget-title::after{height:2px!important}
 .widget_kratos_tags .tag_clouds a{display:inline-block;margin:0 2px 4px 0;padding:4px 12px;border:1px solid #f0f0f0;color:#666;text-transform:uppercase;line-height:19px;font-size:13px!important}
+.widget_kratos_poststab{padding:7px 30px 15px 30px}
 .widget_kratos_poststab .nav-tabs>li>a:focus,.nav-tabs>li>a:hover,a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,button.list-group-item:hover{color:#000!important}
 .widget_kratos_poststab .nav-tabs.nav-justified>li>a{margin-right:0;border-bottom:0;border-radius:0}
 .widget_kratos_poststab .nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border:0}
 .widget_kratos_poststab #tabul li{border-bottom:3px solid #f2f2f2;list-style:none;text-align:center;font-size:16px;cursor:url(../images/pointer.cur),auto}
 .widget_kratos_poststab #tabul .active{position:relative;border-bottom:3px solid #51aded;color:#000}
-.widget_kratos_poststab .tab-content{margin:0 0 -18px}
+.widget_kratos_poststab .tab-content{margin:0 8px -18px 8px}
 .widget_kratos_poststab .tab-content .list-group a:last-child,.widget_kratos_poststab .tab-content .list-group a:nth-last-child(2){border-bottom:0}
 .widget_kratos_poststab .tab-content .list-group a{overflow:hidden;border-bottom:1px dashed #b4afaf;color:#666;text-decoration:none;text-overflow:ellipsis;white-space:nowrap;-webkit-transition:color .3s;transition:color .3s}
 .widget_kratos_poststab .list-group-item{position:relative;display:block;margin-bottom:0;padding:8px 0;border:0}
 .widget_kratos_poststab .list-group-item:first-child{margin-top:1px}
 .widget_kratos_poststab .list-group-item i{margin:0 5px 0 0}
+.widget_kratos_comments .recentcomments{padding:0 5px}
+.widget_kratos_comments .comment-listitem{list-style:none;padding:8px 0!important}
+.widget_kratos_comments .comment-user{font-size:13px}
+.widget_kratos_comments .comment-avatar{float:left}
+.widget_kratos_comments .comment-avatar img{float:left;margin-right:8px;width:50px;height:50px;border-radius:50%;-webkit-box-shadow:0 .125rem 1.0625rem 0 rgba(0,0,0,.1);box-shadow:0 .125rem 1.0625rem 0 rgba(0,0,0,.1)}
+.widget_kratos_comments .comment-author{margin-right:10px}
+.widget_kratos_comments .comment-content{font-size:14px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;width:75%}
+.widget_kratos_comments .wp-smiley{max-height:20px !important}
 .widget_archive li::before,.widget_categories li::before,.widget_pages li::before,.widget_recent_comments li::before,.widget_recent_entries li::before{font-family:Fontawesome;font-size:15px}
 .widget_archive ul,.widget_categories ul,.widget_pages ul,.widget_recent_comments ul,.widget_recent_entries ul{list-style:none;padding:0}
 .widget_archive li::before{content:'\f133';margin-right:8px}
 .widget_pages li::before{content:'\f016';margin-right:8px}
-.widget_recent_comments li::before{content:'\f0e5';margin-right:8px}
 .widget_categories ul{margin-bottom:1em;font-size:16px}
 .widget_categories li::before{content:'\f114';margin-right:8px}
 .cd-tool>div:hover{cursor:url(../images/pointer.cur),auto}
@@ -354,6 +360,7 @@ img.wp-smiley{width:auto!important;height:auto!important;vertical-align:text-bot
 #footer p{color:rgba(255,255,255,.3);letter-spacing:1px;font-size:14px;text-transform:uppercase}
 #footer p a{color:rgba(255,255,255,.5)}
 #footer .govimg{display:inline-block;margin-top:-4px;margin-right:6px;width:14px;height:1pc;background:url(../images/icon-police.png) 0 0 no-repeat;vertical-align:middle}
+@media(min-width:992px){#footer .col-md-offset-3{margin-left:10%}#footer .col-md-6{width:80%}}
 .kratos-social-icons>a{padding:4px 14px;color:#51aded}
 .kratos-social-icons>a i{font-size:30px}
 .kratos-social-icons>a:active,.kratos-social-icons>a:focus,.kratos-social-icons>a:hover{text-decoration:none;color:#5a5a5a}
