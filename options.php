@@ -125,7 +125,6 @@ function optionsframework_options(){
         'name'=>'特色图片（留空使用随机图片20张）',
         'desc'=>'选择你喜欢的默认特色图片（仅针对新式布局）',
         'id'=>'default_image',
-        'std'=>get_template_directory_uri().'/images/thumb/thumb_1.jpg',
         'type'=>'upload');
     $options[] = array(
         'name'=>'微信二维码',
@@ -197,7 +196,7 @@ function optionsframework_options(){
             'pic'=>'图片',
             'color'=>'纯色'));
     $options[] = array(
-        'name'=>'以下为图片Banner的设置',
+        'name'=>'以下为图片Header的设置',
         'desc'=>'只有顶部显示模式为图片才有效。');
     $options[] = array(
         'name'=>'顶部图片',
@@ -207,7 +206,7 @@ function optionsframework_options(){
     $options[] = array(
         'name'=>'图片文字-1(可做文字标题)',
         'id'=>'background_image_text1',
-        'std'=>'Kratos',
+        'std'=>'Kratos(M)',
         'type'=>'text');
     $options[] = array(
         'name'=>'图片文字-2(可做站点描述)',
@@ -215,11 +214,11 @@ function optionsframework_options(){
         'std'=>'A responsible theme for WordPress',
         'type'=>'text');
     $options[] = array(
-        'name'=>'以下为纯色Banner的设置',
+        'name'=>'以下为纯色Header的设置',
         'desc'=>'只有顶部显示模式为纯色才有效。');
     $options[] = array(
-        'name'=>'Banner颜色',
-        'desc'=>'移动端的banner颜色也是这个设置哦',
+        'name'=>'Nav Bar颜色',
+        'desc'=>'同移动端Header的颜色',
         'id'=>'banner_color',
         'std'=>'#16171a',
         'type'=>'color');
@@ -313,7 +312,7 @@ function optionsframework_options(){
         'type'=>'heading');
     $options[] = array(
         'name'=>'是否启用轮播',
-        'desc'=>'图片宽度建议大于750像素',
+        'desc'=>'图片宽度建议大于750像素，请保证所有图片比例一致。',
         'id'=>'kratos_banner',
         'std'=>'0',
         'type'=>'select',
@@ -384,7 +383,7 @@ function optionsframework_options(){
         'name'=>'发信人',
         'desc'=>'请填写发件人姓名',
         'id'=>'mail_name',
-        'std'=>'FCZBL_No_Replay',
+        'std'=>'犬の窝-邮件通知',
         'type'=>'text');
     $options[] = array(
         'name'=>'邮件服务器',
@@ -474,7 +473,7 @@ function optionsframework_options(){
         'std'=>'',
         'type'=>'text');
     $options[] = array(
-        'name'=>'GitHub',
+        'name'=>'GayHub',
         'desc'=>'连接前要带有 http:// 或者 https:// ',
         'id'=>'social_github',
         'std'=>'',
@@ -543,7 +542,7 @@ function optionsframework_options(){
         'name'=>'注册登录页面背景',
         'desc'=>'因为默认使用了Bing每日美图API，所以这里只能手动写链接了...',
         'id'=>'login_bak',
-        'std'=>'https://www.fczbl.vip/api/bing/index.php',
+        'std'=>'https://www.fczbl.vip/api/bing',
         'type'=>'text');
     $options[] = array(
         'name'=>'注册登录页面站点图标',
