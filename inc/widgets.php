@@ -2,7 +2,6 @@
 //The article heat
 function most_comm_posts($days=30,$nums=5){
     global $wpdb;
-    date_default_timezone_set("PRC");
     $today = date("Y-m-d H:i:s");
     $daysago = date("Y-m-d H:i:s",strtotime($today)-($days*24*60*60));
     $result = $wpdb->get_results("SELECT comment_count,ID,post_title,post_date FROM $wpdb->posts WHERE post_date BETWEEN '$daysago' AND '$today' and post_type='post' and post_status='publish' ORDER BY comment_count DESC LIMIT 0 ,$nums");
