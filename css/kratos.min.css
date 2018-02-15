@@ -127,6 +127,7 @@ table,table tbody tr th{text-align:center!important}
 #slide{margin-bottom:20px}#slide .carousel-indicators li{margin:1px 5px}
 #slide .carousel-inner>.item>img,.carousel-inner>.item>a>img{width:100%}
 #slide .carousel-control.left,.carousel-control.right{background:0;background-image:none;filter:none}
+#slide .carousel-indicators{bottom:0;z-index:2;margin-bottom:8px}
 #kratos-blog-post{padding:20px 0}
 #kratos-blog-post .aligncenter{margin-left:auto;margin-right:auto}
 #kratos-blog-post p .aligncenter{display:block}
@@ -375,72 +376,73 @@ img.wp-smiley{width:auto!important;height:auto!important;vertical-align:text-bot
 .linkpage li a h4:hover{color:#51aded}
 .linkpage li a h4,.linkpage li a p{cursor:url(../images/pointer.cur),auto;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;line-height:1.4}
 .linkpage li a p{font-size:12px;color:#999;padding-left:90px}
-@media screen and (max-width:1200px){
-	.kratos-entry-content-new{height:80px;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:1200px){
+.kratos-entry-content-new{height:80px;overflow:hidden;text-overflow:ellipsis}
 }
-@media screen and (max-width:992px){
-	.kratos-post-meta span{font-size:12px}
-	.kratos-post-meta span i:not(:first-child){margin-left:10px}
-	.kratos-entry-content-new{height:auto;overflow:hidden;text-overflow:ellipsis}
-	.title-h2{padding:0 15px;font-size:18px}
+@media(max-width:992px){
+.kratos-post-meta span{font-size:12px}
+.kratos-post-meta span i:not(:first-child){margin-left:10px}
+.kratos-entry-content-new{height:auto;overflow:hidden;text-overflow:ellipsis}
+.title-h2{padding:0 15px;font-size:18px}
 }
-@media screen and (max-width:768px){
-	h1{font-size:25px!important}
-	h2{font-size:21px}
-	h3{font-size:18px}
-	h4{font-size:15px}
-	.kratos-nav-toggle{display:block}
-	.color-logo{text-align:center;width:100%;font-size:25px;font-weight:400;height:60px;padding:7px}
-	.color-logo a,.color-logo a:hover{color:#fff!important;padding:15px 0}
-	.color-logo img{max-width:175px;height:35px}
-	.kratos-cover{height:inherit;padding:3em 0}
-	.kratos-start{height:45px!important}
-	.kratos-cover.kratos-cover_2.text-center,.kratos-overlay{display:none}
-	#kratos-header-section{background:#16171a}
-	#kratos-blog-post{padding:2em 0 1em;background:#f5f5f5!important}
-	.kratos-post-meta span{font-size:9pt}
-	.kratos-post-meta span i:not(:first-child){margin-left:5px}
-	#kratos-menu-wrap,.kratos-post-inner-new header .label{display:none}
-	.kratos-post-content embed{max-width:100%;height:auto}
-	.kratos-entry-footer .post-like-donate a{width:75pt;height:31px;font-size:13px;line-height:29px}
-	.share-plain{width:30px!important;height:30px!important;font-size:14px}
-	.share-plain .icon-wrap{width:29px;height:29px;line-height:29px}
-	.share-plain .share-int{margin-left:-75px;padding:5px 15px;width:150px}
-	.share-plain .share-int p{margin:10px 0 5px;font-size:10px}
-	.kratos-entry-thumb-new{position:relative;float:none;width:auto;height:auto;overflow:hidden;padding:0;margin:0;margin-bottom:20px}
-	.kratos-entry-thumb-new img{height:auto;max-width:100%;width:750px;padding:0;border:0}
-	.kratos-post-inner-new{margin-left:0;height:auto;padding:0 20px}
-	.kratos-post-meta-new .read-more{margin-right:8px}
-	.kratos-entry-content-new{height:auto}
-	.kratos-post-meta-new a{margin-right:10px}
-	.downbtn{padding:9px 1pc;font-size:14px}
-	.hide_notice,.info{font-size:11px}
+@media(max-width:768px){
+h1{font-size:25px!important}
+h2{font-size:21px}
+h3{font-size:18px}
+h4{font-size:15px}
+.kratos-nav-toggle{display:block}
+.color-logo{text-align:center;width:100%;font-size:25px;font-weight:400;height:60px;padding:7px}
+.color-logo a,.color-logo a:hover{color:#fff!important;padding:15px 0}
+.color-logo img{max-width:175px;height:35px}
+.kratos-cover{height:inherit;padding:3em 0}
+.kratos-start{height:45px!important}
+.kratos-cover.kratos-cover_2.text-center,.kratos-overlay{display:none}
+#kratos-header-section{background:#16171a}
+#kratos-blog-post{padding:2em 0 1em;background:#f5f5f5!important}
+.kratos-post-meta span{font-size:9pt}
+.kratos-post-meta span i:not(:first-child){margin-left:5px}
+#kratos-menu-wrap,.kratos-post-inner-new header .label{display:none}
+.kratos-post-content embed{max-width:100%;height:auto}
+.kratos-entry-footer .post-like-donate a{width:75pt;height:31px;font-size:13px;line-height:29px}
+.share-plain{width:30px!important;height:30px!important;font-size:14px}
+.share-plain .icon-wrap{width:29px;height:29px;line-height:29px}
+.share-plain .share-int{margin-left:-75px;padding:5px 15px;width:150px}
+.share-plain .share-int p{margin:10px 0 5px;font-size:10px}
+.kratos-entry-thumb-new{position:relative;float:none;width:auto;height:auto;overflow:hidden;padding:0;margin:0;margin-bottom:20px}
+.kratos-entry-thumb-new img{height:auto;max-width:100%;width:750px;padding:0;border:0}
+.kratos-post-inner-new{margin-left:0;height:auto;padding:0 20px}
+.kratos-post-meta-new .read-more{margin-right:8px}
+.kratos-entry-content-new{height:auto}
+.kratos-post-meta-new a{margin-right:10px}
+.downbtn{padding:9px 1pc;font-size:14px}
+.hide_notice,.info{font-size:11px}
 }
-@media screen and (min-width:768px){
-	#kratos-header-section.color-banner{height:71px}
-	.color-banner #kratos-menu-wrap{float:right;width:80%}
-	.kratos-start.kratos-hero{height:70px}
-	.color-banner .nav-header{padding:14px 0}
-	.color-logo{float:left;width:20%}
-	.color-logo a{color:#fff;font-size:24px;padding-left:15px;font-weight:500}
-	.color-logo a:hover{color:#fff!important}
+@media(min-width:768px){
+#kratos-header-section.color-banner{height:71px}
+.color-banner #kratos-menu-wrap{float:right;width:80%}
+.kratos-start.kratos-hero{height:70px}
+.color-banner .nav-header{padding:14px 0}
+.color-logo{float:left;width:20%}
+.color-logo a{color:#fff;font-size:24px;padding-left:15px;font-weight:500}
+.color-logo a:hover{color:#fff!important}
 }
-@media screen and (max-width:535px){
-	.kratos-post-meta .hd,.pull-date,.spig{display:none}
+@media(max-width:535px){
+.kratos-post-meta .hd,.pull-date,.spig{display:none}
+#slide .carousel-indicators{margin-bottom:0}
 }
-@media screen and (max-width:530px){
-	.kratos-entry-footer .post-like-donate a{width:80px}
-	.kratos-entry-footer .footer-tag a{padding:2px 4px}
+@media(max-width:530px){
+.kratos-entry-footer .post-like-donate a{width:80px}
+.kratos-entry-footer .footer-tag a{padding:2px 4px}
 }
-@media screen and (max-width:460px){
-	.linkpage li{width:97%}
-	.linkpage ul{padding-left:5px}
+@media(max-width:460px){
+.linkpage li{width:97%}
+.linkpage ul{padding-left:5px}
 }
-@media screen and (max-width:450px){
-	.kratos-entry-footer .post-like-donate a{width:70px;height:31px;font-size:13px;line-height:29px}
-	.downbtn{padding:8px 1pc}
+@media(max-width:450px){
+.kratos-entry-footer .post-like-donate a{width:70px;height:31px;font-size:13px;line-height:29px}
+.downbtn{padding:8px 1pc}
 }
-@media screen and (max-width:415px){
-	.kratos-entry-footer .post-like-donate a{width:65px;height:31px;font-size:9pt;line-height:29px}
-	.downbtn{padding:8px 13px}
+@media(max-width:415px){
+.kratos-entry-footer .post-like-donate a{width:65px;height:31px;font-size:9pt;line-height:29px}
+.downbtn{padding:8px 13px}
 }
