@@ -3,7 +3,7 @@ input{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,opensans,Optim
 body{overflow-y:auto}
 #login{width:320px;background:rgba(0,0,0,.2);padding:0 20px 0 20px;top:0;right:15%;position:absolute;box-shadow:0 0 5px 0 #333;height:100%}
 @media(max-width:470px){#login{right:0;left:0}}
-.login h1{height:18%;margin-bottom:20px;position:relative}
+.login h1{height:18%;position:relative}
 .login h1 a{background-size:200px 50px;background-position:top center;background-repeat:no-repeat;width:200px;margin:auto;height:50px;text-indent:-9999px;overflow:hidden;position:absolute;bottom:0;left:0;right:0;display:block}
 #login .description,#nav,#reg_passmail{color:#FFF}
 .login label{color:#FFF;font-size:14px}
