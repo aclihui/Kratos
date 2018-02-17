@@ -1,8 +1,8 @@
 window.setInterval(getkoto,6000); 
 function getkoto(){
-	$.post("https://www.fczbl.vip/api/hitokoto/",function(hitokoto) {
-		$(".hitokoto").html(hitokoto);
-	});
+    $.post("https://www.fczbl.vip/api/hitokoto/",function(hitokoto) {
+        $(".hitokoto").html(hitokoto);
+    });
 }
 jQuery(document).ready(function ($) {
     $("#spig").mousedown(function (e) {
@@ -55,10 +55,10 @@ jQuery(document).ready(function ($) {
         top: $(".spig").offset().top + 300,
         left: document.body.offsetWidth - 200
     },
-	{
-	    queue: false,
-	    duration: 1000
-	});
+    {
+        queue: false,
+        duration: 1000
+    });
 });
 jQuery(document).ready(function ($) {
     $('h2 a').click(function () {
@@ -108,31 +108,31 @@ jQuery(document).ready(function ($) {
     });
     $('.Share').mouseover(function(){
         showMessage('好东西要让更多人知道才行哦');
-	});
+    });
     $('#footer p a i.fa-weibo').mouseover(function(){
         showMessage('微博？求关注喵！');
-	});
+    });
     $('#footer p a i.fa-envelope').mouseover(function(){
         showMessage('邮件我会及时回复的！');
-	});
+    });
     $('#footer p a i.fa-twitter').mouseover(function(){
         showMessage('Twitter?好像是不存在的东西?');
-	});
+    });
     $('#footer p a i.fa-facebook-official').mouseover(function(){
         showMessage('emmm...FB已经好久没上了...');
-	});
+    });
     $('#footer p a i.fa-github').mouseover(function(){
         showMessage('GayHub！我是新手！');
-	});
-	$('.cd-gb-a').mouseover(function(){
+    });
+    $('.cd-gb-a').mouseover(function(){
         showMessage('既然来了就留下点什么吧~');
-	});
-	$('#weixin-img').mouseover(function(){
+    });
+    $('#weixin-img').mouseover(function(){
         showMessage('这是我的微信二维码~');
-	});
-	$('.cd-top').mouseover(function(){
+    });
+    $('.cd-top').mouseover(function(){
         showMessage('要回到开始的地方么？');
-	});
+    });
 });
 jQuery(document).ready(function ($) {
     window.setInterval(function () {
@@ -151,11 +151,11 @@ jQuery(document).ready(function ($) {
             $(".spig").animate({
             left: document.body.offsetWidth/2*(1+s[i1]),
             top:  (window.innerHeight+document.documentElement.scrollTop-170)-(window.innerHeight-170)/2*(1+s[i2])
-			},
-			{
-			    duration: 2000,
-			    complete: showMessage(msgs[i])
-			});
+            },
+            {
+                duration: 2000,
+                complete: showMessage(msgs[i])
+            });
     }, 45000);
 });
 jQuery(document).ready(function ($) {
@@ -165,10 +165,10 @@ jQuery(document).ready(function ($) {
             top: $("#author").offset().top - 70,
             left: $("#author").offset().left - 170
         },
-		{
-		    queue: false,
-		    duration: 1000
-		});
+        {
+            queue: false,
+            duration: 1000
+        });
     });
     $("#email").click(function () {
         showMessage("留下你的邮箱，不然就是无头像人士了！");
@@ -176,10 +176,10 @@ jQuery(document).ready(function ($) {
             top: $("#email").offset().top - 70,
             left: $("#email").offset().left - 170
         },
-		{
-		    queue: false,
-		    duration: 1000
-		});
+        {
+            queue: false,
+            duration: 1000
+        });
     });
     $("#url").click(function () {
         showMessage("快快告诉我你的家在哪里，好让我去参观参观！");
@@ -187,10 +187,10 @@ jQuery(document).ready(function ($) {
             top: $("#url").offset().top - 70,
             left: $("#url").offset().left - 170
         },
-		{
-		    queue: false,
-		    duration: 1000
-		});
+        {
+            queue: false,
+            duration: 1000
+        });
     });
     $("#comment").click(function () {
         showMessage("一定要认真填写喵~");
@@ -198,10 +198,10 @@ jQuery(document).ready(function ($) {
             top: $("#comment").offset().top - 70,
             left: $("#comment").offset().left - 170
         },
-		{
-		    queue: false,
-		    duration: 1000
-		});
+        {
+            queue: false,
+            duration: 1000
+        });
     });
 });
 jQuery(document).ready(function ($) {
@@ -210,10 +210,10 @@ jQuery(document).ready(function ($) {
         $(".spig").animate({
             top: $(window).scrollTop() + f +300
         },
-		{
-		    queue: false,
-		    duration: 1000
-		});
+        {
+            queue: false,
+            duration: 1000
+        });
     });
 });
 jQuery(document).ready(function ($) {
@@ -235,10 +235,10 @@ jQuery(document).ready(function ($) {
             left: document.body.offsetWidth/2*(1+s[i1]),
             top:  (window.innerHeight+document.documentElement.scrollTop-170)-(window.innerHeight-170)/2*(1+s[i2])
             },
-			{
-			    duration: 500,
-			    complete: showMessage(msgs[i])
-			});
+            {
+                duration: 500,
+                complete: showMessage(msgs[i])
+            });
         } else {
             ismove = false;
         }
