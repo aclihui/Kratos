@@ -93,8 +93,6 @@ function remove_default_widget(){
        unregister_widget('WP_Widget_Media_Video');
        unregister_widget('WP_Widget_Recent_Comments');
        unregister_widget('WP_Widget_Text');
- //    unregister_widget('WP_Widget_Archives');//文章归档
- //    unregister_widget('WP_Widget_Categories');//分类目录
 }
 add_action('widgets_init','remove_default_widget');
 class kratos_widget_ad extends WP_Widget {
@@ -112,14 +110,14 @@ class kratos_widget_ad extends WP_Widget {
         $title = $instance['title']?$instance['title']:'';
         $imgurl = $instance['imgurl']?$instance['imgurl']:'';
         echo $before_widget;
-        if(!empty($title)){?>
-            <h4 class="widget-title"><?php echo $title; ?></h4>
-        <?php }
-        if(!empty($imgurl)){?>
+        if(!empty($title)){ ?>
+            <h4 class="widget-title"><?php echo $title; ?></h4><?php
+        }
+        if(!empty($imgurl)){ ?>
             <a href="<?php echo $aurl; ?>" target="_blank">
                 <img class="carousel-inner img-responsive img-rounded" src="<?php echo $imgurl; ?>" />
-            </a>
-        <?php }
+            </a><?php
+        }
         echo $after_widget;
     }
     function update($new_instance,$old_instance){
@@ -128,8 +126,7 @@ class kratos_widget_ad extends WP_Widget {
     function form($instance){
         @$title = esc_attr($instance['title']);
         @$aurl = esc_attr($instance['aurl']);
-        @$imgurl = esc_attr($instance['imgurl']);
-        ?>
+        @$imgurl = esc_attr($instance['imgurl']); ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">
                     标题：
@@ -147,8 +144,7 @@ class kratos_widget_ad extends WP_Widget {
                     图片：
                     <input class="widefat" id="<?php echo $this->get_field_id('imgurl'); ?>" name="<?php echo $this->get_field_name('imgurl'); ?>" type="text" value="<?php echo $imgurl; ?>" />
                 </label>
-            </p>
-        <?php
+            </p><?php
     }
 }
 class kratos_widget_about extends WP_Widget {
@@ -165,29 +161,41 @@ class kratos_widget_about extends WP_Widget {
         $profile = $instance['profile']?$instance['profile']:'';
         $imgurl = $instance['imgurl']?$instance['imgurl']:'';
         $bkimgurl = $instance['bkimgurl']?$instance['bkimgurl']:'';
-        echo $before_widget;
-        ?>
+        echo $before_widget; ?>
         <div class="photo-background">
-            <div class="photo-background" style="background:url(
-            <?php if(!empty($bkimgurl)){echo $bkimgurl;}else{echo bloginfo('template_url'); echo "/images/about.jpg";}?>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
-            </div>
+            <div class="photo-background" style="background:url(<?php if(!empty($bkimgurl)) echo $bkimgurl; else echo bloginfo('template_url')."/images/about.jpg"; ?>) no-repeat center center;-webkit-background-size:cover;background-size:cover"></div>
         </div>
         <?php if(current_user_can('manage_options')){ ?>
         <div class="photo-wrapper clearfix">
             <div class="photo-wrapper-tip text-center">
-                <img class="about-photo" src="<?php if(!empty($imgurl)){echo $imgurl;}else{echo bloginfo('template_url');echo "/images/photo.jpg";} ?>" alt=""/>
+                <?php global $current_user;echo get_avatar($current_user->user_email); ?>
             </div>
         </div>
         <div class="textwidget">
             <div class="widget-admin text-center">
                 <p>
-                    <a href="<?php echo admin_url('/post-new.php'); ?>"><i class="fa fa-pencil"></i> 撰写文章</a>
-                    <a class="widget-admin-center" href="<?php echo admin_url('/post-new.php?post_type=page'); ?>"><i class="fa fa-plus"></i> 新建页面</a>
+                    <a href="<?php echo admin_url('/post-new.php'); ?>"><i class="fa fa-pencil"></i> 撰写文章 </a>
+                    <a class="widget-admin-center" href="<?php echo admin_url('/post-new.php?post_type=page'); ?>"><i class="fa fa-plus"></i> 新建页面 </a>
                     <a href="<?php echo admin_url('/edit-comments.php'); ?>"><i class="fa fa-comments"></i> 查看评论</a>
                 </p>
                 <p>
-                    <a href="<?php echo admin_url('/options-general.php'); ?>"><i class="fa fa-cogs"></i> 站点设置</a>
-                    <a class="widget-admin-center" href="<?php echo admin_url('/themes.php?page=kratos'); ?>"><i class="fa fa-cog"></i> 主题设置</a>
+                    <a href="<?php echo admin_url('/options-general.php'); ?>"><i class="fa fa-cogs"></i> 站点设置 </a>
+                    <a class="widget-admin-center" href="<?php echo admin_url('/themes.php?page=kratos'); ?>"><i class="fa fa-cog"></i> 主题设置 </a>
+                    <a href="<?php echo wp_logout_url(); ?>"><i class="fa fa-sign-out"></i> 退出登录</a>
+                </p>
+            </div>
+        </div>
+        <?php }elseif(is_user_logged_in()){ ?>
+        <div class="photo-wrapper clearfix">
+            <div class="photo-wrapper-tip text-center">
+                <?php global $current_user;echo get_avatar($current_user->user_email); ?>
+            </div>
+        </div>
+        <div class="textwidget">
+            <div class="widget-admin text-center">
+                <p>
+                    <a href="<?php echo admin_url('/profile.php'); ?>"><i class="fa fa-pencil"></i> 个人资料 </a>
+                    <a href="<?php echo admin_url('/'); ?>"><i class="fa fa-dashboard"></i> 仪表盘 </a>
                     <a href="<?php echo wp_logout_url(); ?>"><i class="fa fa-sign-out"></i> 退出登录</a>
                 </p>
             </div>
@@ -200,18 +208,15 @@ class kratos_widget_about extends WP_Widget {
         </div>
         <div class="textwidget">
             <p class="text-center"><?php echo $profile; ?></p>
-        </div>
-        <?php }
+        </div><?php
+    }
         echo $after_widget;
     }
-    function update($new_instance,$old_instance){
-        return $new_instance;
-    }
+    function update($new_instance,$old_instance){return $new_instance;}
     function form($instance){
         @$imgurl = esc_attr($instance['imgurl']);
         @$bkimgurl = esc_attr($instance['bkimgurl']);
-        @$profile = esc_attr($instance['profile']);
-    ?>
+        @$profile = esc_attr($instance['profile']); ?>
         <p>
             <label for="<?php echo $this->get_field_id('imgurl'); ?>">
                 头像地址：
@@ -229,8 +234,8 @@ class kratos_widget_about extends WP_Widget {
                 卡片背景：
                 <input class="widefat" id="<?php echo $this->get_field_id('bkimgurl'); ?>" name="<?php echo $this->get_field_name('bkimgurl'); ?>" type="text" value="<?php echo $bkimgurl; ?>" />
             </label>
-        </p>
-    <?php }
+        </p><?php 
+    }
 }
 class kratos_widget_tags extends WP_Widget {
     function __construct() {
@@ -282,8 +287,7 @@ class kratos_widget_tags extends WP_Widget {
         $title =  esc_attr($instance['title']);
         $number = intval($instance['number']);
         $orderby =  esc_attr($instance['orderby']);
-        $order =  esc_attr($instance['order']);
-        ?>
+        $order =  esc_attr($instance['order']); ?>
         <p>
             <label for='<?php echo $this->get_field_id("title"); ?>'>标题：<input type='text' class='widefat' name='<?php echo $this->get_field_name("title"); ?>' id='<?php echo $this->get_field_id("title"); ?>' value="<?php echo $title; ?>"/></label>
         </p>
@@ -307,8 +311,8 @@ class kratos_widget_tags extends WP_Widget {
                 </select>
             </label>
         </p>
-        <input type="hidden" id="<?php echo $this->get_field_id('submit'); ?>" name="<?php echo $this->get_field_name('submit'); ?>" value="1" />
-        <?php }
+        <input type="hidden" id="<?php echo $this->get_field_id('submit'); ?>" name="<?php echo $this->get_field_name('submit'); ?>" value="1" /><?php
+    }
 }
 class kratos_widget_posts extends WP_Widget {
     function __construct() {
@@ -322,8 +326,7 @@ class kratos_widget_posts extends WP_Widget {
     function widget($args,$instance){
         extract($args);
         $result = '';
-        $number = (!empty($instance['number']))?intval($instance['number']):5;
-        ?>
+        $number = (!empty($instance['number']))?intval($instance['number']):5; ?>
         <aside class="widget widget_kratos_poststab">
             <ul id="tabul" class="nav nav-tabs nav-justified visible-lg">
                 <li><a href="#newest" data-toggle="tab"> 最新文章</a></li>
@@ -362,8 +365,8 @@ class kratos_widget_posts extends WP_Widget {
                     </ul>
                 </div>
             </div>
-        </aside>
-        <?php }
+        </aside><?php
+    }
     function update($new_instance,$old_instance){
         if(!isset($new_instance['submit'])) return false;
         $instance = $old_instance;
@@ -373,13 +376,12 @@ class kratos_widget_posts extends WP_Widget {
     function form($instance){
         global $wpdb;
         $instance = wp_parse_args((array) $instance,array('number'=>'5'));
-        $number = intval($instance['number']);
-        ?>
+        $number = intval($instance['number']); ?>
         <p>
             <label for='<?php echo $this->get_field_id("number"); ?>'>每项展示数量：<input type='text' name='<?php echo $this->get_field_name("number"); ?>' id='<?php echo $this->get_field_id("number"); ?>' value="<?php echo $number; ?>"/></label>
         </p>
-        <input type="hidden" id="<?php echo $this->get_field_id('submit'); ?>" name="<?php echo $this->get_field_name('submit'); ?>" value="1" />
-        <?php }
+        <input type="hidden" id="<?php echo $this->get_field_id('submit'); ?>" name="<?php echo $this->get_field_name('submit'); ?>" value="1" /><?php
+    }
 }
 class kratos_widget_comments extends WP_Widget {
     function __construct() {
@@ -428,8 +430,7 @@ class kratos_widget_comments extends WP_Widget {
     }
     public function form($instance){
         $title = !empty($instance['title'])?$instance['title']:'最近评论';
-        $number = !empty($instance['number'])?absint($instance['number']):5;
-        ?>
+        $number = !empty($instance['number'])?absint($instance['number']):5; ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>">
                 标题：
@@ -441,8 +442,8 @@ class kratos_widget_comments extends WP_Widget {
                 显示数量：
                 <input class="tiny-text" id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="number" step="1" min="1" max="99" value="<?php echo $number; ?>" size="3" />
             </label>
-        </p>
-        <?php }
+        </p><?php
+    }
 }
 function kratos_register_widgets(){
     register_widget('kratos_widget_ad'); 

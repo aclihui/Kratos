@@ -1,5 +1,4 @@
 <?php
-
 add_action('phpmailer_init','mail_smtp');
 function mail_smtp($phpmailer){
     if(kratos_option('mail_smtps')==1){
