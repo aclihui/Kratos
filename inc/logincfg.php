@@ -1,5 +1,5 @@
 <?php
-//Register domin limit
+//Register domain limit
 add_action('register_post','validdomain',10,3);
 function validdomain($login,$email,$errors){
     $validDomains = explode("\r\n",kratos_option('dwhite'));
@@ -32,10 +32,10 @@ function validdomain($login,$email,$errors){
     if($isValidEmailDomain===false) $errors->add('domain_error','<strong>错误</strong>：'.kratos_option('derror'));
 }
 //Pwd register
-if(kratos_option('mail_reg')) {
-add_action('register_form','kratos_show_extra_register_fields');
-add_action('register_post','kratos_check_extra_register_fields',10,3);
-add_action('user_register','kratos_register_extra_fields',100);
+if(kratos_option('mail_reg')){
+    add_action('register_form','kratos_show_extra_register_fields');
+    add_action('register_post','kratos_check_extra_register_fields',10,3);
+    add_action('user_register','kratos_register_extra_fields',100);
 }
 function kratos_show_extra_register_fields(){ ?>
     <p>

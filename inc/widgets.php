@@ -161,7 +161,8 @@ class kratos_widget_about extends WP_Widget {
         $profile = $instance['profile']?$instance['profile']:'';
         $imgurl = $instance['imgurl']?$instance['imgurl']:'';
         $bkimgurl = $instance['bkimgurl']?$instance['bkimgurl']:'';
-        echo $before_widget; ?>
+        echo $before_widget;
+        if(!is_home()) $redirect = get_permalink(); else $redirect = get_bloginfo('home');?>
         <div class="photo-background">
             <div class="photo-background" style="background:url(<?php if(!empty($bkimgurl)) echo $bkimgurl; else echo bloginfo('template_url')."/images/about.jpg"; ?>) no-repeat center center;-webkit-background-size:cover;background-size:cover"></div>
         </div>
@@ -181,7 +182,7 @@ class kratos_widget_about extends WP_Widget {
                 <p>
                     <a href="<?php echo admin_url('/options-general.php'); ?>"><i class="fa fa-cogs"></i> 站点设置 </a>
                     <a class="widget-admin-center" href="<?php echo admin_url('/themes.php?page=kratos'); ?>"><i class="fa fa-cog"></i> 主题设置 </a>
-                    <a href="<?php echo wp_logout_url(); ?>"><i class="fa fa-sign-out"></i> 退出登录</a>
+                    <a href="<?php echo wp_logout_url($redirect); ?>"><i class="fa fa-sign-out"></i> 退出登录</a>
                 </p>
             </div>
         </div>
@@ -196,14 +197,14 @@ class kratos_widget_about extends WP_Widget {
                 <p>
                     <a href="<?php echo admin_url('/profile.php'); ?>"><i class="fa fa-pencil"></i> 个人资料 </a>
                     <a href="<?php echo admin_url('/'); ?>"><i class="fa fa-dashboard"></i> 仪表盘 </a>
-                    <a href="<?php echo wp_logout_url(); ?>"><i class="fa fa-sign-out"></i> 退出登录</a>
+                    <a href="<?php echo wp_logout_url($redirect); ?>"><i class="fa fa-sign-out"></i> 退出登录</a>
                 </p>
             </div>
         </div>
         <?php }else{ ?>
         <div class="photo-wrapper clearfix">
             <div class="photo-wrapper-tip text-center">
-                <a href="<?php echo wp_login_url(); ?>" rel="nofollow"><img class="about-photo" src="<?php if(!empty($imgurl)) echo $imgurl; else echo bloginfo('template_url')."/images/photo.jpg"; ?>" alt=""/></a>
+                <a href="<?php echo wp_login_url($redirect); ?>" rel="nofollow"><img class="about-photo" src="<?php if(!empty($imgurl)) echo $imgurl; else echo bloginfo('template_url')."/images/photo.jpg"; ?>" alt=""/></a>
             </div>
         </div>
         <div class="textwidget">
