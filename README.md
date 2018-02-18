@@ -32,8 +32,10 @@ kratos/
 │   ├── fontawesome-webfont.woff
 │   └── fontawesome-webfont.woff2
 ├── images/
+│   ├── options/
+│   │   └── (has some options pic)
 │   ├── smilies/
-│   │   └── (has some smiles pic)
+│   │   └── (has some emoji pic)
 │   ├── thumb/
 │   │   └── (has some thumb pic)
 │   ├── 404.jpg
@@ -71,7 +73,7 @@ kratos/
 │   │   ├── css/
 │   │   │   └── optionsframework.css
 │   │   ├── images/
-│   │   │   └── (has some options pic)
+│   │   │   └── ico-delete.png
 │   │   ├── includes/
 │   │   │   ├── class-options-framework.php
 │   │   │   ├── class-options-framework-admin.php
@@ -82,8 +84,6 @@ kratos/
 │   │   │   ├── media-uploader.js
 │   │   │   └── options-custom.js
 │   │   └── options-framework.php
-│   ├── avatars.php
-│   ├── core.php
 │   ├── imgcfg.php
 │   ├── logincfg.php
 │   ├── OwO.json
