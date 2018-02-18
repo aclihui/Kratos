@@ -4,7 +4,7 @@
         $(".Share").click(function(){
             $(".share-wrap").fadeToggle("slow");
         });
-    };
+    }
     var sidebaraffix = function(){
         if($("#sidebar").height()){
             if($("#main").height()>$("#sidebar").height()){
@@ -20,7 +20,7 @@
                 });
             }
         }
-    };
+    }
     var toSearch = function(){
         $('.search-box').on("click",function(e){
             $("#searchform").animate({width:"200px"},200),
@@ -32,7 +32,7 @@
             e.stopPropagation();
         });
         $('#searchform').on("click",function(e){e.stopPropagation();})
-    };
+    }
     var showThumb = function(){
         (function ($){
             $.extend({
@@ -70,7 +70,7 @@
                 }
             });
         })(jQuery);
-    };
+    }
     var showlove = function(){
         $.fn.postLike = function(){
             if($(this).hasClass('done')){
@@ -94,7 +94,7 @@
             }
         };
         $(document).on("click",".Love",function(){$(this).postLike();});
-    };
+    }
     var gotop = function(){
         $('.gotop-box').on('click',function(event){
             event.preventDefault();
@@ -111,7 +111,7 @@
                 $('.gotop-box').removeClass('active');
             }
         });
-    };
+    }
     var wechatpic = function(){
         $("#wechat-img").mouseout(function(){
             $("#wechat-pic")[0].style.display = 'none';
@@ -119,13 +119,13 @@
         $("#wechat-img").mouseover(function(){
             $("#wechat-pic")[0].style.display = 'block';
         })
-    };
+    }
     var showPhotos = function(){
         layer.photos({
           photos:'.kratos-post-content',
           anim: 0
         });
-    };
+    }
     var offcanvas = function(){
         var $clone = $('#kratos-menu-wrap').clone();
         $clone.attr({
@@ -157,7 +157,7 @@
                 }
             }
         });
-    };
+    }
     var mobiClick = function(){
         $(document).click(function(e){
             var container = $("#offcanvas-menu,.js-kratos-nav-toggle");
@@ -168,7 +168,7 @@
                 }
             }
         });
-    };
+    }
     var xControl = function(){
         $('.xHeading').on('click',function(event){
             var $this = $(this);
@@ -180,7 +180,7 @@
             }
             event.preventDefault();
         });
-    };
+    }
     var donateConfig = function(){
         $('.Donate').on('click',function(){
             layer.open({
@@ -197,7 +197,7 @@
                 if(id=='wechatpay'){$(".qr-pay #alipay_qr").addClass('d-none');$(".qr-pay #wechat_qr").removeClass('d-none')};
             });
         });
-    };
+    }
     var OwOcfg = function(){
         if($("#commentform").height()){
             var OwO_demo = new OwO({
@@ -210,7 +210,28 @@
                 maxHeight:'250px'
             });
         }
-    };
+    }
+    var archives = function(){
+        $('#archives section#mon').each(function(){
+            var num=$(this).find('.arc-t').size();
+            var text=$(this).find('.al_mon').text();
+            $(this).find('.al_mon').html(text+'（'+num+' 篇文章）');
+        });
+        $('#archives h4.al_year').click(function(){
+            $(this).next().slideToggle(400);
+            return false;
+        });
+        $('#archives div.al_mon').click(function(){
+            $(this).next().slideToggle(400);
+            return false;
+        });
+        $('#al_collapse').click(function(){
+            $('.mon_arc').hide(400);$('#al_collapse').hide();$('#al_expand').show();
+        });
+        $('#al_expand').click(function(){
+            $('.mon_arc').show(400);$('#al_expand').hide();$('#al_collapse').show();
+        });
+    }
     $(function(){
         shareMenu();
         showThumb();
@@ -224,6 +245,7 @@
         xControl();
         donateConfig();
         OwOcfg();
+        archives();
         if(xb.site_s=='Y') sidebaraffix();
     });
 }());
