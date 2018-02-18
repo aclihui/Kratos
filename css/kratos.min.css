@@ -143,12 +143,14 @@ table,table tbody tr th{text-align:center!important}
 .pagination>li:first-child>a{border-bottom-left-radius:0;border-top-left-radius:0}
 .pagination>li:last-child>a{border-top-right-radius:0;border-bottom-right-radius:0}
 .pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover{border-color:#51aded;background-color:#51aded;color:#fff!important}
+.post-navigation{margin-top:15px}
 .post-navigation .nav-next a,.post-navigation .nav-previous a{color:#5a5a5a}
 .post-navigation .nav-previous{float:left;text-align:left;max-width:50%;background-color:#fff;box-shadow:0 1px 5px rgba(0,0,0,.1);padding:7px 18px}
 .post-navigation .nav-next{float:right;text-align:right;max-width:50%;background-color:#fff;box-shadow:0 1px 5px rgba(0,0,0,.1);padding:7px 18px}
 .kratos-post-meta span{font-size:13px;color:#777}
 .kratos-post-meta .fa-thumbs-o-up,.kratos-post-meta i:not(:first-child){margin-left:12px}
-.kratos-hentry{margin:0 0 15px;background-color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1);border-radius:0;-webkit-transition:all .6s ease;transition:all .6s ease}
+.kratos-hentry{margin-bottom:15px;background-color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1);border-radius:0;-webkit-transition:all .6s ease;transition:all .6s ease}
+.kratos-hentry.kratos-post-inner{margin-bottom:0}
 .container article:last-of-type{margin:0}
 .container article.kratos-hentry:hover{box-shadow:0 8px 15px rgba(146,146,146,.39)}
 .kratos-post-nav{padding:10px 20px 10px 20px;color:#5a5a5a}
@@ -224,13 +226,14 @@ table,table tbody tr th{text-align:center!important}
 .share-plain .share-int:after{position:absolute;bottom:-20px;left:50%;display:block;margin-left:-25px;width:50px;height:20px;background:url(../images/arrow.png) 0 0 no-repeat;background-size:50px 20px;content:''}
 .share-plain .share-int canvas,.share-plain .share-int img{margin:15px 0 -6px;height:auto;max-width:100%}
 .share-plain .share-int p{margin:15px 0 0;color:#676767;white-space:normal;word-wrap:break-word;font-size:14px;line-height:1.5}
+.kratos-copyright{margin:15px 0 0}
 .kratos-copyright img{margin-top:20px}
 .kratos-copyright h5{margin:10px 10px 20px 10px}
 .kratos-copyright a{color:#5a5a5a}
-.comments-area{word-wrap:break-word;word-break:break-all;margin-top:1rem!important}
-.comments-area ol{margin-top:1rem;list-style:none;margin-left:-40px}
+.comments-area{word-wrap:break-word;word-break:break-all}
+.comments-area ol{margin-top:15px;list-style:none;margin-left:-40px}
 .comments-area .comment-list li{padding:1.75rem 1.75rem 1.5rem;border-radius:.125rem;background-color:#fff;-webkit-box-shadow:0 .0625rem .3125rem rgba(0,0,0,.1);box-shadow:0 .0625rem .3125rem rgba(0,0,0,.1)}
-.comments-area .comment-list li:not(:first-child){margin-top:2rem}
+.comments-area .comment-list li:not(:first-child){margin-top:15px}
 .comments-area .comment-list .children li{margin-top:1rem;margin-bottom:0;background-color:#fffdf1;-webkit-box-shadow:0 .0625rem .625rem #e0e0e0;box-shadow:0 .0625rem .625rem #e0e0e0}
 .comments-area .avatar{position:absolute;margin-top:-.1875rem;width:50px;height:50px;border-radius:50%;background:url(../images/avatar.png) no-repeat center #f0f0f0;-webkit-box-shadow:0 .125rem 1.0625rem 0 rgba(0,0,0,.22);box-shadow:0 .125rem 1.0625rem 0 rgba(0,0,0,.22);transition:all .2s ease-in-out}
 .comments-area .comment-awaiting-moderation,.comments-area .comment-meta,.comments-area .fn{margin-left:6rem}
@@ -251,6 +254,7 @@ a.comment-reply-link:hover{color:#000;box-shadow:0 0 1px #505050}
 .comment-metadata a,.comments-area a.url{color:#444;text-decoration:none}
 .comment-respond{background-color:#fff;box-shadow:0 1px 5px rgba(0,0,0,.1);border-radius:0;padding:20px 20px 8px 20px}
 #comments-nav{text-align:center;margin:0 0 15px}
+#comments-nav>a,#comments-nav>span{margin:0 5px}
 #comments-nav a{padding:5px 10px;border:1px solid #eee;background-color:#eee;color:#777}
 #comments-nav a:hover{border:1px solid #51aded;background-color:#51aded;color:#fff!important}
 #comments-nav span.current{font-weight:700;border:1px solid #51aded;background-color:#51aded;padding:5px 10px;color:#fff}
@@ -376,6 +380,17 @@ img.wp-smiley{width:auto!important;height:auto!important;vertical-align:text-bot
 .linkpage li a h4:hover{color:#51aded}
 .linkpage li a h4,.linkpage li a p{cursor:url(../images/pointer.cur),auto;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;line-height:1.4}
 .linkpage li a p{font-size:12px;color:#999;padding-left:90px}
+#archives .arc-tag{margin-bottom:15px}
+#archives .arc-tag a{-webkit-box-shadow:0 1px 4px rgba(0,0,0,.1);box-shadow:0 1px 4px rgba(0,0,0,.1);border:1px solid #fff;border-radius:15px;color:rgba(51,51,51,0.78);margin:4px 8px 0 0;font-weight:500;display:inline-block;padding:0 12px;background:rgba(255,255,255,.5);}
+#archives .arc-tag a::before{content:"# ";color:#e8a6a6}
+#archives h4{margin:5px 0}
+#archives #mon{margin:0 20px}
+#archives .al_mon{color:#444}
+#archives .arc-t{width:30%;float:left;position:relative;background:rgba(255, 253, 243, 0.8);margin:5px 15px 10px 3px;border-radius:5px;-webkit-box-shadow:0 2px 4px rgba(192,192,192,0.4);box-shadow:0 2px 4px rgba(192,192,192,0.4)}
+#archives .arc-tile{line-height:25px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;position:relative;padding:10px 14px;-webkit-box-shadow:0 1px 4px rgba(0,0,0,.04);box-shadow:0 1px 4px rgba(0,0,0,.04);}
+#archives .arc-tile a{color:#777}
+#archives .arc-tile span{font-size:14px;float:right;color:#000}
+#archives .al_year:hover,#archives .al_mon:hover{cursor:url(../images/pointer.cur),auto}
 @media(max-width:1200px){
 .kratos-entry-content-new{height:80px;overflow:hidden;text-overflow:ellipsis}
 }
@@ -416,6 +431,7 @@ h4{font-size:15px}
 .kratos-post-meta-new a{margin-right:10px}
 .downbtn{padding:9px 1pc;font-size:14px}
 .hide_notice,.info{font-size:11px}
+#archives .arc-t{width:45%}
 }
 @media(min-width:768px){
 #kratos-header-section.color-banner{height:71px}
@@ -433,6 +449,7 @@ h4{font-size:15px}
 @media(max-width:530px){
 .kratos-entry-footer .post-like-donate a{width:80px}
 .kratos-entry-footer .footer-tag a{padding:2px 4px}
+#archives .arc-t{width:97%}
 }
 @media(max-width:460px){
 .linkpage li{width:97%}
