@@ -304,7 +304,7 @@ function optionsframework_options(){
         'name'=>'版权声明',
         'desc'=>'是否启用 CC BY-SA 4.0 声明',
         'id'=>'post_cc',
-        'std'=>'0',
+        'std'=>'1',
         'type'=>'checkbox');
     $options[] = array(
         'name'=>'分享按钮',
