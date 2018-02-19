@@ -56,6 +56,29 @@ foreach ($pieces as $piece){
 remove_filter('the_content','wpautop');
 remove_filter('the_content','wptexturize');
 add_filter('the_content','my_formatter',99);
+//Support chinese tags
+add_action('parse_request','kratos_chinese_tag_names_parse_request');
+add_filter('get_pagenum_link','kratos_chinese_tag_names_get_pagenum_link');
+function kratos_chinese_convencoding($str, $to = 'UTF-8', $from = 'GBK') {
+    if(function_exists('mb_convert_encoding')){
+        $str = mb_convert_encoding($str,$to,$from);
+    }else if(function_exists('iconv')){
+        $str = iconv($from,$to."//IGNORE",$str);
+    }
+    return $str;
+}
+function kratos_chinese_tag_names_parse_request($obj){
+    if($obj->did_permalink==false) return;
+    if(isset($obj->request)) $obj->request = kratos_chinese_convencoding($obj->request,get_option('blog_charset'));
+    if(isset($obj->query_vars)) foreach ($obj->query_vars as $key => &$value){
+        if($key=='s') continue;
+        $value = kratos_chinese_convencoding($value,get_option('blog_charset'));
+    }
+}
+function kratos_chinese_tag_names_get_pagenum_link($result){
+    $result =  kratos_chinese_convencoding($result,get_option('blog_charset'));
+    return $result;
+}
 //Disable google fonts
 function kratos_disable_open_sans($translations,$text,$context,$domain){
     if('Open Sans font: on or off'==$context&&'on'==$text) $translations = 'off';
@@ -359,11 +382,10 @@ ob_start("wp_compress_html_main");
 }
 if(!is_admin()&&kratos_option('site_comp')) add_action('init','wp_compress_html');
 //Welcome
-add_action('welcome_panel','kratos_admin_notice');
 function kratos_admin_notice(){ ?>
   <style type="text/css">.about-description a{text-decoration:none}</style>
   <div class="notice notice-info">
-  <p class="about-description">嗨，欢迎使用 <a target="view_window" href="https://www.fczbl.vip/">Kratos(M)</a> 主题开始创作，如果遇到Bug请前往 <a target="_blank" rel="nofollow" href="https://github.com/xb2016/Kratos/issues">Github</a> 反馈，谢谢！</p>
-  </div>
-  <?php
+  <p class="about-description">嗨，欢迎使用 <a target="view_window" href="https://www.fczbl.vip/">Kratos(M)</a> 主题开始创作，单击 <a target="_blank" rel="nofollow" href="https://www.fczbl.vip/787.html">此处</a> 查看帮助文档。如果遇到Bug请前往 <a target="_blank" rel="nofollow" href="https://github.com/xb2016/Kratos/issues">Github</a> 反馈，谢谢！</p>
+  </div><?php
 }
+add_action('welcome_panel','kratos_admin_notice');
