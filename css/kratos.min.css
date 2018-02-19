@@ -253,7 +253,7 @@ a.comment-reply-link:hover{color:#000;box-shadow:0 0 1px #505050}
 .comment-metadata a,.comments-area a.url{color:#444;text-decoration:none}
 .comment-respond{margin-top:15px;background-color:#fff;box-shadow:0 1px 5px rgba(0,0,0,.1);border-radius:0;padding:20px 20px 8px 20px}
 #comments-nav{text-align:center;margin:0 0 15px}
-#comments-nav>a,#comments-nav>span{margin:0 5px}
+#comments-nav>a,#comments-nav>span{margin:0 4px}
 #comments-nav a{padding:5px 10px;border:1px solid #eee;background-color:#eee;color:#777}
 #comments-nav a:hover{border:1px solid #51aded;background-color:#51aded;color:#fff!important}
 #comments-nav span.current{font-weight:700;border:1px solid #51aded;background-color:#51aded;padding:5px 10px;color:#fff}
@@ -441,13 +441,13 @@ h4{font-size:15px}
 .color-logo a{color:#fff;font-size:24px;padding-left:15px;font-weight:500}
 .color-logo a:hover{color:#fff!important}
 }
-@media(max-width:535px){
-.kratos-post-meta .hd,.pull-date,.spig{display:none}
-#slide .carousel-indicators{margin-bottom:0}
-}
 @media(max-width:530px){
+#slide .carousel-indicators{margin-bottom:0}
 .kratos-entry-footer .post-like-donate a{width:80px}
 .kratos-entry-footer .footer-tag a{padding:2px 4px}
+.kratos-post-meta .hd,.pull-date,.spig{display:none}
+.pagination li a{width:30px;padding:4px;margin-left:5px}
+#comments-nav a,#comments-nav span.current{padding:3px 8px;margin:2px}
 #archives .arc-t{width:97%}
 }
 @media(max-width:460px){
