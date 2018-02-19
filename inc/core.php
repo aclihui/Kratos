@@ -91,6 +91,11 @@ function kratos_upload_webp ($existing_mimes=array()){
   $existing_mimes['webp']='image/webp';
   return $existing_mimes;
 }
+//The length and suffix
+function kratos_excerpt_length($length){return 170;}
+add_filter('excerpt_length','kratos_excerpt_length');
+function kratos_excerpt_more($more){return '……';}
+add_filter('excerpt_more','kratos_excerpt_more');
 //Load scripts
 function kratos_theme_scripts(){  
     $dir = get_template_directory_uri();

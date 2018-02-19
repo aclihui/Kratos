@@ -98,14 +98,14 @@ function hide($atts,$content=null,$code=""){
             global $id;
             $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_author_email = '".$email."' and comment_post_id='".$id."'and comment_approved = '1'");
             }
-        if(!$comments) $content = '<div class="hide_notice">抱歉，只有<a href="'.wp_login_url().'?redirect_to='.home_url(add_query_arg(array())).'" rel="nofollow">登录</a>并在本文发表评论才能阅读隐藏内容</div>';
+        if(!$comments) $content = '<div class="hide_notice">抱歉，只有<a href="'.wp_login_url(get_permalink()).'" rel="nofollow">登录</a>并在本文发表评论才能阅读隐藏内容</div>';
     }else{
         if(eregi($ereg,$email)){
             global $wpdb;
             global $id;
             $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_author_email = '".$email."' and comment_approved = '1'");
         }
-        if(!$comments) $content = '<div class="hide_notice">抱歉，只有<a href="'.wp_login_url().'?redirect_to='.home_url(add_query_arg(array())).'" rel="nofollow">登录</a>并在本站任一文章发表评论才能阅读隐藏内容</div>';
+        if(!$comments) $content = '<div class="hide_notice">抱歉，只有<a href="'.wp_login_url(get_permalink()).'" rel="nofollow">登录</a>并在本站任一文章发表评论才能阅读隐藏内容</div>';
     }
     if($comments) $content = '<div class="unhide"><div class="info">以下为隐藏内容：</div>'.$content.'</div>';
     return $content;

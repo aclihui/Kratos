@@ -42,21 +42,12 @@ function kratos_blog_thumbnail_new(){
         $img_val = $img_src[$img_count];
         if(!empty($img_val)){
             echo '<a href="'.get_permalink().'"><img src="'.$img_val.'" /></a>';
-        }else{
-            if(!kratos_option('default_image')){
-               $random = mt_rand(1,20);
-               echo '<a href="'.get_permalink().'"><img src="'.get_bloginfo('template_url').'/images/thumb/thumb_'.$random.'.jpg" /></a>';
-            }else{
-               echo '<a href="'.get_permalink().'"><img src="'.kratos_option('default_image').'" /></a>';
-            }
-        }
+        }else if(!kratos_option('default_image')){
+            $random = mt_rand(1,20);
+            echo '<a href="'.get_permalink().'"><img src="'.get_bloginfo('template_url').'/images/thumb/thumb_'.$random.'.jpg" /></a>';
+        }else echo '<a href="'.get_permalink().'"><img src="'.kratos_option('default_image').'" /></a>';   
     }  
 }
-//The length and suffix
-function kratos_excerpt_length($length){return 170;}
-add_filter('excerpt_length','kratos_excerpt_length');
-function kratos_excerpt_more($more){return '……';}
-add_filter('excerpt_more','kratos_excerpt_more');
 //Share the thumbnail fetching
 function share_post_image(){
     global $post;

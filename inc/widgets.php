@@ -256,8 +256,8 @@ class kratos_widget_tags extends WP_Widget {
         $order = (!empty($instance['order']))?esc_attr($instance['order']):'DESC';
         $tags = wp_tag_cloud(array(
                     'unit' => 'px',
-                    'smallest' => 14,
-                    'largest' => 14,
+                    'smallest' => 13,
+                    'largest' => 13,
                     'number' => $number,
                     'format' => 'flat',
                     'orderby' => $orderby,
@@ -330,17 +330,17 @@ class kratos_widget_posts extends WP_Widget {
         $number = (!empty($instance['number']))?intval($instance['number']):5; ?>
         <aside class="widget widget_kratos_poststab">
             <ul id="tabul" class="nav nav-tabs nav-justified visible-lg">
-                <li><a href="#newest" data-toggle="tab"> 最新文章</a></li>
-                <li class="active"><a href="#hot" data-toggle="tab"> 热点文章</a></li>
+                <li class="active"><a href="#newest" data-toggle="tab">最新文章</a></li>
+                <li><a href="#hot" data-toggle="tab">热点文章</a></li>
                 <li><a href="#rand" data-toggle="tab">随机文章</a></li>
             </ul>
             <ul id="tabul" class="nav nav-tabs nav-justified visible-md">
-                <li><a href="#newest" data-toggle="tab"> 最新</a></li>
-                <li class="active"><a href="#hot" data-toggle="tab"> 热点</a></li>
+                <li class="active"><a href="#newest" data-toggle="tab">最新</a></li>
+                <li><a href="#hot" data-toggle="tab">热点</a></li>
                 <li><a href="#rand" data-toggle="tab">随机</a></li>
             </ul>
             <div class="tab-content">
-                <div class="tab-pane fade" id="newest">
+                <div class="tab-pane fade in active" id="newest">
                     <ul class="list-group">
                         <?php $myposts = get_posts('numberposts='.$number.' & offset=0');foreach($myposts as $post): ?>
                             <a class="list-group-item visible-lg" title="<?php echo $post->post_title; ?>" href="<?php echo get_permalink($post->ID); ?>" rel="bookmark"><i class="fa  fa-book"></i> <?php echo strip_tags($post->post_title) ?>
@@ -350,9 +350,9 @@ class kratos_widget_posts extends WP_Widget {
                         <?php endforeach; ?>
                     </ul>
                 </div>
-                <div class="tab-pane fade  in active" id="hot">
+                <div class="tab-pane fade" id="hot">
                     <ul class="list-group">
-                        <?php if(function_exists('most_comm_posts')) most_comm_posts(60,$number); ?>
+                        <?php if(function_exists('most_comm_posts')) most_comm_posts(180,$number); ?>
                     </ul>
                 </div>
                 <div class="tab-pane fade" id="rand">
