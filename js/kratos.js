@@ -6,7 +6,7 @@
         });
     }
     var sidebaraffix = function(){
-        if($("#sidebar").height()){
+        if($("#sidebar").height()&&xb.site_sh){
             if($("#main").height()>$("#sidebar").height()){
                 var footerHeight = 0;
                 if($('#page-footer').length>0){
@@ -246,7 +246,7 @@
         donateConfig();
         OwOcfg();
         archives();
-        if(xb.site_s=='Y') sidebaraffix();
+        sidebaraffix();
     });
 }());
 var now = new Date();
