@@ -24,7 +24,7 @@ function kratos_options_menu_filter($menu){
 }
 add_filter('optionsframework_menu','kratos_options_menu_filter');
 //The menu navigation registration
-function kratos_register_nav_menu(){register_nav_menus(array('header_menu' => '顶部菜单'));}
+function kratos_register_nav_menu(){register_nav_menus(array('header_menu'=>'顶部菜单'));}
 add_action('after_setup_theme','kratos_register_nav_menu');
 //Highlighting the active menu
 function kratos_active_menu_class($classes){
@@ -59,7 +59,7 @@ add_filter('the_content','my_formatter',99);
 //Support chinese tags
 add_action('parse_request','kratos_chinese_tag_names_parse_request');
 add_filter('get_pagenum_link','kratos_chinese_tag_names_get_pagenum_link');
-function kratos_chinese_convencoding($str, $to = 'UTF-8', $from = 'GBK') {
+function kratos_chinese_convencoding($str,$to='UTF-8',$from='GBK'){
     if(function_exists('mb_convert_encoding')){
         $str = mb_convert_encoding($str,$to,$from);
     }else if(function_exists('iconv')){
@@ -76,7 +76,7 @@ function kratos_chinese_tag_names_parse_request($obj){
     }
 }
 function kratos_chinese_tag_names_get_pagenum_link($result){
-    $result =  kratos_chinese_convencoding($result,get_option('blog_charset'));
+    $result = kratos_chinese_convencoding($result,get_option('blog_charset'));
     return $result;
 }
 //Disable google fonts
@@ -100,20 +100,19 @@ add_filter('excerpt_more','kratos_excerpt_more');
 function kratos_theme_scripts(){  
     $dir = get_template_directory_uri();
     if(!is_admin()){
-        wp_enqueue_style('animate',$dir.'/css/animate.min.css',array(), '3.5.1'); 
+        wp_enqueue_style('animate',$dir.'/css/animate.min.css',array(),'3.5.1'); 
         wp_enqueue_style('awesome',$dir.'/css/font-awesome.min.css',array(),'4.7.1');
         wp_enqueue_style('bootstrap',$dir.'/css/bootstrap.min.css',array(),'3.3.7');
         wp_enqueue_style('layer',$dir.'/css/layer.min.css',array(),'3.1.0');
         wp_enqueue_style('kratos',$dir.'/css/kratos.min.css',array(),KRATOS_VERSION);
         wp_enqueue_script('jquery',$dir.'/js/jquery.min.js',array(),'2.1.4');
-        wp_enqueue_script('easing',$dir.'/js/jquery.easing.min.js',array(), '1.3.0'); 
+        wp_enqueue_script('easing',$dir.'/js/jquery.easing.min.js',array(),'1.3.0'); 
         wp_enqueue_script('layer',$dir.'/js/layer.min.js',array(),'3.1.0');
         wp_enqueue_script('bootstrap',$dir.'/js/bootstrap.min.js',array(),'3.3.7');
         wp_enqueue_script('kratos',$dir.'/js/kratos.js',array(),KRATOS_VERSION);
     }
     if(comments_open()&&is_single()||is_page()) wp_enqueue_script('OwO',$dir.'/js/OwO.min.js',array(),'1.0.1');
-    if(kratos_option('site_sa')&&!wp_is_mobile()) $site_sa = 'Y';
-    if(kratos_option('head_mode')=='pic') $site_sa_h = 55; else $site_sa_h = 103;
+    if(kratos_option('site_sa')&&!wp_is_mobile()){if(kratos_option('head_mode')=='pic') $site_sa_h = 55; else $site_sa_h = 103;}
     $d2kratos = array(
          'thome'=> get_stylesheet_directory_uri(),
          'ctime'=> kratos_option('createtime'),
@@ -121,7 +120,6 @@ function kratos_theme_scripts(){
           'scan'=> kratos_option('paytext'),
         'alipay'=> kratos_option('alipayqr_url'),
         'wechat'=> kratos_option('wechatpayqr_url'),
-        'site_s'=> $site_sa,
        'site_sh'=> $site_sa_h
     );
     wp_localize_script('kratos','xb',$d2kratos);
@@ -151,7 +149,7 @@ remove_filter('wp_mail','wp_staticize_emoji_for_email');
 add_filter('emoji_svg_url','__return_false');
 add_filter('show_admin_bar','__return_false');
 add_action('wp_enqueue_scripts','mt_enqueue_scripts',1);
-function mt_enqueue_scripts() {wp_deregister_script('jquery');}
+function mt_enqueue_scripts(){wp_deregister_script('jquery');}
 //Prohibit character escaping
 $qmr_work_tags = array('the_title','the_excerpt','single_post_title','comment_author','comment_text','link_description','bloginfo','wp_title','term_description','category_description','widget_title','widget_text');
 foreach($qmr_work_tags as $qmr_work_tag){remove_filter ($qmr_work_tag,'wptexturize');}
@@ -184,8 +182,8 @@ function kratos_keywords(){
     elseif(is_category()){single_cat_title();}
     elseif(is_single()){
         echo trim(wp_title('',FALSE)).',';
-        if(has_tag()){foreach((get_the_tags()) as $tag) {echo $tag->name.',';}}
-        foreach((get_the_category()) as $category) {echo $category->cat_name.',';} 
+        if(has_tag()){foreach((get_the_tags()) as $tag){echo $tag->name.',';}}
+        foreach((get_the_category()) as $category){echo $category->cat_name.',';} 
     }
     elseif(is_search()){the_search_query();}
     else{echo trim(wp_title('',FALSE));}
@@ -238,7 +236,7 @@ function kratos_wp_title($title,$sep){
     $title .= get_bloginfo('name');
     $site_description = get_bloginfo('description','display');
     if($site_description&&(is_home()||is_front_page())) $title = "$title $sep $site_description";
-    if($paged>=2||$page>=2) $title = "$title $sep " . sprintf(__('Page %s','kratos'),max($paged,$page));
+    if($paged>=2||$page>=2) $title = "$title $sep " . sprintf('第 %s 页',max($paged,$page));
     return $title;
 }
 add_filter('wp_title','kratos_wp_title',10,2);
