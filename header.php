@@ -18,9 +18,11 @@
   <head>
     <title><?php wp_title('-',true,'right'); ?></title>
     <meta charset="<?php bloginfo('charset'); ?>">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <?php if(kratos_option('tool_ssl')){?><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><?php } ?>
     <meta name="robots" content="index,follow">
-    <?php if(kratos_option('tool_ssl')){?><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /><?php } ?>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="format-detection" content="telphone=no, email=no">
     <meta name="description" itemprop="description" content="<?php kratos_description(); ?>">
@@ -29,7 +31,7 @@
     <?php wp_head();wp_print_scripts('jquery');?>
     <style><?php
         if(kratos_option('site_bw')) echo 'html{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);filter:gray;-webkit-filter:grayscale(1)}';
-        if(kratos_option('background_mode')=='image'&&!wp_is_mobile()) echo '@media(min-width:768px){.pagination>li>a{background-color:rgba(255,255,255,.8)}.kratos-hentry,.navigation div,.comments-area .comment-list li,#kratos-widget-area .widget,.comment-respond{background-color:rgba(255,255,255,.8)!important}.comment-list .children li{background-color:rgba(255,253,232,.7)!important}body.custom-background{background-image:url('.kratos_option('background_index_image').');background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:fixed}}';
+        if(kratos_option('background_mode')=='image'&&!wp_is_mobile()) echo '@media(min-width:768px){.pagination>li>a{background-color:rgba(255,255,255,.8)}.kratos-hentry,.navigation div,.comments-area .comment-list li,#kratos-widget-area .widget,.comment-respond{background-color:rgba(255,255,255,.8)!important}.comment-list .children li{background-color:rgba(255,253,232,.7)!important}body.custom-background{background-image:url('.kratos_option('background_index_image').');background-size:cover;background-attachment:fixed}}';
         if(kratos_option('head_mode')=='pic') echo '@media(max-width:768px){#kratos-header-section{background:'.kratos_option('banner_color').'}}@media(min-width:768px){.color-logo{display:none}.affix{top:54px}}'; ?>
     </style>
   </head>
