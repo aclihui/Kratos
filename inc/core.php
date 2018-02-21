@@ -378,6 +378,20 @@ function wp_compress_html(){
 ob_start("wp_compress_html_main");
 }
 if(!is_admin()&&kratos_option('site_comp')) add_action('init','wp_compress_html');
+//Hex2rgb
+function hex2rgb($hexColor){
+    $color=str_replace('#','',$hexColor);
+    if(strlen($color)>3){
+        $rgb=hexdec(substr($color,0,2)).','.hexdec(substr($color,2,2)).','.hexdec(substr($color,4,2));
+    }else{
+        $color=str_replace('#','',$hexColor);
+        $r=substr($color,0,1).substr($color,0,1);
+        $g=substr($color,1,1).substr($color,1,1);
+        $b=substr($color,2,1).substr($color,2,1);
+        $rgb=hexdec($r).','.hexdec($g).','.hexdec($b);
+    }
+    return $rgb;
+}
 //Welcome
 function kratos_admin_notice(){ ?>
   <style type="text/css">.about-description a{text-decoration:none}</style>
