@@ -189,7 +189,7 @@ function optionsframework_options(){
     $options[] = array(
         'name'=>'顶部显示模式',
         'id'=>'head_mode',
-        'std'=>'pic',
+        'std'=>'color',
         'type'=>'select',
         'class'=>'mini',
         'options'=>array(
@@ -222,6 +222,12 @@ function optionsframework_options(){
         'id'=>'banner_color',
         'std'=>'#16171a',
         'type'=>'color');
+    $options[] = array(
+        'name'=>'Nav Bar透明度',
+        'desc'=>'可选 0～1，1为不透明',
+        'id'=>'banner_color_op',
+        'std'=>'.8',
+        'type'=>'text');
     $options[] = array(
         'name'=>'图片Logo',
         'desc'=>'高40px，宽最大200px，不设置将显示文字Logo',

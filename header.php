@@ -32,7 +32,7 @@
     <style><?php
         if(kratos_option('site_bw')) echo 'html{filter:grayscale(100%);-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);filter:gray;-webkit-filter:grayscale(1)}';
         if(kratos_option('background_mode')=='image'&&!wp_is_mobile()) echo '@media(min-width:768px){.pagination>li>a{background-color:rgba(255,255,255,.8)}.kratos-hentry,.navigation div,.comments-area .comment-list li,#kratos-widget-area .widget,.comment-respond{background-color:rgba(255,255,255,.8)!important}.comment-list .children li{background-color:rgba(255,253,232,.7)!important}body.custom-background{background-image:url('.kratos_option('background_index_image').');background-size:cover;background-attachment:fixed}}';
-        if(kratos_option('head_mode')=='pic') echo '@media(max-width:768px){#kratos-header-section{background:'.kratos_option('banner_color').'}}@media(min-width:768px){.color-logo{display:none}.affix{top:54px}}'; ?>
+        if(kratos_option('head_mode')=='pic') echo '@media(max-width:768px){#kratos-header-section{background:rgba('.hex2rgb(kratos_option('banner_color')).','.kratos_option('banner_color_op').')}}@media(min-width:768px){.color-logo{display:none}.affix{top:54px}}'; ?>
     </style>
   </head>
     <?php flush(); ?>
@@ -43,7 +43,7 @@
                     <?php if (has_nav_menu('header_menu')): ?>
                     <div class="nav-toggle"><a class="kratos-nav-toggle js-kratos-nav-toggle"><i></i></a></div>
                     <?php endif; ?>
-                    <header id="kratos-header-section"<?php if(kratos_option('head_mode')!='pic') echo ' class="color-banner" style="background:'.kratos_option('banner_color').'"'; ?>>
+                    <header id="kratos-header-section"<?php if(kratos_option('head_mode')!='pic') echo ' class="color-banner" style="background:rgba('.hex2rgb(kratos_option('banner_color')).','.kratos_option('banner_color_op').')"'; ?>>
                         <div class="container">
                             <div class="nav-header">
                                 <div class="color-logo"><a href="<?php echo get_option('home'); ?>"><?php if(!kratos_option('banner_logo')) echo bloginfo('name'); else echo '<img src="'.kratos_option('banner_logo').'">'; ?></a></div>
