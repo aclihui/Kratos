@@ -1,4 +1,10 @@
 <?php
+//Custom login
+function custom_login(){
+    echo '<style>body{background:#92C1D1 url('.kratos_option('login_bak').') fixed center top no-repeat!important;background-size:cover!important}.login h1 a{background-image:url('.kratos_option('login_logo').')!important}</style>';
+    echo '<link rel="stylesheet" id="wp-admin-css" href="'.get_bloginfo('template_directory').'/css/customlogin.min.css" type="text/css" />';
+}
+add_action('login_head','custom_login');
 //Register domain limit
 add_action('register_post','validdomain',10,3);
 function validdomain($login,$email,$errors){
@@ -41,7 +47,7 @@ function kratos_show_extra_register_fields(){ ?>
             <input id="nickname" class="input" type="text" size="20" name="nickname" />
         </label>
     </p>
-	<?php if(kratos_option('mail_reg')){ ?>
+    <?php if(kratos_option('mail_reg')){ ?>
     <p>
         <label for="password">密码<br/>
             <input id="password" class="input" type="password" tabindex="30" size="25" value="" name="password" />
@@ -69,7 +75,7 @@ function kratos_register_extra_fields($user_id){
     $userdata['ID'] = $user_id;
     if($_POST['password']!==''&&kratos_option('mail_reg')) $userdata['user_pass'] = $_POST['password'];
     $userdata['nickname'] = $_POST['nickname'];
-	$userdata['display_name'] = $_POST['nickname'];
+    $userdata['display_name'] = $_POST['nickname'];
     $new_user_id = wp_update_user($userdata);
 }
 //Login limit

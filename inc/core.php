@@ -351,12 +351,6 @@ function sig_allowed_html_tags_in_comments(){
    );
 }
 add_action('init','sig_allowed_html_tags_in_comments',10);
-//Custom login
-function custom_login(){
-    echo '<link rel="stylesheet" id="wp-admin-css" href="'.get_bloginfo('template_directory').'/css/customlogin.min.css" type="text/css" />';
-    echo '<style>body{background:#92C1D1 url('.kratos_option('login_bak').') fixed center top no-repeat!important;background-size:cover!important}.login h1 a{background-image:url('.kratos_option('login_logo').')!important}</style>';
-}
-add_action('login_head','custom_login');
 //Compress
 function wp_compress_html(){
     function wp_compress_html_main($buffer){
