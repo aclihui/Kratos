@@ -370,7 +370,7 @@ function wp_compress_html(){
        }
     $final=strlen($buffer_out);
     $savings=($initial-$final)/$initial*100;
-    $savings=round($savings, 2);
+    $savings=round($savings,2);
     $buffer_out.="\n<!--压缩前: $initial bytes; 压缩后: $final bytes; 节约：$savings% -->";
     return $buffer_out;
 }
@@ -391,11 +391,14 @@ function hex2rgb($hexColor){
     }
     return $rgb;
 }
-//Welcome
-function kratos_admin_notice(){ ?>
-  <style type="text/css">.about-description a{text-decoration:none}</style>
-  <div class="notice notice-info">
-  <p class="about-description">嗨，欢迎使用 <a target="view_window" href="https://www.fczbl.vip/">Kratos(M)</a> 主题开始创作，单击 <a target="_blank" rel="nofollow" href="https://www.fczbl.vip/787.html">此处</a> 查看帮助文档。如果遇到Bug请前往 <a target="_blank" rel="nofollow" href="https://github.com/xb2016/Kratos/issues">Github</a> 反馈，谢谢！</p>
-  </div><?php
+//Notice
+function kratos_admin_notice(){
+    $noticeinfo = wp_remote_retrieve_body(wp_remote_get('https://www.fczbl.vip/api/kratos_notice.txt'));
+    if(!is_wp_error($noticeinfo)&&$noticeinfo){ ?>
+    <style type="text/css">.about-description a{text-decoration:none}</style>
+    <div class="notice notice-info">
+        <p class="about-description"><?php echo $noticeinfo; ?></p>
+    </div><?php
+    }
 }
 add_action('welcome_panel','kratos_admin_notice');
