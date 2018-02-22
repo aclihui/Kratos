@@ -1,4 +1,11 @@
 <?php
+//Replace Gravatar server
+function kratos_get_avatar($avatar){
+    $avatar = str_replace(array('www.gravatar.com','0.gravatar.com','1.gravatar.com','2.gravatar.com','3.gravatar.com','secure.gravatar.com'),kratos_option('gravatar_uri'),$avatar);
+    return $avatar;
+}
+add_filter('get_avatar','kratos_get_avatar');
+//Local avatar
 class kratos_local_avatars{
     private $user_id_being_edited;
     public function __construct(){

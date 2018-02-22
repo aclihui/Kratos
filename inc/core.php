@@ -32,12 +32,6 @@ function kratos_active_menu_class($classes){
     return $classes;
 }
 add_filter('nav_menu_css_class','kratos_active_menu_class');
-//Replace Gravatar server
-function kratos_get_avatar($avatar){
-    $avatar = str_replace(array('www.gravatar.com','0.gravatar.com','1.gravatar.com','2.gravatar.com','3.gravatar.com','secure.gravatar.com'),'cn.gravatar.com',$avatar);
-    return $avatar;
-}
-add_filter('get_avatar','kratos_get_avatar');
 //Disable automatic formatting
 function my_formatter($content){
     $new_content = '';
@@ -368,11 +362,16 @@ function wp_compress_html(){
                 while(stristr($buffer[$i],'  ')) $buffer[$i]=(str_replace("  "," ",$buffer[$i]));
                 if(kratos_option('co_comp')) $buffer[$i]=preg_replace(array('/<!--(?!\s*(?:\[if [^\]]+]|<!|>))(?:(?!-->).)*-->/s','!/\*[^*]*\*+([^/][^*]*\*+)*/!'),'',$buffer[$i]);
                 if(kratos_option('xhtml_comp')&&strtolower(substr(ltrim($buffer[$i]),0,15))=='<!doctype html>') $buffer[$i]=str_replace(' />','>',$buffer[$i]);
-                if(kratos_option('html_relative')) $buffer[$i]=str_replace(array('https://'.$_SERVER['HTTP_HOST'].'/','http://'.$_SERVER['HTTP_HOST'].'/','//'.$_SERVER['HTTP_HOST'].'/'),array('/','/','/'),$buffer[$i]);
-                if(kratos_option('html_scheme')) $buffer[$i]=str_replace(array('http://','https://'),'//',$buffer[$i]);
+                if(kratos_option('html_relative')) $buffer[$i]=str_replace(array('href="https://'.$_SERVER['HTTP_HOST'].'/','href="http://'.$_SERVER['HTTP_HOST'].'/','href="//'.$_SERVER['HTTP_HOST'].'/'),'href="/',$buffer[$i]);
+                if(kratos_option('html_relative')) $buffer[$i]=str_replace(array("href='https://".$_SERVER['HTTP_HOST'].'/',"href='http://".$_SERVER['HTTP_HOST'].'/',"href='//".$_SERVER['HTTP_HOST'].'/'),"href='/",$buffer[$i]);
+                if(kratos_option('html_scheme')) $buffer[$i]=str_replace(array('href="http://','href="https://',"href='http://","href='https://"),array('href="//','href="//',"href='//","href='//"),$buffer[$i]);
             }
             $buffer_out.=$buffer[$i];
        }
+    $final=strlen($buffer_out);
+    $savings=($initial-$final)/$initial*100;
+    $savings=round($savings, 2);
+    $buffer_out.="\n<!--压缩前: $initial bytes; 压缩后: $final bytes; 节约：$savings% -->";
     return $buffer_out;
 }
 ob_start("wp_compress_html_main");

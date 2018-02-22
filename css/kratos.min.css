@@ -40,25 +40,23 @@ table,table tbody tr th{text-align:center!important}
 .panel-success>.panel-heading{border-color:#3bb273;background-color:#3bb273;color:#fff}
 .panel-danger>.panel-heading{border-color:#e15554;background-color:#e15554;color:#fff}
 .downbtn{padding:10px 26px;border:1px solid #3e92cc;background:#3e92cc;color:#fff;line-height:3}
-.downbtn:hover{background:#3a89c1;color:#fff!important}
+.downbtn:hover{background:#3a89c1;color:#fff!important;cursor:url(../images/pointer.cur),auto}
 .downbtn:focus{text-decoration:none;color:#fff!important}
 .downbtn:not(:first-child){margin-left:10px}
 .downcloud{border:1px solid #16bac5}
 .downcloud,.downcloud:focus{background:#16bac5}
-.downcloud:hover{background:#1399a2}
+.downcloud:hover{background:#1399a2;cursor:url(../images/pointer.cur),auto}
 .video-container:not(:first-child){margin-top:15px}
 .video-container{position:relative;overflow:hidden;padding-top:30px;padding-bottom:56.25%;height:0}
 .video-container embed,.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 .post-pwd{width:55%}
 .btn{text-transform:uppercase;letter-spacing:2px;-webkit-transition:.3s;transition:.3s}
-.btn:active,.btn:focus,.btn:hover{background:#393e46!important;color:#fff;outline:0!important}
+.btn:active,.btn:focus,.btn:hover{background:#393e46!important;color:#fff;outline:0!important;cursor:url(../images/pointer.cur),auto}
 .btn-primary{border-color:#51aded;background-color:#51aded;color:#fff}
 .btn-primary:hover{border-color:#15b9fa;background-color:#15b9fa;color:#fff}
 .btn-primary:active,.btn-primary:active:focus,.btn-primary:active:hover,.btn-primary:focus{border-color:#0895cb;background-color:#0895cb;color:#fff}
 .btn.btn-primary{background:#51aded;color:#fff;border:none!important;border:2px solid transparent!important}
 .btn.btn-primary:active,.btn.btn-primary:focus,.btn.btn-primary:hover{box-shadow:none;background:#51aded;color:#fff!important}
-.btn.btn-star{color:#fff;border:2px solid #fff}
-.btn.btn-star:active,.btn.btn-star:focus,.btn.btn-star:hover{background:#51aded!important;border:2px solid #51aded;color:#fff}
 .wp-useragent img{margin-top:-5px}
 .xControl{position:relative;margin-bottom:15px;background:#f6f6f6}
 .xHeading{position:relative;cursor:url(../images/pointer.cur),auto;padding:10px 30px 10px 10px}
@@ -118,7 +116,6 @@ table,table tbody tr th{text-align:center!important}
 .kratos-cover{background-size:cover;position:relative;background-position:center center}
 .kratos-cover .btn{padding:1em 5em;opacity:.9}
 .kratos-cover.kratos-cover_2{height:320px;background-position:top}
-.kratos-cover .desc.desc3{top:38%}
 .kratos-cover .desc{top:50%;position:absolute;width:100%;margin-top:-28px;z-index:2;color:#fff;text-shadow:2px 2px 2px #666}
 .kratos-cover .desc h2{color:#fff;text-transform:none;font-size:40px;margin-bottom:10px;display:inline-block}
 .kratos-cover .desc p,.kratos-cover .desc span{color:#fff;margin-bottom:30px;font-size:25px;letter-spacing:1px;display:inline-block}
@@ -365,6 +362,12 @@ img.wp-smiley{width:auto!important;height:auto!important;vertical-align:text-bot
 .kratos-social-icons>a{padding:4px 14px;color:#51aded}
 .kratos-social-icons>a i{font-size:30px}
 .kratos-social-icons>a:active,.kratos-social-icons>a:focus,.kratos-social-icons>a:hover{text-decoration:none;color:#5a5a5a}
+.page404{padding:0 5%}
+.page404 .errtxt h5{color:#555}
+.page404 .back-p{margin-right:15px;padding:10px 20px;border:1px solid #51aded;background:#51aded;color:#fff;line-height:3}
+.page404 .back-p:hover{background:#489cd7;color:#fff!important}
+.page404 .back-index{margin-left:15px;padding:10px 20px;border:1px solid #f0f0f0;background-color:#fafafa;color:#767676;line-height:3}
+.page404 .back-index:hover{border-color:#0092ee;color:#0092ee}
 .linkpage ul{color:rgba(255,255,255,.15)}
 .linkpage ul:after{content:" ";clear:both;display:block}
 .linkpage li{float:left;width:48%;position:relative;transition:all .3s ease-out;border-radius:5px;line-height:1.3;height:90px;display:block}
@@ -395,6 +398,9 @@ img.wp-smiley{width:auto!important;height:auto!important;vertical-align:text-bot
 .kratos-post-meta span i:not(:first-child){margin-left:10px}
 .kratos-entry-content-new{height:auto;overflow:hidden;text-overflow:ellipsis}
 .title-h2{padding:0 15px;font-size:18px}
+}
+@media(min-width:992px){
+.page404 .errtxt{margin-top:15%}.errtxt h5,.page404 .errtxt p{margin-top:30px}
 }
 @media(max-width:768px){
 h1{font-size:25px!important}

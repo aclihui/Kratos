@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
     }
     $(".spig").animate({
         top: $(".spig").offset().top + 300,
-        left: document.body.offsetWidth - 200
+        left: 60
     },
     {
         queue: false,
@@ -91,7 +91,7 @@ jQuery(document).ready(function ($) {
     $('.nav-next').mouseover(function () {
         showMessage('点它可以前进哦！');
     });
-    $('.desc a h2, .desc a span').mouseover(function () {
+    $('.desc a h2,.desc a span,.color-logo a,.back-index').mouseover(function () {
         showMessage('点它就可以回到首页啦！');
     });
     $('.comment-reply-link').mouseover(function(){
@@ -127,10 +127,10 @@ jQuery(document).ready(function ($) {
     $('.cd-gb-a').mouseover(function(){
         showMessage('既然来了就留下点什么吧~');
     });
-    $('#weixin-img').mouseover(function(){
+    $('#wechat-img').mouseover(function(){
         showMessage('这是我的微信二维码~');
     });
-    $('.cd-top').mouseover(function(){
+    $('.gotop-box').mouseover(function(){
         showMessage('要回到开始的地方么？');
     });
 });
