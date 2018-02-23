@@ -43,37 +43,42 @@ add_action('register_post','kratos_check_extra_register_fields',10,3);
 add_action('user_register','kratos_register_extra_fields',100);
 function kratos_show_extra_register_fields(){ ?>
     <p>
-        <label for="password">昵称<br/>
-            <input id="nickname" class="input" type="text" size="20" name="nickname" />
+        <label for="nickname">昵称<br/>
+            <input id="nickname" class="input" type="text" name="nickname" value="" size="20" />
         </label>
     </p>
     <?php if(kratos_option('mail_reg')){ ?>
     <p>
         <label for="password">密码<br/>
-            <input id="password" class="input" type="password" tabindex="30" size="25" value="" name="password" />
+            <input id="password" class="input" type="password" name="password" value="" size="25" />
         </label>
     </p>
     <p>
         <label for="repeat_password">重复密码<br/>
-            <input id="repeat_password" class="input" type="password" tabindex="40" size="25" value="" name="repeat_password" />
+            <input id="repeat_password" class="input" type="password" name="repeat_password" value="" size="25" />
         </label>
-    </p>
+    </p><?php
+    }
+    $num1=rand(10,89);
+    $num2=rand(0,9); ?>
     <p>
-        <label for="are_you_human">人机验证：请输入本站名称<br/>
-            <input id="are_you_human" class="input" type="text" tabindex="40" size="25" value="" name="are_you_human" />
+        <label for="are_you_human">人机验证：<?php echo $num1.' + '.$num2.' = ?'; ?><br/>
+            <input id="are_you_human" class="input" type="text" name="are_you_human" value="" size="25" />
+            <input type="hidden" name="num1" value="<?php echo $num1; ?>">
+            <input type="hidden" name="num2" value="<?php echo $num2; ?>">
         </label>
-    </p><?php }
+    </p><?php
 }
 function kratos_check_extra_register_fields($login,$email,$errors){
-    if($_POST['nickname']=='') $errors->add('no_nickname',"<strong>错误</strong>：昵称一栏为空。");
+    if($_POST['nickname']=='') $errors->add('no_nickname',"<strong>错误</strong>：昵称一栏不能为空。");
     if($_POST['password']!==$_POST['repeat_password']&&kratos_option('mail_reg')) $errors->add('passwords_not_matched',"<strong>错误</strong>：两次输入的密码不一致。");
     if(strlen($_POST['password'])<8&&kratos_option('mail_reg')) $errors->add('password_too_short',"<strong>错误</strong>：密码长度必须大于8位。");
-    if($_POST['are_you_human']!==get_bloginfo('name')&&kratos_option('mail_reg')) $errors->add('not_human',"<strong>错误</strong>：站点名称错误，请看下方返回按钮。");
+    if($_POST['are_you_human']!=$_POST['num1']+$_POST['num2']) $errors->add('not_human',"<strong>错误</strong>：验证码错误，请重试。");
 }
 function kratos_register_extra_fields($user_id){
     $userdata = array();
     $userdata['ID'] = $user_id;
-    if($_POST['password']!==''&&kratos_option('mail_reg')) $userdata['user_pass'] = $_POST['password'];
+    if(kratos_option('mail_reg')) $userdata['user_pass'] = $_POST['password'];
     $userdata['nickname'] = $_POST['nickname'];
     $userdata['display_name'] = $_POST['nickname'];
     $new_user_id = wp_update_user($userdata);
