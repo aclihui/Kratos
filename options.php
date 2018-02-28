@@ -471,7 +471,7 @@ function optionsframework_options(){
         'desc'=>'请填写邮箱密码',
         'id'=>'mail_passwd',
         'std'=>'123456789',
-        'type'=>'text');
+        'type'=>'password');
     $options[] = array(
         'name'=>'启用SMTPAuth服务',
         'desc'=>'是否启用SMTPAuth服务',

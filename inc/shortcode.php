@@ -91,16 +91,15 @@ function hide($atts,$content=null,$code=""){
     global $current_user;
     get_currentuserinfo();
     if($current_user->ID) $email = $current_user->user_email;
-    $ereg = "^[_\.a-z0-9]+@([0-9a-z][0-9a-z-]+\.)+[a-z]{2,5}$";
     if($reply_to_this=='true'){
-        if(eregi($ereg,$email)){
+        if($email){
             global $wpdb;
             global $id;
             $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_author_email = '".$email."' and comment_post_id='".$id."'and comment_approved = '1'");
             }
         if(!$comments) $content = '<div class="hide_notice">抱歉，只有<a href="'.wp_login_url(get_permalink()).'" rel="nofollow">登录</a>并在本文发表评论才能阅读隐藏内容</div>';
     }else{
-        if(eregi($ereg,$email)){
+        if($email){
             global $wpdb;
             global $id;
             $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_author_email = '".$email."' and comment_approved = '1'");
