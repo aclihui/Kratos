@@ -1,28 +1,28 @@
 <?php
 function success($atts,$content=null,$code=""){
     $return = '<div class="alert alert-success">';
-    $return .= $content;
+    $return .= do_shortcode($content);
     $return .= '</div>';
     return $return;
 }
 add_shortcode('success','success');
 function info($atts,$content=null,$code=""){
     $return = '<div class="alert alert-info">';
-    $return .= $content;
+    $return .= do_shortcode($content);
     $return .= '</div>';
     return $return;
 }
 add_shortcode('info','info');
 function warning($atts,$content=null,$code=""){
     $return = '<div class="alert alert-warning">';
-    $return .= $content;
+    $return .= do_shortcode($content);
     $return .= '</div>';
     return $return;
 }
 add_shortcode('warning','warning');
 function danger($atts,$content=null,$code=""){
     $return = '<div class="alert alert-danger">';
-    $return .= $content;
+    $return .= do_shortcode($content);
     $return .= '</div>';
     return $return;
 }
@@ -81,7 +81,7 @@ function xcollapse($atts,$content=null,$code=""){
     $return = '<div class="xControl"><div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><h5>';
     $return .= $title;
     $return .= '</h5></div><div class="xContent"><div class="inner">';
-    $return .= $content;
+    $return .= do_shortcode($content);
     $return .= '</div></div></div>';
     return $return;
 }
@@ -115,7 +115,7 @@ function successbox($atts,$content=null,$code=""){
     $return = '<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title">';
     $return .= $title;
     $return .= '</h3></div><div class="panel-body">';
-    $return .= $content;
+    $return .= do_shortcode($content);
     $return .= '</div></div>';
     return $return;
 }
@@ -125,7 +125,7 @@ function infobox($atts,$content=null,$code=""){
     $return = '<div class="panel panel-info"><div class="panel-heading"><h3 class="panel-title">';
     $return .= $title;
     $return .= '</h3></div><div class="panel-body">';
-    $return .= $content;
+    $return .= do_shortcode($content);
     $return .= '</div></div>';
     return $return;
 }
@@ -135,7 +135,7 @@ function warningbox($atts,$content=null,$code=""){
     $return = '<div class="panel panel-warning"><div class="panel-heading"><h3 class="panel-title">';
     $return .= $title;
     $return .= '</h3></div><div class="panel-body">';
-    $return .= $content;
+    $return .= do_shortcode($content);
     $return .= '</div></div>';
     return $return;
 }
@@ -145,7 +145,7 @@ function dangerbox($atts,$content=null,$code=""){
     $return = '<div class="panel panel-danger"><div class="panel-heading"><h3 class="panel-title">';
     $return .= $title;
     $return .= '</h3></div><div class="panel-body">';
-    $return .= $content;
+    $return .= do_shortcode($content);
     $return .= '</div></div>';
     return $return;
 }
