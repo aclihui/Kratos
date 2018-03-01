@@ -391,6 +391,18 @@ function hex2rgb($hexColor){
     }
     return $rgb;
 }
+//New window-comment author link
+function comment_author_link_window(){
+    global $comment;
+    $url = get_comment_author_url();
+    $author = get_comment_author();
+    if(empty($url)||'http://'==$url||'https://'==$url)
+        $return = $author;
+    else
+        $return = "<a href='".$url."' target='_blank'>".$author."</a>"; 
+    return $return;
+}
+add_filter('get_comment_author_link','comment_author_link_window');
 //Notice
 function kratos_admin_notice(){
     $noticeinfo = wp_remote_retrieve_body(wp_remote_get('https://www.fczbl.vip/api/kratos_notice.txt'));
