@@ -65,12 +65,6 @@ function optionsframework_options(){
             'old_layout'=>$imagepath.'old-layout.png',
             'new_layout'=>$imagepath.'new-layout.png'));
     $options[] = array(
-        'name'=>'SSL',
-        'desc'=>'此站点是否启用SSL(HTTPS协议)？',
-        'id'=>'tool_ssl',
-        'std'=>'0',
-        'type'=>'checkbox');
-    $options[] = array(
         'name'=>'分类页面',
         'desc' =>'是否启用分类页面的名称以及简介功能',
         'id'=>'show_head_cat',
