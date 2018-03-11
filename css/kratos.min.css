@@ -400,7 +400,7 @@ a.comment-reply-link:hover{color:#000;box-shadow:0 0 1px #505050}
 #respond .form-control{box-shadow:none;background:0 0;border:1px solid #ccc;height:auto;width:100%;font-size:14px;font-weight:300;border-radius:0}
 #respond .input-group-addon{border-radius:0}
 #respond .has-feedback{position:relative}
-#respond .has-feedback .form-control{padding-right:42.5px}
+#respond .has-feedback .form-control:not(:first-child){padding-right:30px}
 #respond .form-control-feedback{position:absolute;top:0;right:0;z-index:2;display:block;width:34px;height:34px;text-align:center;pointer-events:none}
 #comments img{max-width:100%}
 .comment-form .form-control-feedback{line-height:40px;color:#848484}
@@ -408,6 +408,7 @@ a.comment-reply-link:hover{color:#000;box-shadow:0 0 1px #505050}
 .comment-form .btn-primary{width:100%;border-radius:0}
 .comment-form .comment-author{margin-top:10px}
 .comment-form .logged-in-as a{color:#848484}
+.form-control{padding:6px 12px;line-height:1.42857143;color:#555;z-index:2;float:left}
 .form-group{margin-bottom:15px}
 .input-group{display:table;border-collapse:separate}
 .input-group-addon{padding:6px 12px;font-size:14px;font-weight:400;line-height:1;color:#555;text-align:center;background-color:#eee;border:1px solid #ccc;width:1%;white-space:nowrap;vertical-align:middle;display:table-cell}
