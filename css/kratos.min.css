@@ -590,8 +590,8 @@ h4{font-size:15px}
 .downbtn{padding:9px 1pc;font-size:14px}
 .hide_notice,.info{font-size:11px}
 #archives .arc-t{width:45%}
-#commentform .form-group{float:none;width:100%}
-.comment-form-email.form-group.has-feedback{margin-left:0;margin-right:0}
+#respond #commentform .form-group{float:none;width:100%}
+#respond .comment-form-email.form-group.has-feedback{margin-left:0;margin-right:0}
 }
 @media(max-width:767px){
 .visible-xs{display:block!important}
