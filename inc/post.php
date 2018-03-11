@@ -147,6 +147,7 @@ function smilies_reset(){
      ':good:' => 'good.png',
       ':bad:' => 'bad.png',
        ':ok:' => 'ok.png',
+     ':stop:' => 'stop.png',
     );
 }
 smilies_reset();

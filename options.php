@@ -20,8 +20,8 @@ function optionsframework_options(){
     $options[] = array(
         'name'=>'Gravatar头像服务器地址',
         'desc'=>'不确定请勿更改',
-        'id'=>'gravatar_uri',
-        'std'=>'cn.gravatar.com',
+        'id'=>'gravatar_url',
+        'std'=>'cn.gravatar.com/avatar',
         'type'=>'text');
     $options[] = array(
         'name'=>'背景类型',
@@ -119,7 +119,7 @@ function optionsframework_options(){
         'std'=>'0',
         'type'=>'checkbox');
     $options[] = array(
-        'name'=>'站点黑白',
+        'name'=>'站点黑白(此功能与侧边栏随动冲突)',
         'desc'=>'是否启用站点黑白功能(一般常用于悼念日)',
         'id'=>'site_bw',
         'std'=>'0',
@@ -220,8 +220,8 @@ function optionsframework_options(){
         'std'=>'A responsible theme for WordPress',
         'type'=>'text');
     $options[] = array(
-        'name'=>'以下为纯色Header的设置',
-        'desc'=>'只有顶部显示模式为纯色才有效。');
+        'name'=>'以下为纯色Header与移动端设置',
+        'desc'=>'只有顶部显示模式为纯色才有效(PC)。');
     $options[] = array(
         'name'=>'Nav Bar颜色',
         'desc'=>'同移动端Header的颜色',
@@ -232,7 +232,13 @@ function optionsframework_options(){
         'name'=>'Nav Bar透明度',
         'desc'=>'可选 0～1，1为不透明',
         'id'=>'banner_color_op',
-        'std'=>'.8',
+        'std'=>'.9',
+        'type'=>'text');
+    $options[] = array(
+        'name'=>'移动端侧边栏菜单颜色',
+        'desc'=>'请使用RGB格式表示，默认42,42,42,.9',
+        'id'=>'mobi_color',
+        'std'=>'42,42,42,.9',
         'type'=>'text');
     $options[] = array(
         'name'=>'图片Logo',
@@ -497,7 +503,7 @@ function optionsframework_options(){
         'name'=>'注释移除',
         'desc'=>'是否移除HTML中出现的HTML/JS/CSS注释',
         'id'=>'co_comp',
-        'std'=>'1',
+        'std'=>'0',
         'type'=>'checkbox');
     $options[] = array(
         'name'=>'XHTML关闭标签',
@@ -509,7 +515,7 @@ function optionsframework_options(){
         'name'=>'以/代替站点域名',
         'desc'=>'例如以/feed代替https://www.fczbl.vip/feed',
         'id'=>'html_relative',
-        'std'=>'0',
+        'std'=>'1',
         'type'=>'checkbox');
     $options[] = array(
         'name'=>'移除所有http:与https:',
@@ -534,9 +540,9 @@ function optionsframework_options(){
         'type'=>'checkbox');
     $options[] = array(
         'name'=>'雪花数量',
-        'desc'=>'数值越大雪花数量越多，默认200',
+        'desc'=>'数值越大雪花数量越多，默认150',
         'id'=>'snow_xb2016_flakecount',
-        'std'=>'200',
+        'std'=>'150',
         'type'=>'text');
     $options[] = array(
         'name'=>'雪花大小',
@@ -546,9 +552,9 @@ function optionsframework_options(){
         'type'=>'text');
     $options[] = array(
         'name'=>'雪花距离',
-        'desc'=>'雪花距离鼠标指针的最小值，小于这个距离的雪花将受到鼠标的排斥，默认150',
+        'desc'=>'雪花距离鼠标指针的最小值，小于这个距离的雪花将受到鼠标的排斥，默认100',
         'id'=>'snow_xb2016_mindist',
-        'std'=>'150',
+        'std'=>'100',
         'type'=>'text');
     $options[] = array(
         'name'=>'雪花速度',

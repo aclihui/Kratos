@@ -33,44 +33,6 @@
         });
         $('#searchform').on("click",function(e){e.stopPropagation();})
     }
-    var showThumb = function(){
-        (function ($){
-            $.extend({
-                tipsBox:function (options){
-                    options = $.extend({
-                        obj:null,
-                        str:"+1",
-                        startSize:"10px",
-                        endSize:"25px",
-                        interval:800,
-                        color:"red",
-                        callback:function (){ }
-                    },options);
-                    $("body").append("<span class='num'>"+options.str+"</span>");
-                    var box = $(".num");
-                    var left = options.obj.offset().left+options.obj.width()/2;
-                    var top = options.obj.offset().top-options.obj.height();
-                    box.css({
-                        "position":"absolute",
-                        "left":left-12+"px",
-                        "top":top+9+"px",
-                        "z-index":9999,
-                        "font-size":options.startSize,
-                        "line-height":options.endSize,
-                        "color":options.color
-                    });
-                    box.animate({
-                        "font-size":options.endSize,
-                        "opacity":"0",
-                        "top":top-parseInt(options.endSize)+"px"
-                    },options.interval,function (){
-                        box.remove();
-                        options.callback();
-                    });
-                }
-            });
-        })(jQuery);
-    }
     var showlove = function(){
         $.fn.postLike = function(){
             if($(this).hasClass('done')){
@@ -100,7 +62,7 @@
             event.preventDefault();
             $('html, body').animate({
                 scrollTop:$('html').offset().top
-            },500,'easeInOutExpo');
+            },500);
             return false;
         });
         $(window).scroll(function(){
@@ -172,7 +134,7 @@
     var xControl = function(){
         $('.xHeading').on('click',function(event){
             var $this = $(this);
-            $this.closest('.xControl').find('.xContent').slideToggle(300,'easeInOutExpo');
+            $this.closest('.xControl').find('.xContent').slideToggle(300);
             if ($this.closest('.xControl').hasClass('active')){
                 $this.closest('.xControl').removeClass('active');
             }else{
@@ -212,29 +174,28 @@
         }
     }
     var archives = function(){
-        $('#archives section#mon').each(function(){
-            var num=$(this).find('.arc-t').size();
-            var text=$(this).find('.al_mon').text();
-            $(this).find('.al_mon').html(text+'（'+num+' 篇文章）');
-        });
-        $('#archives h4.al_year').click(function(){
-            $(this).next().slideToggle(400);
-            return false;
-        });
-        $('#archives div.al_mon').click(function(){
-            $(this).next().slideToggle(400);
-            return false;
-        });
-        $('#al_collapse').click(function(){
-            $('.mon_arc').hide(400);$('#al_collapse').hide();$('#al_expand').show();
-        });
-        $('#al_expand').click(function(){
-            $('.mon_arc').show(400);$('#al_expand').hide();$('#al_collapse').show();
-        });
+        if($("#archives").height()){
+            $('#archives section#mon').each(function(){
+                var num=$(this).find('.arc-t').size();
+                var text=$(this).find('.al_mon').text();
+                $(this).find('.al_mon').html(text+'（'+num+' 篇文章）');
+            });
+            $('#archives h4.al_year').click(function(){
+                $(this).next().slideToggle(400);return false;
+            });
+            $('#archives div.al_mon').click(function(){
+                $(this).next().slideToggle(400);return false;
+            });
+            $('#al_collapse').click(function(){
+                $('.mon_arc').hide(400);$('#al_collapse').hide();$('#al_expand').show();
+            });
+            $('#al_expand').click(function(){
+                $('.mon_arc').show(400);$('#al_expand').hide();$('#al_collapse').show();
+            });
+        }
     }
     $(function(){
         shareMenu();
-        showThumb();
         showlove();
         gotop();
         wechatpic();

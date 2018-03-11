@@ -1,7 +1,7 @@
 <?php
 //Replace Gravatar server
 function kratos_get_avatar($avatar){
-    $avatar = str_replace(array('www.gravatar.com','0.gravatar.com','1.gravatar.com','2.gravatar.com','3.gravatar.com','secure.gravatar.com'),kratos_option('gravatar_uri'),$avatar);
+    $avatar = str_replace(array('www.gravatar.com/avatar','0.gravatar.com/avatar','1.gravatar.com/avatar','2.gravatar.com/avatar','3.gravatar.com/avatar','secure.gravatar.com/avatar'),kratos_option('gravatar_url'),$avatar);
     return $avatar;
 }
 add_filter('get_avatar','kratos_get_avatar');

@@ -33,6 +33,13 @@ get_header();get_header('abstract'); ?>
                                     }
                                 }
                             } ?>
+                                <li>
+                                    <a href="https://github.com/xb2016" target="_blank" rel="nofollow">
+                                        <img src="https://www.fczbl.vip/head/more.png">
+                                        <h4>你愿意和我签订契约么？</h4>
+                                        <p>欢迎做我的好朋友♂RBQ</p>
+                                    </a>
+                                </li>
                             </ul>
                             <hr/>
                         </div>
