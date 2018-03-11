@@ -6,10 +6,10 @@ DEMO：[https://www.fczbl.vip/787.html](https://www.fczbl.vip/787.html)
 
 Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome). Created and maintained by Vtrois. Stay up to date with the latest release and announcements on [Bulletin Board](https://github.com/Vtrois/Kratos/issues). 
 
-![Kratos Demo](http://i2.bvimg.com/1949/649bfde164c5c8b1.png) 
+![Kratos Demo](https://www.fczbl.vip/wp-content/uploads/kratos.png)
 
 ## Changes
-![Kratos Demo](https://www.fczbl.vip/wp-content/uploads/kratos2.jpg)
+![Kratos Demo](https://www.fczbl.vip/wp-content/uploads/kratos_demo.jpg)
 
 Please visit [https://www.fczbl.vip/787.html](https://www.fczbl.vip/787.html) .
 
@@ -19,18 +19,13 @@ Within the download you'll find the following directories and files. You'll see 
 ```
 kratos/
 ├── css/
-│   ├── animate.min.css
-│   ├── bootstrap.min.css
 │   ├── customlogin.css
-│   ├── font-awesome.min.css
-│   ├── kratos.min.css
-│   └── layer.min.css
+│   └── kratos.min.css
 ├── fonts/
 │   ├── fontawesome-webfont.eot
 │   ├── fontawesome-webfont.svg
 │   ├── fontawesome-webfont.ttf
-│   ├── fontawesome-webfont.woff
-│   └── fontawesome-webfont.woff2
+│   └── fontawesome-webfont.woff
 ├── images/
 │   ├── options/
 │   │   └── (has some options pic)
@@ -84,6 +79,8 @@ kratos/
 │   │   │   ├── media-uploader.js
 │   │   │   └── options-custom.js
 │   │   └── options-framework.php
+│   ├── avatars.php
+│   ├── core.php
 │   ├── imgcfg.php
 │   ├── logincfg.php
 │   ├── OwO.json
@@ -94,12 +91,15 @@ kratos/
 │   └── widgets.php
 ├── js/
 │   ├── bootstrap.min.js
-│   ├── jquery.easing.js
 │   ├── jquery.min.js
 │   ├── kratos.js
 │   ├── layer.min.js
 │   ├── OwO.min.js
 │   └── spig.js
+├── pages/
+│   ├── page-archives.php
+│   ├── page-link.php
+│   └── page-notitle.php
 ├── 404.php
 ├── comments.php
 ├── content.php
@@ -110,8 +110,6 @@ kratos/
 ├── index.php
 ├── options.php
 ├── page.php
-├── page-link.php
-├── page-notitle.php
 ├── screenshot.png
 ├── single.php
 └── style.css
