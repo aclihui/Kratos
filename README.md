@@ -20,6 +20,7 @@ Within the download you'll find the following directories and files. You'll see 
 kratos/
 ├── css/
 │   ├── customlogin.css
+│   ├── font-awesome.min.css
 │   └── kratos.min.css
 ├── fonts/
 │   ├── fontawesome-webfont.eot
