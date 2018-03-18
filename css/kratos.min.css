@@ -179,6 +179,7 @@ td,th{padding:0}
 .pull-right{float:right!important}
 .pull-left{float:left!important}
 .row{margin-right:-15px;margin-left:-15px}
+.useragent{font-size:15px;color:#333}
 .visible-lg,.visible-md,.visible-sm,.visible-xs{display:none!important}
 .text-left{text-align:left}
 .text-right{text-align:right}
@@ -188,7 +189,6 @@ td,th{padding:0}
 .text-lowercase{text-transform:lowercase}
 .text-uppercase{text-transform:uppercase}
 .text-capitalize{text-transform:capitalize}
-.wp-useragent img{margin-top:-5px}
 .alert{padding:15px;margin-bottom:20px;border:1px solid transparent}
 .alert>p,.alert>ul{margin-bottom:0}
 .alert>p+p {margin-top:5px}
@@ -613,7 +613,7 @@ h4{font-size:15px}
 #slide .carousel-indicators{margin-bottom:0}
 .kratos-entry-footer .post-like-donate a{width:80px}
 .kratos-entry-footer .footer-tag a{padding:2px 4px}
-.kratos-post-meta .hd,.pull-date,.spig{display:none}
+.kratos-post-meta .hd,.pull-date,.spig,.useragent .bversion{display:none}
 .pagination li a{width:30px;padding:4px;margin-left:5px}
 #comments-nav a,#comments-nav span.current{padding:3px 8px;margin:2px}
 #archives .arc-t{width:97%}

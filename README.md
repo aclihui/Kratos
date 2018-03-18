@@ -28,13 +28,15 @@ kratos/
 │   ├── fontawesome-webfont.ttf
 │   └── fontawesome-webfont.woff
 ├── images/
-│   ├── options/
-│   │   └── (has some options pic)
+│   ├── net/
+│   │   └── (has some net pic)
+│   ├── os/
+│   │   └── (has some os pic)
 │   ├── smilies/
 │   │   └── (has some emoji pic)
 │   ├── thumb/
 │   │   └── (has some thumb pic)
-│   ├── 404.jpg
+│   ├── 404.png
 │   ├── about.jpg
 │   ├── alipay.png
 │   ├── alipayqr.png
@@ -50,7 +52,6 @@ kratos/
 │   ├── icon-ext.png
 │   ├── icon-police.png
 │   ├── index_image.png
-│   ├── licenses.png
 │   ├── locked.gif
 │   ├── move.cur
 │   ├── photo.jpg
@@ -66,20 +67,7 @@ kratos/
 │   │   │   └── (has some button pic)
 │   │   └── more.js
 │   ├── theme-options/
-│   │   ├── css/
-│   │   │   └── optionsframework.css
-│   │   ├── images/
-│   │   │   └── ico-delete.png
-│   │   ├── includes/
-│   │   │   ├── class-options-framework.php
-│   │   │   ├── class-options-framework-admin.php
-│   │   │   ├── class-options-interface.php
-│   │   │   ├── class-options-media-uploader.php
-│   │   │   └── class-options-sanitization.php
-│   │   ├── js/
-│   │   │   ├── media-uploader.js
-│   │   │   └── options-custom.js
-│   │   └── options-framework.php
+│   │   └── (options framework)
 │   ├── avatars.php
 │   ├── core.php
 │   ├── imgcfg.php
@@ -89,6 +77,7 @@ kratos/
 │   ├── share.php
 │   ├── shortcode.php
 │   ├── smtp.php
+│   ├── ua.php
 │   └── widgets.php
 ├── js/
 │   ├── bootstrap.min.js

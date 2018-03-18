@@ -89,6 +89,12 @@ function optionsframework_options(){
         'std'=>'1',
         'type'=>'checkbox');
     $options[] = array(
+        'name'=>'评论UA',
+        'desc'=>'是否在评论区显示评论者UA信息',
+        'id'=>'comment_ua',
+        'std'=>'1',
+        'type'=>'checkbox');
+    $options[] = array(
         'name'=>'浮动小人',
         'desc'=>'是否启用浮动小人功能',
         'id'=>'site_spig',
