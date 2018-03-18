@@ -6,35 +6,7 @@ function user_agent_show(){
     $title = 'Unknown';
     $version = null;
     $code = 'null';
-    if(preg_match('/Xandros/i',$useragent)){
-        $title = 'Xandros';
-        $code = 'xandros';
-    }elseif(preg_match('/Xubuntu/i',$useragent)){
-        $title = 'Xubuntu';
-        if(preg_match('/Xubuntu[\/|\ ]([.0-9a-zA-Z]+)/i',$useragent,$regmatch)) $version = $regmatch[1];
-        if ($regmatch[1] < 10){
-            $code = 'xubuntu-1';
-        }else{
-            $code = 'xubuntu-2';
-        }
-    }elseif(preg_match('/Zenwalk/i',$useragent)){
-        $title = 'Zenwalk GNU Linux';
-        $code = 'zenwalk';
-    }elseif(preg_match('/Ubuntu/i',$useragent)){
-        $title = 'Ubuntu';
-        if(preg_match('/Ubuntu[\/|\ ]([.0-9]+[.0-9a-zA-Z]+)/i',$useragent,$regmatch)) $version = $regmatch[1];
-        if($regmatch[1] < 10){
-            $code = 'ubuntu-1';
-        }else{
-            $code = 'ubuntu-2';
-        }
-    }elseif(preg_match('/Linux/i',$useragent)){
-        $title = 'GNU/Linux';
-        $code = 'linux';
-    }elseif(preg_match('/J2ME\/MIDP/i',$useragent)){
-        $title = 'J2ME/MIDP Device';
-        $code = 'java';
-    }elseif(preg_match('/iPad/i',$useragent)){
+    if(preg_match('/iPad/i',$useragent)){
 		$title = 'iPad';
 		if(preg_match('/CPU\ OS\ ([._0-9a-zA-Z]+)/i',$useragent,$regmatch)) $version = 'iOS '.str_replace('_','.',$regmatch[1]);
 		$code = 'ipad';
@@ -398,6 +370,28 @@ function user_agent_show(){
         $title = 'SymbianOS';
         if(preg_match('/Symb[ian]?[OS]?\/([.0-9a-zA-Z]+)/i',$useragent,$regmatch)) $version = $regmatch[1];
         $code = 'symbianos';
+    }elseif(preg_match('/Xandros/i',$useragent)){
+        $title = 'Xandros';
+        $code = 'xandros';
+    }elseif(preg_match('/Xubuntu/i',$useragent)){
+        $title = 'Xubuntu';
+        if(preg_match('/Xubuntu[\/|\ ]([.0-9a-zA-Z]+)/i',$useragent,$regmatch)) $version = $regmatch[1];
+        if ($regmatch[1] < 10){
+            $code = 'xubuntu-1';
+        }else{
+            $code = 'xubuntu-2';
+        }
+    }elseif(preg_match('/Zenwalk/i',$useragent)){
+        $title = 'Zenwalk GNU Linux';
+        $code = 'zenwalk';
+    }elseif(preg_match('/Ubuntu/i',$useragent)){
+        $title = 'Ubuntu';
+        if(preg_match('/Ubuntu[\/|\ ]([.0-9]+[.0-9a-zA-Z]+)/i',$useragent,$regmatch)) $version = $regmatch[1];
+        if($regmatch[1] < 10){
+            $code = 'ubuntu-1';
+        }else{
+            $code = 'ubuntu-2';
+        }
     }elseif(preg_match('/Unix/i',$useragent)){
         $title = 'Unix';
         $code = 'unix';
