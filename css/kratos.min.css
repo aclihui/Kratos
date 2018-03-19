@@ -526,7 +526,7 @@ a.comment-reply-link:hover{color:#000;box-shadow:0 0 1px #505050}
 .search-box .search-form{width:0}
 .wechat-img{bottom:80px;background:#848484;opacity:.7}
 .wechat-img #wechat-pic{display:none}
-.wechat-img img{position:fixed;right:80px;bottom:45px;width:150px;height:150px}
+.wechat-img img{position:absolute;right:55px;bottom:-55px;width:150px;height:150px}
 #footer{background:#23282d;padding:40px 0 30px}
 #footer p{color:rgba(255,255,255,.3);letter-spacing:1px;font-size:14px;text-transform:uppercase}
 #footer p a{color:rgba(255,255,255,.5)}
