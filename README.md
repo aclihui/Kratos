@@ -6,10 +6,12 @@ DEMO：[https://www.fczbl.vip/787.html](https://www.fczbl.vip/787.html)
 
 Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome). Created and maintained by Vtrois. Stay up to date with the latest release and announcements on [Bulletin Board](https://github.com/Vtrois/Kratos/issues). 
 
-![Kratos Demo](https://www.fczbl.vip/wp-content/uploads/kratos.png)
+![Kratos Demo](https://img.fczbl.vip/images/2018/04/01/kratos.png)
 
 ## Changes
-![Kratos Demo](https://www.fczbl.vip/wp-content/uploads/kratos_demo.jpg)
+![Kratos Demo](https://img.fczbl.vip/images/2018/04/01/Kratos_demo_2.png)
+
+![Kratos Demo](https://img.fczbl.vip/images/2018/04/01/kratos_demo.jpg)
 
 Please visit [https://www.fczbl.vip/787.html](https://www.fczbl.vip/787.html) .
 
