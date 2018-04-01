@@ -283,7 +283,7 @@ td,th{padding:0}
 .kratos-cover{background-size:cover;position:relative;background-position:center center}
 .kratos-cover .btn{padding:1em 5em;opacity:.9}
 .kratos-cover.kratos-cover_2{height:320px;background-position:top}
-.kratos-cover .desc{top:50%;position:absolute;width:100%;margin-top:-40px;z-index:2;color:#fff;text-shadow:2px 2px 2px #666}
+.kratos-cover .desc{top:50%;position:absolute;width:100%;margin-top:-50px;z-index:2;color:#fff;text-shadow:2px 2px 2px #666}
 .kratos-cover .desc h2{color:#fff;text-transform:none;font-size:40px;margin-bottom:10px;display:inline-block}
 .kratos-cover .desc p,.kratos-cover .desc span{color:#fff;margin-bottom:30px;font-size:25px;letter-spacing:1px;display:inline-block}
 .kratos-cover .desc span a{color:#fff}
