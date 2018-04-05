@@ -35,7 +35,7 @@ function kratos_blog_thumbnail_new(){
         echo '<a href="'.get_permalink().'"><img src="'.$img_url.'" /></a>';
     }else{
         $content = $post->post_content;
-        $img_preg = "/<img (.*?) src=\"(.+?)\".*?>/";
+        $img_preg = "/<img(.*?)src=\"(.+?)\".*?>/";
         preg_match($img_preg,$content,$img_src);
         $img_count=count($img_src)-1;
         if(isset($img_src[$img_count]))
