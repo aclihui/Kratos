@@ -247,7 +247,6 @@ td,th{padding:0}
 #offcanvas-menu ul li{padding:0;margin:0 0 10px 0;list-style:none}
 #offcanvas-menu ul li a{font-size:16px;color:rgba(255,255,255,.55)}
 #offcanvas-menu ul li>.sub-menu{margin-top:9px;padding-left:20px}
-#offcanvas-menu ul li.current-menu-item>a{color:#51aded}
 #offcanvas-menu ul .sub-menu{display:block!important}
 #kratos-header{position:relative;margin-bottom:0;z-index:5}
 #kratos-header .color-logo img{max-width:200px;height:40px;margin-top:-5px}
